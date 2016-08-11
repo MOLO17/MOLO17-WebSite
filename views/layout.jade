@@ -1,0 +1,18 @@
+doctype
+html(lang="it",ng-app="MoloWebsite")
+	head
+		title #{title}
+
+		//- include meta/favicon
+		
+		!= CDN('/stylesheets/reset.css')
+		!= CDN('/stylesheets/style.css')
+
+		block headscript
+
+	body()
+
+		block bodycontent
+		
+		footer
+			block footer

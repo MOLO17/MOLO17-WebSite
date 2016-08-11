@@ -1,0 +1,160 @@
+.inbox-offerts-content
+
+	.attachments-list
+		flex none
+		padding 0px
+		margin-bottom 10px
+		text-align left
+
+		.attachments-list-element
+		.attachments-list-element *
+			transition(background-color .1s)
+
+		.attachments-list-element
+			cursor pointer
+			padding 0px
+			font-size 13px
+			border-radius(6px)
+			border 1px solid #004c98
+			display inline-block
+			padding 5px
+			position relative
+			vertical-align middle
+			margin-left 5px
+			margin-right 5px
+			margin-bottom 5px
+
+			.icon
+				background #004c98
+				padding 5px
+				// box-sizing(border-box)
+				border-radius 50%
+				width 12px
+				height 12px
+				color #fff
+
+			.name
+				margin-left 5px
+				word-wrap break-word
+				word-break break-all
+
+			&:hover
+				background-color #004c98
+				.icon 
+					background #fff
+					color #004c98
+				.name
+					color #fff
+
+	.from-name
+	.from-email
+	.subject
+	.date
+		padding 0px
+		margin-bottom 15px !important
+		line-height 15px
+		flex none
+
+	.from-name
+		color #004c98
+		font-weight bold
+		margin-bottom 5px !important
+		font-size 18px
+
+	.from-email
+		font-size 14px
+
+	.content
+		padding 0px
+		line-height 20px
+		font-size 15px
+		word-wrap break-word
+
+	.subject 
+		font-weight bold
+		font-size 15px
+		margin-bottom 5px !important
+
+	.date
+		font-size 14px
+
+	.from-email
+	.date
+	.attachments-list
+		padding-bottom 15px !important
+		border-bottom 1px solid #ddd
+
+
+
+.inbox-offerts-list
+	.inbox-single-offert
+
+		outline 0
+		cursor pointer
+
+		&.selected
+			md-card
+				background-color #eee
+
+		&.done
+
+			md-card
+				background-color #fff
+
+			opacity .4
+		// position relative
+
+		.email
+			font-size 13px
+			font-weight bold
+			line-height 15px
+
+			-webkit-hyphens auto
+			-moz-hyphens auto
+			-ms-hyphens auto
+			-o-hyphens auto
+			hyphens auto
+
+		md-card-avatar
+			margin-left 0px
+
+		.attachments
+		.attachments *
+			color #004c98
+
+		.content
+			font-size 14px
+			padding-left 0px
+			padding-right 0px
+
+		.attachments
+			line-height 20px
+			font-size 13px
+
+			md-icon
+				line-height 15px
+				margin-left 10px
+				font-size 20px
+
+		.date
+			font-size 12px
+
+		.checked
+			position absolute
+			top 8px
+			right 8px
+
+			.md-label
+				display none
+
+			.md-icon
+			.md-container
+				border-radius(50%)
+		
+		md-grid-tile-footer
+			background transparent !important
+
+		md-grid-tile-footer figcaption
+			padding-right 0px
+			padding-left 0px
+			width 100% !important

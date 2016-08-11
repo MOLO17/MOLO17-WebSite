@@ -1,0 +1,60 @@
+{
+  "name": "molo-17",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=development node index.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "engineStrict": true,
+  "author": "Alessandro Benedetti <web@molo17.com>",
+  "license": "ISC",
+  "dependencies": {
+
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.0",
+    "bower": "^1.7.9",
+    "compression": "^1.6.1",
+    "cookie-parser": "^1.4.1",
+    "cors": "^2.7.1",
+
+    "express": "^4.13.4",
+    "express-cdn": "^0.2.9",
+    "express-device": "^0.4.2",
+
+
+    "grunt": "^1.0.1",
+    "grunt-ng-annotate": "^2.0.2",
+    "grunt-usemin": "^3.1.1",
+    "jade": "^1.11.0",
+    "momentjs": "^1.1.9",
+
+    "morgan": "^1.7.0",
+    "nib": "^1.1.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0",
+    "stylus": "^0.54.2",
+    "underscore": "^1.8.3"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "public/bower_components"
+  ],
+  "devDependencies": {
+    "grunt-bumpup": "^0.6.3",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-exec": "^1.0.0",
+    "grunt-ng-annotate": "^2.0.2",
+    "jshint": "^2.9.2",
+    "jslint": "^0.10.0"
+  }
+}

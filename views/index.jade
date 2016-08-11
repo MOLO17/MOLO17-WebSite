@@ -1,0 +1,15 @@
+extends layout
+
+block headscript
+
+	//- if (environment == 'development')
+	!= CDN('/js/app.js')
+	//- else
+	//- 	!= CDN('/dist/js/intermek.admin.min.js')
+
+block bodycontent
+	div.relative(layout="column",layout-fill,role="main")
+		md-content(flex,md-scroll-y,layout-fill)
+			div(layout="column",layout-fill,ng-view)
+		
+block footer

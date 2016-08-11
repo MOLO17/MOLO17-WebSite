@@ -1,0 +1,11 @@
+{
+  "version":"1.20",
+  "title":"Molo17 Website",
+  "copyright":"Copyright (c) 2016 MOLO17 Srl - All rights reserved.",
+  "qc_development":{
+  },
+  "qc_staging":{
+  },
+  "qc_production":{
+  }
+}

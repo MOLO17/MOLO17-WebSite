@@ -1,0 +1,9 @@
+node_modules/
+production.db
+newrelic_agent.log
+.DS_Store
+integrations/libs/docker/vendor
+.tmp/
+public/bower_components/
+vendor/
+bower_components

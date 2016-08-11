@@ -1,0 +1,175 @@
+.ngdialog.ngdialog-theme-plain
+	#dialog-title
+		background-color companyColor
+		border-radius(10px 10px 0px 0px)
+
+#dialog-title
+	color white
+	font-size 22px
+	text-align center
+	padding 0px 10px
+	box-sizing(border-box)
+
+.ngdialog.ngdialog-theme-plain
+	.ngdialog-content
+		// background-color lc_green
+		border-radius 10px
+		padding-top 0px
+
+.ngdialog.ngdialog-theme-plain
+	&.collection-color-picker-dialog
+		.ngdialog-content
+			background-color companyColor
+			width 300px
+			border-radius 10px
+			padding 0px
+
+.ngdialog.ngdialog-theme-plain
+	&.ngdialog-confirm-delete
+		#dialog-title
+			background-color #e84d3c
+
+.ngdialog.ngdialog-theme-plain 
+	.ngdialog-close::before
+		color white
+.ngdialog.ngdialog-theme-plain 
+	.ngdialog-close:active:before
+		color white
+.ngdialog.ngdialog-theme-plain 
+	.ngdialog-close:hover:before
+		color white
+.ngdialog.ngdialog-theme-plain
+	&.collection-color-picker-dialog
+		.ngdialog-content
+			form
+				div
+					div
+						background-color white
+						padding 0px
+.ngdialog.ngdialog-theme-plain
+	&.collection-color-picker-dialog
+		.ngdialog-content
+			form
+				.form-group
+					margin-bottom 0px
+					display block
+
+.ngdialog-content
+	padding 0px !important
+
+	.bt-fill-info-form
+		input[type="text"]
+			width 90%
+			margin auto
+			font-size 15px
+
+	.ngdialog-button.ngdialog-button-primary
+		font-size 18px !important
+		.spinner
+			div
+				padding 0px !important
+
+			left 10px !important
+
+	.form-header
+		height 50px
+		line-height 50px
+		background-color companyColor
+		border-top-left-radius 10px
+		border-top-right-radius 10px
+	
+	.form-body
+		// min-height 80px
+		padding 20px 0px
+		margin-bottom 0px
+
+		label
+			padding 10px
+			box-sizing(border-box)
+			font-size 16px
+
+	.form-footer
+		div.ngdialog-buttons
+			padding 15px 10px 10px 10px
+			border-top 1px solid rgba(186,186,186,0.4)
+		div
+			box-sizing(border-box)
+
+		.lc-loader
+		.lc-loader div
+			padding 0px
+
+	.ngdialog-close:before
+		font-size 35px !important
+		right 5px !important
+		top 10px !important
+
+.ngdialog-overlay
+	-webkit-animation ngdialog-fadein .1s !important
+	animation ngdialog-fadein .1s !important
+
+.ngdialog.ngdialog-closing .ngdialog-overlay
+	-webkit-animation ngdialog-fadeout .1s !important
+	animation ngdialog-fadeout .1s !important
+
+@-webkit-keyframes zoomIn
+	0%
+		lc-scale(1.1)
+		opacity 0
+
+	100%
+		lc-scale(1)
+		opacity 1
+
+@-moz-keyframes zoomIn
+	0%
+		lc-scale(1.1)
+		opacity 0
+
+	100%
+		lc-scale(1)
+		opacity 1
+
+@keyframes zoomIn
+	0%
+		lc-scale(1.1)
+		opacity 0
+
+	100%
+		lc-scale(1)
+		opacity 1
+
+@-webkit-keyframes zoomOut
+	0%
+		lc-scale(1)
+		opacity 1
+
+	100%
+		lc-scale(1.1)
+		opacity 0
+
+@-moz-keyframes zoomOut
+	0%
+		lc-scale(1)
+		opacity 1
+
+	100%
+		lc-scale(1.1)
+		opacity 0
+
+@keyframes zoomOut
+	0%
+		lc-scale(1)
+		opacity 1
+
+	100%
+		lc-scale(1.1)
+		opacity 0
+
+.ngdialog-content
+	-webkit-animation zoomIn .1s !important
+	animation zoomIn .1s !important
+
+.ngdialog.ngdialog-closing .ngdialog-content
+	-webkit-animation zoomOut .1s !important
+	animation zoomOut .1s !important

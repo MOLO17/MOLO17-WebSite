@@ -1,0 +1,92 @@
+@import 'brand'
+@import 'utils'
+@import 'plugin'
+
+*
+	// -webkit-touch-callout none
+	// -webkit-user-select none
+	// -khtml-user-select none
+	// -moz-user-select none
+	// -ms-user-select none
+	// user-select none
+
+input
+textarea
+	-webkit-touch-callout default
+	-webkit-user-select text
+	-moz-user-select text
+	-ms-user-select text
+	user-select text
+
+/*Abilita stampa su browser webkit*/
+@media print
+	*
+		-webkit-print-color-adjust: exact;
+
+@viewport {
+	width device-width;
+	user-zoom fixed !important;
+}
+
+html
+	overflow	hidden
+	width	100%
+	height 	100%
+
+@media only screen and (max-width: 1024px), screen and (max-height: 768px)
+	html
+		overflow auto !important
+
+body
+	background-color backgroundColor
+	color #B4B4B4
+	box-sizing(border-box)
+	overflow auto
+	width	100%
+	height 	100%
+	min-width 1024px
+	font-family bt_standardFontFamily,helvetica, arial, sans-serif
+
+button
+html
+input
+md-bottom-sheet .md-subheader
+select
+textarea
+	font-family bt_standardFontFamily,helvetica, arial, sans-serif
+
+strong
+	font-family bt_standardFontFamily,helvetica, arial, sans-serif
+
+input
+	border-radius(0px)
+
+.md-black-focused
+	&:not([disabled])
+		&:hover
+		&.md-focused
+			background-color #000 !important
+			color #fff
+
+			md-icon
+				color #fff
+
+md-icon[md-font-icon]
+	height auto
+
+@import "notification"
+@import "dialog"
+@import "button-animation"
+@import "loader"
+@import "emptyAnimation"
+@import "lightbox"
+@import "animations"
+@import "main-form-container"
+@import "offerts"
+@import "components/login"
+@import "components/inbox"
+@import "components/filters"
+@import "components/user"
+@import "components/dialog"
+@import "components/jira"
+@import "components/menu"
