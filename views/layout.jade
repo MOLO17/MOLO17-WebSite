@@ -4,10 +4,11 @@ html(lang="it",ng-app="MoloWebsite")
 		title #{title}
 
 		//- include meta/favicon
-		
+		!= CDN('/bower_components/angular/angular.min.js')
+		!= CDN('/bower_components/flexboxgrid/css/flexboxgrid.min.css')
+
 		!= CDN('/stylesheets/reset.css')
 		!= CDN('/stylesheets/style.css')
-		!= CDN('/bower_components/flexboxgrid/css/flexboxgrid.min.css')
 
 		block headscript
 

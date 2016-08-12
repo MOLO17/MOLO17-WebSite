@@ -4,10 +4,16 @@ block headscript
 
 	//- if (environment == 'development')
 	!= CDN('/js/app.js')
+	!= CDN('/js/components/sections/demo.js')
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
+	script(type="text/ng-template",id="/sections/demo.html")
+		include components/sections/demo
+
 block bodycontent
 	//- Strutturare da qui la pagina
+
+	sections-demo()
 		
 block footer
