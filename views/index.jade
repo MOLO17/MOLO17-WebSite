@@ -4,7 +4,7 @@ block headscript
 
 	//- if (environment == 'development')
 	!= CDN('/js/app.js')
-	!= CDN('/js/components/sections/demo.component.js')
+	//-!= CDN('/js/components/sections/demo.component.js')
 	!= CDN('/js/components/sections/morning.component.js')
 	!= CDN('/js/components/sections/day.component.js')
 	!= CDN('/js/components/sections/afternoon.component.js')
@@ -13,7 +13,7 @@ block headscript
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
-	script(type="text/ng-template",id="/sections/demo.html")
+	//-script(type="text/ng-template",id="/sections/demo.html")
 		include components/sections/demo
 	script(type="text/ng-template",id="/sections/morning.html")
 		include components/sections/morning

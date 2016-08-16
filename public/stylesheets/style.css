@@ -75,7 +75,6 @@ input {
     }
 }
 
-
 .waves {
     display: block;
     width: 100%;
@@ -123,24 +122,43 @@ input {
 }
 
 
-/*-------------------------------- NUOVOLE -----------------------------------------*/
+/*-------------------------------- NUOVOLE----------------------------------*/
 
 @-webkit-keyframes cloud {
     0% {
-        -webkit-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
     }
 
     100% {
-        -webkit-transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+        -webkit-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
     }
 }
 
 @keyframes cloud {
     0% {
-        transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+        transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
     }
     100% {
-        transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+        transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
+    }
+}
+
+@-webkit-keyframes cloudSmall {
+    0% {
+        -webkit-transform: rotateZ(0deg) translate3d(0, 25%, 0) rotateZ(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(360deg) translate3d(0, 25%, 0) rotateZ(-360deg);
+    }
+}
+
+@keyframes cloudSmall {
+    0% {
+        transform: rotateZ(0deg) translate3d(0, 25%, 0) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg) translate3d(0, 25%, 0) rotateZ(-360deg);
     }
 }
 
@@ -153,44 +171,48 @@ input {
 }
 
 .section-intro__cloud-1 {
-    width: 80px;
-    height: 40px;
+    width: 110px;
+    height: 60px;
     bottom: 380px;
-    margin-left: 635px;
+    margin-left: 1100px;
     opacity: .6;
     -webkit-animation-name: cloud;
-    -webkit-animation-duration: 2.5s;
+    -webkit-animation-duration: 8s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     animation-name: cloud;
-    animation-duration: 2.5s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
 .section-intro__cloud-2 {
     width: 80px;
     height: 40px;
     bottom: 426px;
     margin-left: 250px;
     opacity: .9;
-     -webkit-animation: wave 2.5s .6s infinite linear;
-    animation: wave 2.5s .6s infinite linear;
+     -webkit-animation: cloudSmall 10s .6s infinite linear;
+    animation: cloudSmall 10s .6s infinite linear;
 }
+
 .section-intro__cloud-3 {
-     width: 80px;
-    height: 40px;
+    width: 110px;
+    height: 60px;
     bottom: 338px;
     margin-left: 100px;
     opacity: .6;
-     -webkit-animation: wave 2.5s .6s infinite linear;
-    animation: wave 2.5s .6s infinite linear;
+     -webkit-animation: cloud 10s .6s infinite linear;
+    animation: cloud 10s .6s infinite linear;
 }
+
 .section-intro__cloud-4 {
     width: 80px;
-    height: 40px;
+    height: 42px;
     bottom: 180px;
-    margin-left: 356px;
-    opacity: .5;
-     -webkit-animation: wave 2.5s .6s infinite linear;
-    animation: wave 2.5s .6s infinite linear;
+    margin-left: 200px;
+    margin-top: -20px;
+    opacity: .9;
+     -webkit-animation: cloudSmall 10s .6s infinite linear;
+    animation: cloudSmall 10s .6s infinite linear;
 }
