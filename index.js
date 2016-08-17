@@ -21,8 +21,6 @@ function compile(str, path) {
 							CONTENT RESPONSE
 *****************************************************************************/
 
-app.use(express.static(__dirname+'/public'))
-
 app.use(logger('tiny'))
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -31,9 +29,11 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(stylus.middleware({
 	src: __dirname + '/public',
-	compile: compile
+	compile: compile,
+	force:(process.env.NODE_ENV.toLowerCase()=="development"?true:false)
 }))
 app.use(cors());
+app.use(express.static(__dirname+'/public'))
 
 app.use(require("./libs/v1/routing/router"));
 
