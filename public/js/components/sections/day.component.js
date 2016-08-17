@@ -6,6 +6,13 @@ molo.controller('sectionsDayController', function() {
 	vm = this;
 
 	vm.message = 'day component works!';
+
+
+	var windowWidth = $(window).width();
+	$('.ship_1').animate({right: windowWidth}, 3000, function() {
+		$('.ship_1').animate({right: 50}, 3000);
+	});
+
 });
 
 

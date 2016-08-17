@@ -1,4 +1,9 @@
 
+body
+	background-color: lightblue
+
+/*----------------------------------CLOUDS-----------------------------------------*/
+
 @-webkit-keyframes cloud
 	0%
 		-webkit-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
@@ -132,25 +137,18 @@
 	padding-bottom 17%
 	position absolute
 	bottom 62px
-	right 15%
+	right 0
 	background url('images/ship_1.png') bottom left no-repeat
 	background-size contain
-	z-index 1
-	-webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+	z-index -1
+		
+.animate_ship
+	webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 	animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
-	
-/*
-.ship_1 {
-    width: 15%;
-    padding-bottom: 17%;
-    position: absolute;
-    bottom: 62px;
-    right: 15%;
-    background: url('images/ship_1.png') bottom left no-repeat;
-    background-size: contain;
-    z-index: 1;
-   -webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955);
-    animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955);
-}
-*/
-	
+
+.rotateY
+	webkit-transform: rotateY(150deg)
+	transform: rotateY(150deg)
+.rotateY_back
+	webkit-transform: rotateY(-150deg)
+	transform: rotateY(-150deg)
