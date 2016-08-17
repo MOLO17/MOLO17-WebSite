@@ -50,7 +50,7 @@ body
 	height 	100%
 	margin 0
 	padding 0
-	min-width 1024px
+	//min-width 1024px
 	// font-family bt_standardFontFamily,helvetica, arial, sans-serif
 
 // button
@@ -148,13 +148,22 @@ input
 
 .lighthouse
 	z-index 0
-	width 399px
+	width 400px
 	height 450px
 	background url('images/faro.svg') left bottom no-repeat
 	position absolute
 	bottom 8px
-	left 500px
+	left 50%
+	margin-left -200px
 	
+@media(max-width 400px) 
+	.lighthouse 
+		width 200px
+		height 225px
+		margin-left -100px
+	
+
+
 /*---------------------------------------------------------------------------------*/
 
 .company_logo
@@ -169,8 +178,8 @@ input
 	width 100%
 	height 61px
 	bottom 0
-	position absolute	
-	
+	position absolute
+	background-color lightblue	
 
 @import "components/morning"
 @import "components/day"

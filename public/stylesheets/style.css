@@ -42,7 +42,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  min-width: 1024px;
 }
 input {
   -webkit-border-radius: 0px;
@@ -125,12 +124,20 @@ input {
 /*--------------------------------------------------------------------------------*/
 .lighthouse {
   z-index: 0;
-  width: 399px;
+  width: 400px;
   height: 450px;
   background: url("images/faro.svg") left bottom no-repeat;
   position: absolute;
   bottom: 8px;
-  left: 500px;
+  left: 50%;
+  margin-left: -200px;
+}
+@media (max-width: 400px) {
+  .lighthouse {
+    width: 200px;
+    height: 225px;
+    margin-left: -100px;
+  }
 }
 /*---------------------------------------------------------------------------------*/
 .company_logo {
@@ -146,6 +153,7 @@ input {
   height: 61px;
   bottom: 0;
   position: absolute;
+  background-color: #add8e6;
 }
 body {
   background-color: #add8e6;
