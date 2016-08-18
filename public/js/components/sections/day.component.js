@@ -1,31 +1,31 @@
 
 molo.controller('sectionsDayController', function($scope, $http, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
 
-	vm = this;
 	var vm;
-	var linearDistance;
+	vm = this;
+	var linearDistanceMiles;
 	var windowWidth;
 
+	var moloPositionDecimal;
+	var userPositionDecimal;
+	vm.userPositionDMS;
 
 	vm.moloPositionDecimal = {
 		'lat': projectConsts.molo_17Coords.latitude,
 	 	'lon': projectConsts.molo_17Coords.longitude
 	}
 
-	vm.userPositionDecimal = {};
-	vm.userPositionDMS = {}
-
-
+	
 	function findMoloWeather() {
 		weatherFactory.getWeather(function(err, response) {
 
 			if(err) {
 				console.log(err)
-			} else {
-				weatherService.setWeather(response)
-				console.log(weatherService.getWeather());
-				
-			}
+				return;
+			} 
+
+			weatherService.setWeather(response)
+			console.log(weatherService.getWeather());
 		})
 	}
 	findMoloWeather();
@@ -41,14 +41,13 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
 				vm.userPositionDecimal = coordinatesService.getCoords();
 				console.log(vm.userPositionDecimal);
 
-				linearDistance = Math.ceil(distance(vm.userPositionDecimal.latitude, vm.userPositionDecimal.longitude));
-				console.log('Distanza: ' + linearDistance + ' km');
+				linearDistanceMiles = Math.ceil(distance(vm.userPositionDecimal.latitude, vm.userPositionDecimal.longitude) / 1.852);
+				console.log('Distance: ' + linearDistanceMiles + ' nautic miles');
 
 				vm.userPositionDMS = {
 					'lat': decimalToDMS(vm.userPositionDecimal.latitude),
-					'lon': decimalToDMS(vm.userPositionDecimal.longitude)
+					'long': decimalToDMS(vm.userPositionDecimal.longitude)
 				}
-
 				console.log(vm.userPositionDMS)
 	
 			} else {
@@ -101,6 +100,7 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
 		$('.ship_1').animate({right: 50}, 3000);
 	});
 
+
 });
 
 
@@ -108,6 +108,5 @@ molo.component('sectionDay', {
 	templateUrl: "/sections/day.html",
     controller: "sectionsDayController",
     controllerAs: "vm",
-    bindings: {} 
-
+    bindings: {}
 })
