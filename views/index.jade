@@ -4,11 +4,19 @@ block headscript
 
 	//- if (environment == 'development')
 	!= CDN('/js/app.js')
+	!= CDN('/js/constants.js')
+
 	!= CDN('/js/components/sections/morning.component.js')
 	!= CDN('/js/components/sections/day.component.js')
 	!= CDN('/js/components/sections/afternoon.component.js')
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
+
+	!= CDN('/js/factories/weather.factory.js')
+	!= CDN('/js/factories/coordinates.factory.js')
+
+	!= CDN('/js/services/weather.service.js')
+	!= CDN('/js/services/coordinates.service.js')
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
