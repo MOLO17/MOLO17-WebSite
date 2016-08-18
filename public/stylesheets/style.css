@@ -155,6 +155,12 @@ input {
   position: absolute;
   background-color: #add8e6;
 }
+footer {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 body {
   background-color: #add8e6;
 }
