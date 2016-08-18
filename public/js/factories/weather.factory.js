@@ -12,7 +12,7 @@ molo.factory('weatherFactory', function($http, projectConsts) {
 			.then(function(response) {
 
 				if(response.data && response.data.weather && response.data.weather.length > 0) {
-					var data = response.data.weather[0].description;
+					var data = response.data.weather[0].description.toUpperCase();
 					completionHandler(null, data);
 				} else {
 					completionHandler(errorMessage);

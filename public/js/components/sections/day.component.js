@@ -6,21 +6,14 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
 	var linearDistance;
 	var windowWidth;
 
-	vm.moloPosition = {
+
+	vm.moloPositionDecimal = {
 		'lat': projectConsts.molo_17Coords.latitude,
 	 	'lon': projectConsts.molo_17Coords.longitude
 	}
 
-	console.log()
-
-	vm.userPosition = {};
-
-
-	//Ship animation
-	windowWidth = $(window).width();
-	$('.ship_1').animate({right: windowWidth}, 3000, function() {
-		$('.ship_1').animate({right: 50}, 3000);
-	});
+	vm.userPositionDecimal = {};
+	vm.userPositionDMS = {}
 
 
 	function findMoloWeather() {
@@ -35,7 +28,6 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
 			}
 		})
 	}
-
 	findMoloWeather();
 
 
@@ -45,21 +37,55 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
 			if(result) {
 				coordinatesService.setCoords(result.coords.latitude, result.coords.longitude);
 				//console.log(coordinatesService.getCoords());
-				vm.userPosition = coordinatesService.getCoords();
-				console.log(vm.userPosition);
+
+				vm.userPositionDecimal = coordinatesService.getCoords();
+				console.log(vm.userPositionDecimal);
+
+				linearDistance = Math.ceil(distance(vm.userPositionDecimal.latitude, vm.userPositionDecimal.longitude));
+				console.log('Distanza: ' + linearDistance + ' km');
+
+				vm.userPositionDMS = {
+					'lat': decimalToDMS(vm.userPositionDecimal.latitude),
+					'lon': decimalToDMS(vm.userPositionDecimal.longitude)
+				}
+
+				console.log(vm.userPositionDMS)
+	
 			} else {
 				console.log(err)
 			}
 		})
 	}
-
 	findUserCoords();
+
+
+	//Convert decomal coords to degress, minutes and seconds
+	function decimalToDMS (decimalCoord) {
+		
+		var grades = Math.floor (decimalCoord);
+		var minfloat = (decimalCoord - grades) * 60;
+		var minutes = Math.floor(minfloat);
+		var secfloat = (minfloat - minutes) * 60;
+		var seconds = Math.round(secfloat);
+		
+		if (seconds === 60) {
+	 		minutes++;
+	 		seconds = 0;
+		}
+
+		if (minutes === 60) {
+			grades++;
+			minutes = 0;
+		}
+
+		return ("" + grades + ":" + minutes + ":" + seconds);
+	}
 
 
 	//Distance from 2 coordinates
 	function distance(lat2, lon2) {
-		var lat1 = vm.moloPosition.lat;
-		var lon1 = vm.moloPosition.lon;
+		var lat1 = vm.moloPositionDecimal.lat;
+		var lon1 = vm.moloPositionDecimal.lon;
 
   		var p = 0.017453292519943295;
 		var c = Math.cos;
@@ -68,8 +94,12 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
   		return 12742 * Math.asin(Math.sqrt(a));
 	}
 
-	linearDistance = distance(vm.userPosition.latitude, vm.userPosition.longitude);
-	console.log("Distanza: " + linearDistance);
+
+	//Ship animation
+	windowWidth = $(window).width();
+	$('.ship_1').animate({right: windowWidth}, 3000, function() {
+		$('.ship_1').animate({right: 50}, 3000);
+	});
 
 });
 
