@@ -2,11 +2,18 @@
 molo.factory('coordinatesFactory', function() {
 
 	var coordinatesFactory = {};
+	var coordinates;
 
 	coordinatesFactory.getCoords = function(completionHandler) {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position){
-				completionHandler(true, position)
+				
+				coordinates = {
+					'latitude': position.coords.latitude,
+					'longitude': position.coords.longitude
+				}
+
+				completionHandler(true, coordinates)
 			})
 		}
 	};

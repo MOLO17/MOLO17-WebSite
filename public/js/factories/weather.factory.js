@@ -13,7 +13,7 @@ molo.factory('weatherFactory', function($http, projectConsts) {
 			.then(function(response) {
 
 				if(response.data && response.data.weather && response.data.weather.length > 0 && response.data.main.temp) {
-					var data = {
+					data = {
 						'description': response.data.weather[0].description,
 						'temperature': Math.round(response.data.main.temp)
 					}
@@ -27,7 +27,6 @@ molo.factory('weatherFactory', function($http, projectConsts) {
 			.catch(function(err) {
 				completionHandler(err);
 			})
-
 	}
 
 	return weatherFactory;
