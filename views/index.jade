@@ -6,24 +6,30 @@ block headscript
 	!= CDN('/js/app.js')
 	!= CDN('/js/constants.js')
 
+	//- Components
 	!= CDN('/js/components/sections/morning.component.js')
-	!= CDN('/js/components/sections/day.component.js')
 	!= CDN('/js/components/sections/afternoon.component.js')
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
 
+	//- Controllers
+	!= CDN('/js/controllers/main.controller.js')
+	!= CDN('/js/controllers/index.controller.js')
+
+	//- Factories
 	!= CDN('/js/factories/weather.factory.js')
 	!= CDN('/js/factories/coordinates.factory.js')
 
+	//- Services
 	!= CDN('/js/services/weather.service.js')
 	!= CDN('/js/services/coordinates.service.js')
+
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
+
 	script(type="text/ng-template",id="/sections/morning.html")
 		include components/sections/morning
-	script(type="text/ng-template",id="/sections/day.html")
-		include components/sections/day
 	script(type="text/ng-template",id="/sections/afternoon.html")
 		include components/sections/afternoon
 	script(type="text/ng-template",id="/sections/evening.html")
@@ -31,15 +37,18 @@ block headscript
 	script(type="text/ng-template",id="/sections/night.html")
 		include components/sections/night
 
+
 block bodycontent
-	//- Strutturare da qui la pagina
-	
-	
-	//-section-morning()
-	section-day()
-	//-section-afternoon()
-	//-section-evening()
-	//-section-night()
+
+	div(ng-controller='indexController')
 		
-block footer
+		div(ng-switch on='moment')
+			div(ng-switch-when='morning')
+				section-morning()
+			div(ng-switch-when='afternoon')
+				section-afternoon()
+			div(ng-switch-when='evening')
+				section-evening()
+			div(ng-switch-when='night')
+				section-night()
 	

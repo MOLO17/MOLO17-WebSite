@@ -1,5 +1,4 @@
-
-molo.controller('sectionsDayController', function($scope, $http, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
+molo.controller('mainController', function($scope, $http, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
 
 	var vm;
 	vm = this;
@@ -58,11 +57,3 @@ molo.controller('sectionsDayController', function($scope, $http, weatherFactory,
 
 
 });
-
-
-molo.component('sectionDay', {
-	templateUrl: "/sections/day.html",
-    controller: "sectionsDayController",
-    controllerAs: "vm",
-    bindings: {}
-})

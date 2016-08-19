@@ -33,7 +33,7 @@ molo.service('coordinatesService', function(projectConsts) {
 		var minutes = Math.floor(minfloat);
 		var secfloat = (minfloat - minutes) * 60;
 		var seconds = Math.round(secfloat);
-		
+
 		if (seconds === 60) {
 	 		minutes++;
 	 		seconds = 0;
