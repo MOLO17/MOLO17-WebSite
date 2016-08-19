@@ -83,7 +83,6 @@ input
 
 
 .waves
-	z-index 2
 	display block
 	width 100%
 	height 100%
@@ -95,7 +94,6 @@ input
 	top 0
 	
 .wave
-	z-index 3
 	display block
 	width 250%
 	height 83px
@@ -104,7 +102,7 @@ input
 	bottom 0
 
 .wave-1
-	z-index 10
+	z-index 4
 	bottom 10px
 	opacity .2
 	background url('images/wave-1.svg') 0 0 repeat-x
@@ -181,11 +179,28 @@ input
 	position absolute
 	background-color lightblue
 	
+
+
+.navigation
+	z-index -3
+	position absolute
+	width 350px
+	height 300px
+	background-color red
+	top 180px
+	left 50%
+	margin-left -175px
+	text-align center
+	background-color red
+
+
+	
 footer
 	position absolute
 	display block
 	width 100%
 	height 100%
+
 
 @import "components/morning"
 @import "components/day"

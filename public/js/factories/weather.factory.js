@@ -10,8 +10,8 @@ molo.factory('weatherFactory', function($http, projectConsts) {
 	weatherFactory.getWeather = function(completionHandler) {
 
 		$http.get(projectConsts.weatherAPIUrl)
-			.then(function(response) {
 
+			.then(function(response) {
 				if(response.data && response.data.weather && response.data.weather.length > 0 && response.data.main.temp) {
 					data = {
 						'description': response.data.weather[0].description,
