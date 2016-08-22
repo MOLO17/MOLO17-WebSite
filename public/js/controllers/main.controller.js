@@ -2,12 +2,15 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 
 	var vm;
 	vm = this;
-	var linearDistanceMiles;
+	vm.linearDistanceMiles;
+	vm.weather;
 	var windowWidth;
+	//$scope.weather = false;
+	$scope.position = false;
+
 
 	var userPositionDecimal;
-	vm.userPositionDMS;
-
+	vm.userPositionDMS = {}
 	
 	function findMoloWeather() {
 		weatherFactory.getWeather(function(err, response) {
@@ -16,13 +19,15 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 				return;
 			} 
 			weatherService.setWeather(response)
+			//$scope.weather = true;
 			console.log(weatherService.getWeather());
+			vm.weather = weatherService.getWeather();
 		})
 	}
 	findMoloWeather();
 
 
-	function findUserCoords() {
+	$scope.findUserCoords = function() {
 		coordinatesFactory.getCoords(function(err, result) {
 
 			if(result) {
@@ -31,22 +36,22 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 				vm.userPositionDecimal = coordinatesService.getCoords();
 				console.log(vm.userPositionDecimal);
 
-				linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
+				vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
 						vm.userPositionDecimal.longitude) / 1.852);
-				console.log('Distance: ' + linearDistanceMiles + ' nautic miles');
+				console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
 
-				vm.userPositionDMS = {
-					'latitude': coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
-					'longitude': coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
-				}
+				vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
+				vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
 				console.log(vm.userPositionDMS)
+				$scope.position = true;
+				
 	
 			} else {
 				console.log(err)
 			}
 		})
 	}
-	findUserCoords();
+	$scope.findUserCoords();
 
 
 	//Ship animation

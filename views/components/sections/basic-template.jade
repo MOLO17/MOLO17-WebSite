@@ -12,9 +12,45 @@ div.row
 			div.row
 				div.col-md-12
 					div.waves
-						div.wave.wave-1
-						div.wave.wave-2
-						div.wave.wave-3
+						li
+							div.wave.wave-1
+						li
+							div.wave.wave-2
+						li
+							div.wave.wave-3
+
+			div.info(ng-if='position')
+				div.row
+					div.title.col-md-12
+						| You Are Here
+				div.row
+					div.titles.col-md-12
+						| SCANNING...		
+				div.row
+					div.coords.col-md-12
+						| N    {{vm.userPositionDMS.latitude}}
+						br
+						| E    {{vm.userPositionDMS.longitude}}
+				div.row
+					div.titles.col-md-12
+						| DISTANCE
+				div.row
+					div.coords.col-md-12
+						| {{vm.linearDistanceMiles}} ML
+				div.row
+					div.titles.col-md-12
+						| CONDITIONS
+				div.row
+					div.coords.col-md-12
+						| {{vm.weather.description}}
+						br
+						| {{vm.weather.temperature}} °
+				div.row
+					div.titles.col-md-12
+						| LANDING
+				div.row
+					div.coords.col-md-12
+						| 13 Days
 
 			div.row
 				div.col-md-12
@@ -24,29 +60,21 @@ div.row
 				div.col-md-12
 					block view-content
 
-			div.row
-				div.col-md-12
-					div.footer
-						div.row
-							div.col-md-12.text.firstText
-								| Servizi di Hosting  
-								span.backslash //  
-								| Gestione infrastrutture Cloud  
-								span.backslash //  
-								| Realizzazione applicativi
+			div.footer
+				div.row
+					div.col-md-12.text.firstText
+						| Servizi di Hosting  
+						span.backslash //  
+						| Gestione infrastrutture Cloud  
+						span.backslash //  
+						| Realizzazione applicativi
 
-						div.row
-							div.col-md-12.text.secondText
-								| MOLO17 SRL Via Prà di Risi 17 - 33080 Zoppola PN - Italy  
-								span.backslash // 
-								| T +39 0434 1573057 
-								span.backslash // 
-								| www.molo17.com
-								span.backslash // 
-								| hello@molo17.com
-
-						//-div.col-md-12.text.secondText
-								| MOLO17 SRL Via Prà di Risi 17 - 33080 Zoppola PN - Italy // T +39 0434 1573057 // www.molo17.com // hello@molo17.com
-
-
-			
+				div.row
+					div.col-md-12.text.secondText
+						| MOLO17 SRL Via Prà di Risi 17 - 33080 Zoppola PN - Italy  
+						span.backslash // 
+						| T +39 0434 1573057 
+						span.backslash // 
+						| www.molo17.com  
+						span.backslash //  
+						| hello@molo17.com

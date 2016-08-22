@@ -1,22 +1,21 @@
 
-molo.factory('coordinatesFactory', function() {
+molo.factory('coordinatesFactory', function($geolocation) {
 
 	var coordinatesFactory = {};
 	var coordinates;
 
-	coordinatesFactory.getCoords = function(completionHandler) {
-		if(navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position){
-				
-				coordinates = {
-					'latitude': position.coords.latitude,
-					'longitude': position.coords.longitude
-				}
 
-				completionHandler(true, coordinates)
-			})
-		}
-	};
+	coordinatesFactory.getCoords = function(completionHandler) {
+		$geolocation.getCurrentPosition().then(function(position) {
+
+            coordinates = {
+				'latitude': position.coords.latitude,
+				'longitude': position.coords.longitude
+			}
+
+			completionHandler(true, coordinates)
+         })
+	}
 
 	return coordinatesFactory;
 });

@@ -44,7 +44,7 @@ molo.service('coordinatesService', function(projectConsts) {
 			minutes = 0;
 		}
 
-		return ("" + grades + ":" + minutes + ":" + seconds);
+		return ("" + grades + "° " + minutes + "' " + seconds + "''");
 	}
 
 
