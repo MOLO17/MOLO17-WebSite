@@ -1,17 +1,30 @@
-molo.controller('mainController', function($scope, $http, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
+'use strict'
+	
+molo.controller('mainController', function($scope, $http, $interval, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
 
 	var vm;
 	vm = this;
 	vm.linearDistanceMiles;
 	vm.weather;
+
+	var dayMilliseconds;
+	vm.landing = 10;
+
 	var windowWidth;
+
 	$scope.weather = false;
 	$scope.position = false;
 
-
 	var userPositionDecimal;
 	vm.userPositionDMS = {}
+
+	//Used for landing countdown visualization
+	dayMilliseconds = 1000 * 60 * 60 * 24;
+	$interval(function() { 
+		vm.landing -= 1;
+	},dayMilliseconds);
 	
+
 	function findMoloWeather() {
 		weatherFactory.getWeather(function(err, response) {
 			if(err) {
@@ -27,7 +40,7 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 	findMoloWeather();
 
 
-	$scope.findUserCoords = function() {
+	function findUserCoords() {
 		coordinatesFactory.getCoords(function(err, result) {
 
 			if(result) {
@@ -43,15 +56,18 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 				vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
 				vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
 				console.log(vm.userPositionDMS)
-				$scope.position = true;
+
+				//Delay
+				//$interval(function() {
+					$scope.position = true;
+				//},5000)
 				
-	
 			} else {
 				console.log(err)
 			}
 		})
 	}
-	$scope.findUserCoords();
+	findUserCoords();
 
 
 	//Ship animation
