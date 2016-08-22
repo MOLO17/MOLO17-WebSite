@@ -9,17 +9,18 @@ div.row
 				div.col-md-12
 					div.company_logo
 
-			div.row
+			div.waves
 				div.col-md-12
 					div.waves
-						li
-							div.wave.wave-1
-						li
-							div.wave.wave-2
-						li
-							div.wave.wave-3
+						ul
+							li
+								div.wave.wave-1
+							li
+								div.wave.wave-2
+							li
+								div.wave.wave-3
 
-			div.info(ng-if='position')
+			div.info(ng-if='position && weather')
 				div.row
 					div.title.col-md-12
 						| You Are Here
@@ -28,9 +29,9 @@ div.row
 						| SCANNING...		
 				div.row
 					div.coords.col-md-12
-						| N    {{vm.userPositionDMS.latitude}}
+						| N {{vm.userPositionDMS.latitude}}
 						br
-						| E    {{vm.userPositionDMS.longitude}}
+						| E {{vm.userPositionDMS.longitude}}
 				div.row
 					div.titles.col-md-12
 						| DISTANCE
@@ -44,7 +45,7 @@ div.row
 					div.coords.col-md-12
 						| {{vm.weather.description}}
 						br
-						| {{vm.weather.temperature}} °
+						| {{vm.weather.temperature}}°
 				div.row
 					div.titles.col-md-12
 						| LANDING

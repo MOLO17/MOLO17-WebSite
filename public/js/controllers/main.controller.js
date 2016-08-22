@@ -5,7 +5,7 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 	vm.linearDistanceMiles;
 	vm.weather;
 	var windowWidth;
-	//$scope.weather = false;
+	$scope.weather = false;
 	$scope.position = false;
 
 
@@ -19,7 +19,7 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 				return;
 			} 
 			weatherService.setWeather(response)
-			//$scope.weather = true;
+			$scope.weather = true;
 			console.log(weatherService.getWeather());
 			vm.weather = weatherService.getWeather();
 		})
@@ -56,8 +56,8 @@ molo.controller('mainController', function($scope, $http, weatherFactory, weathe
 
 	//Ship animation
 	windowWidth = $(window).width();
-	$('.ship_1').animate({right: windowWidth}, 3000, function() {
-		$('.ship_1').animate({right: 50}, 3000);
+	$('.ship_1').animate({right: windowWidth}, 20000, function() {
+		$('.ship_1').animate({right: 50}, 20000);
 	});
 
 

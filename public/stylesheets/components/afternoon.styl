@@ -34,7 +34,7 @@ body
 	background url('images/cloud.svg')
 	background-size 100% auto
 	position absolute
-	z-index 1
+	z-index -1
 	left 50%
 
 .cloud-2
@@ -132,6 +132,7 @@ body
 		transform translate3d(5%,0,0) rotateZ(5deg)
 	100%
 		transform translate3d(-5%,0,0) rotateZ(-5deg)
+
 		
 .ship_container
 	width 100%
@@ -142,7 +143,7 @@ body
 	padding-bottom 17%
 	position absolute
 	bottom 202px
-	right 0
+	right 20px
 	background url('images/boat.svg') bottom left no-repeat
 	background-size contain
 	z-index 4
@@ -162,13 +163,19 @@ body
 
 /*-----------------------------------------BIRDS---------------------------------------------------*/
 
-/*
-@-webkit-keyframes birds
-	{from opacity 0 to opacity 1}
-
-@keyframes birds
-	{from opacity 0 to opacity 1}
-*/
+@keyframes birdsAnimated
+	
+	0%
+		opacity: 1;
+	25%
+		opacity: 0.5;
+	50%
+		opacity: 0;
+	75%
+		opacity: 0.5;
+	100%
+		opacity: 1;
+	
 
 .birds
 	display block
@@ -188,14 +195,16 @@ body
 	left 120px
 	bottom 350px
 	background url('images/bird-1.svg') 0 0 no-repeat
-	-webkit-animation-name birds
+	-webkit-animation-name birdsAnimated
 	-webkit-animation-duration 10s
 	-webkit-animation-iteration-count infinite
-	-webkit-animation-timing-function linear
-	animation-name birds
+	-webkit-animation-delay 3.5s
+	webkit-animation-timing-function linear
+	animation-name birdsAnimated
 	animation-duration 10s
 	animation-iteration-count infinite
 	animation-timing-function linear
+	animation-delay 3.5s
 	
 .bird-2
 	background url('images/bird-2.svg') 0 0 no-repeat
@@ -203,6 +212,16 @@ body
 	height 83px
 	left 180px
 	bottom 330px
+	-webkit-animation-name birdsAnimated
+	-webkit-animation-duration 10s
+	-webkit-animation-iteration-count infinite
+	webkit-animation-timing-function linear
+	-webkit-animation-delay 5s
+	animation-name birdsAnimated
+	animation-duration 10s
+	animation-iteration-count infinite
+	animation-timing-function linear
+	animation-delay 5s
 	
 .bird-3
 	background url('images/bird-3.svg') 0 0 no-repeat
@@ -210,3 +229,13 @@ body
 	height 83px
 	left 190px
 	bottom 370px
+	-webkit-animation-name birdsAnimated
+	-webkit-animation-duration 10s
+	-webkit-animation-iteration-count infinite
+	webkit-animation-timing-function linear
+	-webkit-animation-delay 10s
+	animation-name birdsAnimated
+	animation-duration 10s
+	animation-iteration-count infinite
+	animation-timing-function linear
+	animation-delay 10s
