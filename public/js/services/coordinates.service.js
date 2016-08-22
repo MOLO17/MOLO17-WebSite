@@ -62,4 +62,17 @@ molo.service('coordinatesService', function(projectConsts) {
   		return 12742 * Math.asin(Math.sqrt(a));
 	}
 
+
+//-----------------------------------------------------------------------
+
+	var moment = '';
+
+	self.setMoment = function(_moment) {
+		moment = _moment;
+	}
+
+	self.getMoment = function() {
+		return moment;
+	}
+
 });

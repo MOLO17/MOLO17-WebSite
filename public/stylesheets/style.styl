@@ -103,7 +103,7 @@ input
 
 .wave-1
 	z-index 4
-	bottom 10px
+	bottom 160px
 	opacity .2
 	background url('images/wave-1.svg') 0 0 repeat-x
 	-webkit-animation-name wave
@@ -117,7 +117,7 @@ input
 
 .wave-2
 	z-index 5
-	bottom -10px
+	bottom 140px
 	opacity .6
 	background url('images/wave-2.svg') -42px 0 repeat-x
 	-webkit-animation-name wave
@@ -131,7 +131,7 @@ input
 	
 .wave-3
 	z-index 6
-	bottom -30px
+	bottom 120px
 	background url('images/wave-3.svg') -74px 0 repeat-x
 	-webkit-animation-name wave
 	-webkit-animation-duration 2s
@@ -150,7 +150,7 @@ input
 	height 450px
 	background url('images/faro.svg') left bottom no-repeat
 	position absolute
-	bottom 8px
+	bottom 158px
 	left 50%
 	margin-left -200px
 	
@@ -165,21 +165,13 @@ input
 /*---------------------------------------------------------------------------------*/
 
 .company_logo
+	background url('images/logo.svg') left bottom no-repeat
+	width 250px
+	height 70px
 	position absolute
 	left 120px
-	top 100px
+	top 30px
 	color red
-
-/*.wave_container
-	z-index 1
-	display block
-	width 100%
-	height 61px
-	bottom 0
-	position absolute
-	background-color lightblue
-*/
-
 
 .navigation
 	z-index 6
@@ -196,12 +188,15 @@ input
 
 
 	
-footer
+.footer
+	z-index 9
 	position absolute
 	display block
 	width 100%
-	height 100%
+	height 150px
+	bottom 0
 	overflow hidden
+	background-color white
 
 
 @import "components/morning"

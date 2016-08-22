@@ -80,7 +80,7 @@ input {
 }
 .wave-1 {
   z-index: 4;
-  bottom: 10px;
+  bottom: 160px;
   opacity: 0.2;
   background: url("images/wave-1.svg") 0 0 repeat-x;
   -webkit-animation-name: wave;
@@ -94,7 +94,7 @@ input {
 }
 .wave-2 {
   z-index: 5;
-  bottom: -10px;
+  bottom: 140px;
   opacity: 0.6;
   background: url("images/wave-2.svg") -42px 0 repeat-x;
   -webkit-animation-name: wave;
@@ -108,7 +108,7 @@ input {
 }
 .wave-3 {
   z-index: 6;
-  bottom: -30px;
+  bottom: 120px;
   background: url("images/wave-3.svg") -74px 0 repeat-x;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 2s;
@@ -126,7 +126,7 @@ input {
   height: 450px;
   background: url("images/faro.svg") left bottom no-repeat;
   position: absolute;
-  bottom: 8px;
+  bottom: 158px;
   left: 50%;
   margin-left: -200px;
 }
@@ -139,20 +139,14 @@ input {
 }
 /*---------------------------------------------------------------------------------*/
 .company_logo {
+  background: url("images/logo.svg") left bottom no-repeat;
+  width: 250px;
+  height: 70px;
   position: absolute;
   left: 120px;
-  top: 100px;
+  top: 30px;
   color: #f00;
 }
-/*.wave_container
-	z-index 1
-	display block
-	width 100%
-	height 61px
-	bottom 0
-	position absolute
-	background-color lightblue
-*/
 .navigation {
   z-index: 6;
   opacity: 0.4;
@@ -166,12 +160,15 @@ input {
   text-align: center;
   background-color: #f00;
 }
-footer {
+.footer {
+  z-index: 9;
   position: absolute;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 150px;
+  bottom: 0;
   overflow: hidden;
+  background-color: #fff;
 }
 body {
   background-color: #add8e6;
@@ -293,7 +290,7 @@ body {
   width: 15%;
   padding-bottom: 17%;
   position: absolute;
-  bottom: 52px;
+  bottom: 202px;
   right: 0;
   background: url("images/boat.svg") bottom left no-repeat;
   background-size: contain;
@@ -316,30 +313,33 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0;
   position: absolute;
-  left: 0;
   overflow: hidden;
-  top: 0;
-  bottom: 300px;
 }
 .bird {
   display: block;
-  width: 250%;
-  height: 83px;
   position: absolute;
-  left: -100%;
-  bottom: 300px;
 }
 .bird-1 {
+  width: 100px;
+  height: 83px;
+  left: 100px;
+  bottom: 450px;
   background: url("images/bird-1.svg") 0 0 no-repeat;
 }
 .bird-2 {
   background: url("images/bird-1.svg") 0 0 no-repeat;
+  width: 100px;
+  height: 83px;
+  left: 200px;
+  bottom: 450px;
 }
 .bird-3 {
   background: url("images/bird-1.svg") 0 0 no-repeat;
+  width: 100px;
+  height: 83px;
+  left: 300px;
+  bottom: 450px;
 }
 @-moz-keyframes cloud {
   0% {

@@ -41,7 +41,7 @@ block headscript
 block bodycontent
 
 	div(ng-controller='indexController')
-		
+
 		div(ng-switch on='moment')
 			div(ng-switch-when='morning')
 				section-morning()
@@ -51,4 +51,3 @@ block bodycontent
 				section-evening()
 			div(ng-switch-when='night')
 				section-night()
-	
