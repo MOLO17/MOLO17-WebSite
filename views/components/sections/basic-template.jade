@@ -1,16 +1,52 @@
 
-div.main-content
+//- Template composed of all the common graphics elements
 
-	div.company_logo
+div.row
+	div.col-md-12
+		div.main-content
 
-	div.waves
-		div.wave.wave-1
-		div.wave.wave-2
-		div.wave.wave-3
+			div.row
+				div.col-md-12
+					div.company_logo
 
-	div.lighthouse
+			div.row
+				div.col-md-12
+					div.waves
+						div.wave.wave-1
+						div.wave.wave-2
+						div.wave.wave-3
 
-	div
-		block view-content
+			div.row
+				div.col-md-12
+					div.lighthouse
 
-	div.footer
+			div.row
+				div.col-md-12
+					block view-content
+
+			div.row
+				div.col-md-12
+					div.footer
+						div.row
+							div.col-md-12.text.firstText
+								| Servizi di Hosting  
+								span.backslash //  
+								| Gestione infrastrutture Cloud  
+								span.backslash //  
+								| Realizzazione applicativi
+
+						div.row
+							div.col-md-12.text.secondText
+								| MOLO17 SRL Via Prà di Risi 17 - 33080 Zoppola PN - Italy  
+								span.backslash // 
+								| T +39 0434 1573057 
+								span.backslash // 
+								| www.molo17.com
+								span.backslash // 
+								| hello@molo17.com
+
+						//-div.col-md-12.text.secondText
+								| MOLO17 SRL Via Prà di Risi 17 - 33080 Zoppola PN - Italy // T +39 0434 1573057 // www.molo17.com // hello@molo17.com
+
+
+			
