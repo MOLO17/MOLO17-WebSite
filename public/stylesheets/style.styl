@@ -41,8 +41,7 @@ html
 		overflow auto !important
 
 body
-	
-	background-color lightblue !important
+	background-color lightblue
 	color #B4B4B4
 	box-sizing(border-box)
 	overflow hidden
@@ -142,11 +141,12 @@ input
 	animation-iteration-count infinite
 	animation-timing-function linear
 
-/*--------------------------------------------------------------------------------*/
+
+/*------------------------------------LIGHTHOUSE--------------------------------------------*/
 
 .lighthouse
 	z-index 0
-	width 400px
+	width 600px
 	height 450px
 	background url('images/faro.svg') left bottom no-repeat
 	position absolute
@@ -161,7 +161,6 @@ input
 		margin-left -100px
 	
 
-
 /*---------------------------------------------------------------------------------*/
 
 .company_logo
@@ -173,21 +172,6 @@ input
 	top 30px
 	color red
 
-.navigation
-	z-index 6
-	opacity .4
-	position absolute
-	width 350px
-	height 300px
-	background-color red
-	top 180px
-	left 50%
-	margin-left -175px
-	text-align center
-	background-color red
-
-
-	
 .footer
 	z-index 9
 	position absolute
@@ -199,8 +183,9 @@ input
 	background-color white
 
 
+/*------------------------------------------COMPONENTS STYLE---------------------------------------*/
+
 @import "components/morning"
-@import "components/day"
 @import "components/afternoon"
 @import "components/evening"
 @import "components/night"

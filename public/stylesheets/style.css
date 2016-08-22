@@ -32,7 +32,7 @@ html {
   }
 }
 body {
-  background-color: #add8e6 !important;
+  background-color: #add8e6;
   color: #b4b4b4;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -119,10 +119,10 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-/*--------------------------------------------------------------------------------*/
+/*------------------------------------LIGHTHOUSE--------------------------------------------*/
 .lighthouse {
   z-index: 0;
-  width: 400px;
+  width: 600px;
   height: 450px;
   background: url("images/faro.svg") left bottom no-repeat;
   position: absolute;
@@ -147,19 +147,6 @@ input {
   top: 30px;
   color: #f00;
 }
-.navigation {
-  z-index: 6;
-  opacity: 0.4;
-  position: absolute;
-  width: 350px;
-  height: 300px;
-  background-color: #f00;
-  top: 180px;
-  left: 50%;
-  margin-left: -175px;
-  text-align: center;
-  background-color: #f00;
-}
 .footer {
   z-index: 9;
   position: absolute;
@@ -170,6 +157,7 @@ input {
   overflow: hidden;
   background-color: #fff;
 }
+/*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 body {
   background-color: #add8e6;
 }
