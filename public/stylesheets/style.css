@@ -72,8 +72,8 @@ input {
 }
 .wave-3 {
   z-index: 7;
-  bottom: 100px;
-  background: url("images/wave_1_common.svg") -74px 0 repeat-x;
+  bottom: 110px;
+  background: url("images/common/wave_common.svg") -74px 0 repeat-x;
   -webkit-animation-name: waveSlow;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
@@ -86,13 +86,14 @@ input {
 /*------------------------------------LIGHTHOUSE--------------------------------------------*/
 .lighthouse {
   z-index: 5;
-  width: 600px;
-  height: 350px;
-  background: url("images/faro.svg") left bottom no-repeat;
+  width: 260px;
+  height: 100%;
+  background: url("images/common/lighthouse.svg") left bottom no-repeat;
+  background-size: 100% auto;
   position: absolute;
   bottom: 190px;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -130px;
 }
 @media (max-width: 600px) {
   .lighthouse {
@@ -153,7 +154,7 @@ input {
   position: absolute;
   display: block;
   width: 100%;
-  height: 110px;
+  height: 130px;
   bottom: 0;
   overflow: hidden;
   background-color: #fff;
@@ -182,6 +183,32 @@ input {
   height: 100%;
   position: absolute;
 }
+.morning .wave-1 {
+  z-index: 4;
+  bottom: 170px;
+  background: url("images/morning_afternoon/wave_3.svg") 0 0 repeat-x;
+  -webkit-animation-name: wave;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: wave;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.morning .wave-2 {
+  z-index: 6;
+  bottom: 135px;
+  background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
+  -webkit-animation-name: waveMedium;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: waveMedium;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 .day {
   background: url("images/day/background_day.png") 0 0 repeat-x;
   width: 100%;
@@ -191,15 +218,45 @@ input {
 /*--------------------------SHIP---------------------------------------*/
 /*-----------------------------------------BIRDS---------------------------------------------------*/
 }
-.day .cloud {
-  background: url("images/cloud.svg");
+.day .wave-1 {
+  z-index: 4;
+  bottom: 170px;
+  background: url("images/day/wave_3.svg") 0 0 repeat-x;
+  -webkit-animation-name: wave;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: wave;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.day .wave-2 {
+  z-index: 6;
+  bottom: 140px;
+  background: url("images/day/wave_2.svg") -42px 0 repeat-x;
+  -webkit-animation-name: waveMedium;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: waveMedium;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.day .cloud-1 {
+  background: url("images/day/cloud_1.svg");
   background-size: 100% auto;
   position: absolute;
   z-index: -1;
   left: 50%;
 }
 .day .cloud-2 {
-  background-image: url("images/cloud-2.svg");
+  background-image: url("images/day/cloud_2.svg");
+  position: absolute;
+}
+.day .cloud-3 {
+  background-image: url("images/day/cloud_3.svg");
   position: absolute;
 }
 .day .section-intro__cloud-1 {
@@ -288,7 +345,7 @@ input {
   width: 10%;
   padding-bottom: 17%;
   position: absolute;
-  bottom: 202px;
+  bottom: 215px;
   right: 20px;
   background: url("images/boat.svg") bottom left no-repeat;
   background-size: contain;
@@ -370,10 +427,16 @@ input {
   animation-timing-function: linear;
   animation-delay: 10s;
 }
-.day .wave-1 {
+.afternoon {
+  background: url("images/morning_afternoon/background_morning-afternoon.png") 0 0 repeat-x;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.afternoon .wave-1 {
   z-index: 4;
   bottom: 170px;
-  background: url("images/wave_3.svg") 0 0 repeat-x;
+  background: url("images/morning_afternoon/wave_3.svg") 0 0 repeat-x;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
@@ -383,10 +446,10 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .wave-2 {
+.afternoon .wave-2 {
   z-index: 6;
   bottom: 135px;
-  background: url("images/wave_2.svg") -42px 0 repeat-x;
+  background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -396,23 +459,93 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.afternoon {
-  background: url("images/morning_afternoon/background_morning-afternoon.png") 0 0 repeat-x;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
 .evening {
   background: url("images/evening/background_evening.png") 0 0 repeat-x;
   width: 100%;
   height: 100%;
   position: absolute;
 }
+.evening .wave-1 {
+  z-index: 4;
+  bottom: 170px;
+  background: url("images/evening/wave_3.svg") 0 0 repeat-x;
+  -webkit-animation-name: wave;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: wave;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.evening .wave-2 {
+  z-index: 6;
+  bottom: 135px;
+  background: url("images/evening/wave_2.svg") -42px 0 repeat-x;
+  -webkit-animation-name: waveMedium;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: waveMedium;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 .night {
   background: url("images/night/background_night.png") 0 0 repeat-x;
   width: 100%;
   height: 100%;
   position: absolute;
+}
+.night .wave-1 {
+  z-index: 4;
+  bottom: 170px;
+  background: url("images/night/wave_3.svg") 0 0 repeat-x;
+  -webkit-animation-name: wave;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: wave;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.night .wave-2 {
+  z-index: 6;
+  bottom: 135px;
+  background: url("images/night/wave_2.svg") -42px 0 repeat-x;
+  -webkit-animation-name: waveMedium;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: waveMedium;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linearnight;
+}
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes waveMedium {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes waveSlow {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
+  }
 }
 @-webkit-keyframes ship-main {
   0% {
@@ -438,28 +571,100 @@ input {
     -webkit-transform: rotateZ(360deg) translate3d(0, 25%, 0) rotateZ(-360deg);
   }
 }
-@-webkit-keyframes wave {
+@-moz-keyframes wave {
   0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
   }
   100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@-o-keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@-moz-keyframes waveMedium {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
   }
 }
 @-webkit-keyframes waveMedium {
   0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
   }
   100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
+  }
+}
+@-o-keyframes waveMedium {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
+  }
+}
+@keyframes waveMedium {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
+  }
+}
+@-moz-keyframes waveSlow {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
   }
 }
 @-webkit-keyframes waveSlow {
   0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
   }
   100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
+  }
+}
+@-o-keyframes waveSlow {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
+  }
+}
+@keyframes waveSlow {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
   }
 }
 @-moz-keyframes birdsAnimated {
@@ -624,101 +829,5 @@ input {
   }
   100% {
     transform: rotateZ(360deg) translate3d(0, 25%, 0) rotateZ(-360deg);
-  }
-}
-@-moz-keyframes wave {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes wave {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
-  }
-}
-@-o-keyframes wave {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
-  }
-}
-@keyframes wave {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
-  }
-}
-@-moz-keyframes waveMedium {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes waveMedium {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
-  }
-}
-@-o-keyframes waveMedium {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
-  }
-}
-@keyframes waveMedium {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
-  }
-}
-@-moz-keyframes waveSlow {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes waveSlow {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
-  }
-}
-@-o-keyframes waveSlow {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
-  }
-}
-@keyframes waveSlow {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg);
   }
 }

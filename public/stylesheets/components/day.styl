@@ -4,18 +4,48 @@
 	width 100%
 	height 100%
 	position absolute
+	
+	.wave-1
+		z-index 4
+		bottom 170px
+		background url('images/day/wave_3.svg') 0 0 repeat-x
+		-webkit-animation-name wave
+		-webkit-animation-duration 3s
+		-webkit-animation-iteration-count infinite
+		-webkit-animation-timing-function linear
+		animation-name wave
+		animation-duration 3s
+		animation-iteration-count infinite
+		animation-timing-function linear
+
+	.wave-2
+		z-index 6
+		bottom 140px
+		background url('images/day/wave_2.svg') -42px 0 repeat-x
+		-webkit-animation-name waveMedium
+		-webkit-animation-duration 2.5s
+		-webkit-animation-iteration-count infinite
+		-webkit-animation-timing-function linear
+		animation-name waveMedium
+		animation-duration 2.5s
+		animation-iteration-count infinite
+		animation-timing-function linear
 
 	/*----------------------------------CLOUDS-----------------------------------------*/
 
-	.cloud
-		background url('images/cloud.svg')
+	.cloud-1
+		background url('images/day/cloud_1.svg')
 		background-size 100% auto
 		position absolute
 		z-index -1
 		left 50%
 
 	.cloud-2
-		background-image url('images/cloud-2.svg')
+		background-image url('images/day/cloud_2.svg')
+		position absolute
+		
+	.cloud-3
+		background-image url('images/day/cloud_3.svg')
 		position absolute
 
 	.section-intro__cloud-1
@@ -108,7 +138,7 @@
 		width 10%
 		padding-bottom 17%
 		position absolute
-		bottom 202px
+		bottom 215px
 		right 20px
 		background url('images/boat.svg') bottom left no-repeat
 		background-size contain
@@ -191,47 +221,3 @@
 		animation-iteration-count infinite
 		animation-timing-function linear
 		animation-delay 10s
-
-
-	.wave-1
-		z-index 4
-		bottom 170px
-		//opacity .2
-		background url('images/wave_3.svg') 0 0 repeat-x
-		-webkit-animation-name wave
-		-webkit-animation-duration 3s
-		-webkit-animation-iteration-count infinite
-		-webkit-animation-timing-function linear
-		animation-name wave
-		animation-duration 3s
-		animation-iteration-count infinite
-		animation-timing-function linear
-
-	.wave-2
-		z-index 6
-		bottom 135px
-		//opacity .6
-		background url('images/wave_2.svg') -42px 0 repeat-x
-		-webkit-animation-name waveMedium
-		-webkit-animation-duration 2.5s
-		-webkit-animation-iteration-count infinite
-		-webkit-animation-timing-function linear
-		animation-name waveMedium
-		animation-duration 2.5s
-		animation-iteration-count infinite
-		animation-timing-function linear
-/*
-	.wave-3
-		z-index 7
-		bottom 100px
-		background url('images/wave_1_common.svg') -74px 0 repeat-x
-		-webkit-animation-name waveSlow
-		-webkit-animation-duration 2s
-		-webkit-animation-iteration-count infinite
-		-webkit-animation-timing-function linear
-		animation-name waveSlow
-		animation-duration 2s
-		animation-iteration-count infinite
-		animation-timing-function linear
-		
-*/
