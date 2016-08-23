@@ -70,6 +70,44 @@ input
 
 /*-----------------------------------------WAVES---------------------------------------------------*/
 
+@-webkit-keyframes wave
+	0%
+		-webkit-transform rotateZ(0deg) translate3d(0,8%,0) rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg) translate3d(0,8%,0) rotateZ(-360deg)
+
+@keyframes wave
+	0%
+		transform rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg)
+	
+
+@-webkit-keyframes waveMedium
+	0%
+		-webkit-transform rotateZ(0deg) translate3d(0,6%,0) rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg) translate3d(0,6%,0) rotateZ(-360deg)
+
+@keyframes waveMedium
+	0%
+		transform rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg)
+
+
+@-webkit-keyframes waveSlow
+	0%
+		-webkit-transform rotateZ(0deg) translate3d(0,3%,0) rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg) translate3d(0,3%,0) rotateZ(-360deg)
+
+@keyframes waveSlow
+	0%
+		transform rotateZ(0deg) translate3d(0, 3%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 3%, 0) rotateZ(-360deg)
+
 .waves
 	display block
 	width 100%
@@ -216,6 +254,6 @@ input
 @import "components/afternoon"
 @import "components/evening"
 @import "components/night"
-@import "components/animations"
+//@import "components/animations"
 
 	

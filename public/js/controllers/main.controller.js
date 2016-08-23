@@ -1,6 +1,6 @@
 'use strict'
 	
-molo.controller('mainController', function($scope, $http, $interval, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
+molo.controller('mainController', function($scope, $http, $interval, $rootScope, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
 
 	var vm;
 	vm = this;
@@ -12,8 +12,11 @@ molo.controller('mainController', function($scope, $http, $interval, weatherFact
 
 	var windowWidth;
 
-	$scope.weather = false;
-	$scope.position = false;
+	$rootScope.$on('geopositionConfirmed', function() {
+		$scope.showInfo = true;
+		$scope.showCompass = true;
+	})
+
 
 	var userPositionDecimal;
 	vm.userPositionDMS = {}
@@ -32,7 +35,6 @@ molo.controller('mainController', function($scope, $http, $interval, weatherFact
 				return;
 			} 
 			weatherService.setWeather(response)
-			$scope.weather = true;
 			console.log(weatherService.getWeather());
 			vm.weather = weatherService.getWeather();
 		})
@@ -51,15 +53,15 @@ molo.controller('mainController', function($scope, $http, $interval, weatherFact
 
 				vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
 						vm.userPositionDecimal.longitude) / 1.852);
-				console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
+				//console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
 
 				vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
 				vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
 				console.log(vm.userPositionDMS)
 
-				//Delay
+				//Delay foo compass visualization
 				$interval(function() {
-					$scope.position = true;
+					$scope.showCompass = false;
 				},5000)
 				
 			} else {
@@ -72,10 +74,9 @@ molo.controller('mainController', function($scope, $http, $interval, weatherFact
 
 	//Ship animation
 	windowWidth = $(window).width();
-	$('.ship_1').animate({right: windowWidth}, 20000, function() {
+	$('.sailboat').animate({right: windowWidth}, 30000, function() {
 		$('.ship_1').addClass('.rotateY')
-		$('.ship_1').animate({right: 50}, 20000);
+		$('.sailboat').animate({right: 50}, 30000);
 	});
-
 
 });

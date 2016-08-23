@@ -1,5 +1,5 @@
 
-molo.factory('coordinatesFactory', function($geolocation) {
+molo.factory('coordinatesFactory', function($geolocation, $rootScope) {
 
 	var coordinatesFactory = {};
 	var coordinates;
@@ -7,7 +7,8 @@ molo.factory('coordinatesFactory', function($geolocation) {
 
 	coordinatesFactory.getCoords = function(completionHandler) {
 		$geolocation.getCurrentPosition().then(function(position) {
-
+			
+			$rootScope.$emit('geopositionConfirmed');
             coordinates = {
 				'latitude': position.coords.latitude,
 				'longitude': position.coords.longitude

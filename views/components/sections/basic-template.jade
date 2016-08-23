@@ -20,15 +20,14 @@ div.row
 							li
 								div.wave.wave-3
 
-			div.info
-
-				div(ng-if='!position || !weather')
+			div.info(ng-if='showInfo')
+				div(ng-if='showCompass')
 					div.row
 						div.col-md-12
 							| LOADING ...
 							div.compass
 
-				div(ng-if='position && weather')
+				div(ng-if='!showCompass')
 					div.row
 						div.title.col-md-12
 							| You Are Here
@@ -45,7 +44,8 @@ div.row
 							| DISTANCE
 					div.row
 						div.coords.col-md-12
-							| {{vm.linearDistanceMiles}} ML
+							//-	| {{vm.linearDistanceMiles}} ML
+							| 0 ML
 					div.row
 						div.titles.col-md-12
 							| CONDITIONS
