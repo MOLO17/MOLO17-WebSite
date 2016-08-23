@@ -75,7 +75,7 @@ molo.controller('mainController', function($scope, $http, $interval, $rootScope,
 	//Ship animation
 	windowWidth = $(window).width();
 	$('.sailboat').animate({right: windowWidth}, 30000, function() {
-		$('.ship_1').addClass('.rotateY')
+		$('.sailboat').addClass('.rotateY')
 		$('.sailboat').animate({right: 50}, 30000);
 	});
 
