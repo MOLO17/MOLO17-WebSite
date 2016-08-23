@@ -20,38 +20,46 @@ div.row
 							li
 								div.wave.wave-3
 
-			div.info(ng-if='position && weather')
-				div.row
-					div.title.col-md-12
-						| You Are Here
-				div.row
-					div.titles.col-md-12
-						| SCANNING...		
-				div.row
-					div.coords.col-md-12
-						| N {{vm.userPositionDMS.latitude}}
-						br
-						| E {{vm.userPositionDMS.longitude}}
-				div.row
-					div.titles.col-md-12
-						| DISTANCE
-				div.row
-					div.coords.col-md-12
-						| {{vm.linearDistanceMiles}} ML
-				div.row
-					div.titles.col-md-12
-						| CONDITIONS
-				div.row
-					div.coords.col-md-12
-						| {{vm.weather.description}}
-						br
-						| {{vm.weather.temperature}}° C
-				div.row
-					div.titles.col-md-12
-						| LANDING
-				div.row
-					div.coords.col-md-12
-						| {{vm.landing}} days
+			div.info
+
+				div(ng-if='!position || !weather')
+					div.row
+						div.col-md-12
+							| LOADING ...
+							div.compass
+
+				div(ng-if='position && weather')
+					div.row
+						div.title.col-md-12
+							| You Are Here
+					div.row
+						div.titles.col-md-12
+							| SCANNING...		
+					div.row
+						div.coords.col-md-12
+							| N {{vm.userPositionDMS.latitude}}
+							br
+							| E {{vm.userPositionDMS.longitude}}
+					div.row
+						div.titles.col-md-12
+							| DISTANCE
+					div.row
+						div.coords.col-md-12
+							| {{vm.linearDistanceMiles}} ML
+					div.row
+						div.titles.col-md-12
+							| CONDITIONS
+					div.row
+						div.coords.col-md-12
+							| {{vm.weather.description}}
+							br
+							| {{vm.weather.temperature}}° C
+					div.row
+						div.titles.col-md-12
+							| LANDING
+					div.row
+						div.coords.col-md-12
+							| {{vm.landing}} days
 
 			div.row
 				div.col-md-12

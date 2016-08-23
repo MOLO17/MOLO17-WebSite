@@ -58,9 +58,9 @@ molo.controller('mainController', function($scope, $http, $interval, weatherFact
 				console.log(vm.userPositionDMS)
 
 				//Delay
-				//$interval(function() {
+				$interval(function() {
 					$scope.position = true;
-				//},5000)
+				},5000)
 				
 			} else {
 				console.log(err)
@@ -73,6 +73,7 @@ molo.controller('mainController', function($scope, $http, $interval, weatherFact
 	//Ship animation
 	windowWidth = $(window).width();
 	$('.ship_1').animate({right: windowWidth}, 20000, function() {
+		$('.ship_1').addClass('.rotateY')
 		$('.ship_1').animate({right: 50}, 20000);
 	});
 

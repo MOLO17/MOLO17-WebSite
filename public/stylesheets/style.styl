@@ -63,6 +63,8 @@ body
 // 	font-family bt_standardFontFamily,helvetica, arial, sans-serif
 
 input
+	//-webkit-border-radius 0px
+	//-moz-border-radius 0px
 	border-radius(0px)
 	
 
@@ -124,12 +126,13 @@ input
 /*---------------------------------------------------------------------------------*/
 
 .company_logo
-	background url('images/logo.svg') left bottom no-repeat
-	width 180px
-	height 40px
+	background url('images/common/logo.gif') no-repeat
+	background-size 100% auto
+	width 200px
+	height 200px
 	position absolute
-	left 120px
-	top 80px
+	left 100px
+	top 70px
 	color red
 
 /*---------------------------------------INFO------------------------------------------------*/	
@@ -147,8 +150,9 @@ input
 	text-align center
 	background-color white
 	font-family arial
+	-webkit-border-radius 30px
+	-moz-border-radius 30px
 	border-radius 30px
-	//padding 20px
 
 .title
 	margin-top 15px
@@ -194,6 +198,16 @@ input
 	
 .backslash
 	color red
+	
+
+.compass
+	background url('images/common/compass.svg') no-repeat
+	background-size 100% auto
+	position absolute
+	width 80%
+	height 80%
+	top 40px
+	margin-left 25px
 
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 

@@ -104,12 +104,13 @@ input {
 }
 /*---------------------------------------------------------------------------------*/
 .company_logo {
-  background: url("images/logo.svg") left bottom no-repeat;
-  width: 180px;
-  height: 40px;
+  background: url("images/common/logo.gif") no-repeat;
+  background-size: 100% auto;
+  width: 200px;
+  height: 200px;
   position: absolute;
-  left: 120px;
-  top: 80px;
+  left: 100px;
+  top: 70px;
   color: #f00;
 }
 /*---------------------------------------INFO------------------------------------------------*/
@@ -126,6 +127,8 @@ input {
   text-align: center;
   background-color: #fff;
   font-family: arial;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
@@ -175,6 +178,15 @@ input {
 }
 .backslash {
   color: #f00;
+}
+.compass {
+  background: url("images/common/compass.svg") no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 40px;
+  margin-left: 25px;
 }
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 .morning {
@@ -244,30 +256,31 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .cloud-1 {
-  background: url("images/day/cloud_1.svg");
+.day .cloud_1 {
+  background: url("images/day/cloud_1.svg") 0 0 no-repeat;
   background-size: 100% auto;
   position: absolute;
-  z-index: -1;
   left: 50%;
 }
-.day .cloud-2 {
-  background-image: url("images/day/cloud_2.svg");
+.day .cloud_2 {
+  background: url("images/day/cloud_2.svg") 0 0 no-repeat;
+  background-size: 100% auto;
   position: absolute;
 }
-.day .cloud-3 {
-  background-image: url("images/day/cloud_3.svg");
+.day .cloud_3 {
+  background: url("images/day/cloud_3.svg") 0 0 no-repeat;
+  background-size: 100% auto;
   position: absolute;
 }
-.day .section-intro__cloud-1 {
-  width: 110px;
-  height: 60px;
+.day .section-intro__cloud_1 {
+  width: 8%;
+  height: 49px;
   bottom: 380px;
   margin-left: -200px;
   margin-top: 50px;
   opacity: 0.6;
   -webkit-animation-name: cloud;
-  -webkit-animation-duration: 12s;
+  -webkit-animation-duration: 20s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   animation-name: cloud;
@@ -275,9 +288,9 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .section-intro__cloud-2 {
-  width: 80px;
-  height: 40px;
+.day .section-intro__cloud_2 {
+  width: 100px;
+  height: 200px;
   bottom: 350px;
   margin-left: 450px;
   opacity: 0.9;
@@ -290,7 +303,7 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .section-intro__cloud-3 {
+.day .section-intro__cloud_3 {
   width: 110px;
   height: 60px;
   bottom: 500px;
@@ -305,7 +318,7 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .section-intro__cloud-4 {
+.day .section-intro__cloud_4 {
   width: 80px;
   height: 42px;
   bottom: 530px;
@@ -321,7 +334,7 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .section-intro__cloud-5 {
+.day .section-intro__cloud_5 {
   width: 80px;
   height: 42px;
   bottom: 500px;
@@ -337,22 +350,22 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.day .ship_container {
+.day .sailboat_container {
   width: 100%;
   height: 100%;
 }
-.day .ship_1 {
-  width: 10%;
+.day .sailboat {
+  width: 15%;
   padding-bottom: 17%;
   position: absolute;
-  bottom: 215px;
+  bottom: 185px;
   right: 20px;
-  background: url("images/boat.svg") bottom left no-repeat;
+  background: url("images/day/sailboat.svg") bottom left no-repeat;
   background-size: contain;
-  z-index: 5;
+  z-index: 6;
   hoverflow: hidden;
 }
-.day .animate_ship {
+.day .animate_sailboat {
   webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -364,7 +377,7 @@ input {
   webkit-transform: rotateY(-150deg);
   transform: rotateY(-150deg);
 }
-.day .birds {
+.day .seagulls {
   display: block;
   width: 100%;
   height: 100%;
@@ -372,16 +385,16 @@ input {
   bottom: 0;
   overflow: hidden;
 }
-.day .bird {
+.day .seagull {
   display: block;
   position: absolute;
 }
-.day .bird-1 {
+.day .seagull_1 {
   width: 45px;
   height: 83px;
   left: 120px;
-  bottom: 350px;
-  background: url("images/bird-1.svg") 0 0 no-repeat;
+  bottom: 310px;
+  background: url("images/day/seagull_1.svg") 0 0 no-repeat;
   -webkit-animation-name: birdsAnimated;
   -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
@@ -393,12 +406,12 @@ input {
   animation-timing-function: linear;
   animation-delay: 3.5s;
 }
-.day .bird-2 {
-  background: url("images/bird-2.svg") 0 0 no-repeat;
+.day .seagull_2 {
+  background: url("images/day/seagull_2.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 180px;
-  bottom: 330px;
+  bottom: 290px;
   -webkit-animation-name: birdsAnimated;
   -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
@@ -410,12 +423,12 @@ input {
   animation-timing-function: linear;
   animation-delay: 5s;
 }
-.day .bird-3 {
-  background: url("images/bird-3.svg") 0 0 no-repeat;
+.day .seagull_3 {
+  background: url("images/day/seagull_3.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 190px;
-  bottom: 370px;
+  bottom: 340px;
   -webkit-animation-name: birdsAnimated;
   -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
@@ -522,6 +535,22 @@ input {
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-timing-function: linearnight;
+}
+.night .stars {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+}
+.night .star_1 {
+  background: url("images/evening/background_evening.png") 0 0 no-repeat;
+  background-size: 100% auto;
+  left: 200px;
+  bottom: 400px;
+}
+.night .star_2 {
+  background: url("images/evening/background_evening.png") 0 0 no-repeat;
+  background-size: 100% auto;
 }
 @-webkit-keyframes wave {
   0% {
