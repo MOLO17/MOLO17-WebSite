@@ -68,45 +68,6 @@ input
 
 /*-----------------------------------------WAVES---------------------------------------------------*/
 
-@-webkit-keyframes wave
-	0%
-		-webkit-transform rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg)
-	100%
-		-webkit-transform rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg)
-
-@keyframes wave
-	0%
-		transform rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg)
-	100%
-		transform rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg)
-	
-
-@-webkit-keyframes waveMedium
-	0%
-		-webkit-transform rotateZ(0deg) translate3d(0,6%,0) rotateZ(0deg)
-	100%
-		-webkit-transform rotateZ(360deg) translate3d(0,6%,0) rotateZ(-360deg)
-
-@keyframes waveMedium
-	0%
-		transform rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg)
-	100%
-		transform rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg)
-
-
-@-webkit-keyframes waveSlow
-	0%
-		-webkit-transform rotateZ(0deg) translate3d(0,2%,0) rotateZ(0deg)
-	100%
-		-webkit-transform rotateZ(360deg) translate3d(0,2%,0) rotateZ(-360deg)
-
-@keyframes waveSlow
-	0%
-		transform rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg)
-	100%
-		transform rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg)
-
-
 .waves
 	display block
 	width 100%
@@ -126,38 +87,10 @@ input
 	left -100%
 	bottom 0
 
-.wave-1
-	z-index 4
-	bottom 170px
-	opacity .2
-	background url('images/wave-1.svg') 0 0 repeat-x
-	-webkit-animation-name wave
-	-webkit-animation-duration 3s
-	-webkit-animation-iteration-count infinite
-	-webkit-animation-timing-function linear
-	animation-name wave
-	animation-duration 3s
-	animation-iteration-count infinite
-	animation-timing-function linear
-
-.wave-2
-	z-index 6
-	bottom 135px
-	opacity .6
-	background url('images/wave-2.svg') -42px 0 repeat-x
-	-webkit-animation-name waveMedium
-	-webkit-animation-duration 2.5s
-	-webkit-animation-iteration-count infinite
-	-webkit-animation-timing-function linear
-	animation-name waveMedium
-	animation-duration 2.5s
-	animation-iteration-count infinite
-	animation-timing-function linear
-
 .wave-3
 	z-index 7
 	bottom 100px
-	background url('images/wave-3.svg') -74px 0 repeat-x
+	background url('images/wave_1_common.svg') -74px 0 repeat-x
 	-webkit-animation-name waveSlow
 	-webkit-animation-duration 2s
 	-webkit-animation-iteration-count infinite
@@ -268,5 +201,6 @@ input
 @import "components/afternoon"
 @import "components/evening"
 @import "components/night"
+@import "components/animations"
 
 	
