@@ -8,6 +8,7 @@ block headscript
 
 	//- Components
 	!= CDN('/js/components/sections/morning.component.js')
+	!= CDN('/js/components/sections/day.component.js')
 	!= CDN('/js/components/sections/afternoon.component.js')
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
@@ -30,6 +31,8 @@ block headscript
 
 	script(type="text/ng-template",id="/sections/morning.html")
 		include components/sections/morning
+	script(type="text/ng-template",id="/sections/day.html")
+		include components/sections/day
 	script(type="text/ng-template",id="/sections/afternoon.html")
 		include components/sections/afternoon
 	script(type="text/ng-template",id="/sections/evening.html")
@@ -45,6 +48,8 @@ block bodycontent
 		div(ng-switch on='moment')
 			div(ng-switch-when='morning')
 				section-morning()
+			div(ng-switch-when='day')
+				section-day()
 			div(ng-switch-when='afternoon')
 				section-afternoon()
 			div(ng-switch-when='evening')
