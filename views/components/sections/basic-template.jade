@@ -24,10 +24,9 @@ div.row
 				div(ng-if='showCompass')
 					div.row
 						div.col-md-12
-							| LOADING ...
 							div.compass
 
-				div(ng-if='!showCompass')
+				div(ng-if='showText')
 					div.row
 						div.title.col-md-12
 							| You Are Here
@@ -59,6 +58,9 @@ div.row
 					div.row
 						div.coords.col-md-12
 							| {{vm.landing}} days
+
+				div(ng-if='showErrMessage')
+					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tristique elit, quis sagittis diam. Mauris ornare egestas congue. Aliquam aliquam ultrices accumsan. Praesent id rutrum turpis. Praesent ac placerat est. Nunc lacinia sem ut risus accumsan, quis semper diam scelerisque. Donec in lorem lacus. Cras egestas ornare sem vel volutpat. Vivamus laoreet turpis eu mi imperdiet consectetur. Nam accumsan orci at ex lacinia ullamcorper.
 
 			div.row
 				div.col-md-12

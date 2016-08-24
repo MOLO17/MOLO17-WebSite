@@ -164,7 +164,8 @@ input
 /*---------------------------------------------------------------------------------*/
 
 .company_logo
-	background url('images/logo.svg') no-repeat
+	background url('images/common/logo.svg') no-repeat
+	//background url('images/common/logo.gif') no-repeat
 	background-size 100% auto
 	width 200px
 	height 200px
@@ -239,7 +240,95 @@ input
 	
 .bold
 	font-weight bold
+
+//----------------------------------------COMPASS----------------------------------------------------
+
+@-webkit-keyframes compass_animation
+	0%
+		-webkit-transform rotateZ(0deg)
+	25%
+		-webkit-transform rotateZ(30deg)
+	50%
+		-webkit-transform rotateZ(0deg)
+	75%
+		-webkit-transform rotateZ(-30deg)
+	100%
+		-webkit-transform rotateZ(0deg)
+
+@keyframes compass_animation
+	0%
+		transform rotateZ(0deg)
+	25%
+		transform rotateZ(30deg)
+	50%
+		transform rotateZ(0deg)
+	75%
+		transform rotateZ(-30deg)
+	100%
+		transform rotateZ(0deg)
+
+		
+// @-webkit-keyframes compass_animation
+// 	0%
+// 		-webkit-transform rotateZ(0deg)
+// 	10%
+// 		-webkit-transform rotateZ(90deg)
+// 	20%
+// 		-webkit-transform rotateZ(180deg)
+// 	30%
+// 		-webkit-transform rotateZ(270deg)
+// 	40%
+// 		-webkit-transform rotateZ(360deg)
+// 	50%
+// 		-webkit-transform rotateZ(395deg)
+// 	60%
+// 		-webkit-transform rotateZ(360deg)
+// 	70%
+// 		-webkit-transform rotateZ(315deg)
+// 	80%
+// 		-webkit-transform rotateZ(375deg)
+// 	90%
+// 		-webkit-transform rotateZ(335deg)
+// 	100%
+// 		-webkit-transform rotateZ(360deg)
 	
+//TODO	
+@-webkit-keyframes compass_animation
+	//0%
+		//-webkit-transform rotateZ(0deg)
+	10%
+		-webkit-transform rotateZ(0deg)
+	20%
+		-webkit-transform rotateZ(10deg)
+	30%
+		-webkit-transform rotateZ(15deg)
+	40%
+		-webkit-transform rotateZ(20deg)
+	50%
+		-webkit-transform rotateZ(25deg)
+	60%
+		-webkit-transform rotateZ(0deg)
+	70%
+		-webkit-transform rotateZ(-20deg)
+	80%
+		-webkit-transform rotateZ(0deg)
+	90%
+		-webkit-transform rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg)
+
+
+// @keyframes compass_animation
+// 	0%
+// 		transform rotateZ(0deg)
+// 	25%
+// 		transform rotateZ(30deg)
+// 	50%
+// 		transform rotateZ(0deg)
+// 	75%
+// 		transform rotateZ(-30deg)
+// 	100%
+// 		transform rotateZ(0deg)
 
 .compass
 	background url('images/common/compass.svg') no-repeat
@@ -249,6 +338,14 @@ input
 	height 80%
 	top 40px
 	margin-left 25px
+	-webkit-animation-name compass_animation
+	-webkit-animation-duration 2s
+	-webkit-animation-iteration-count infinite
+	-webkit-animation-timing-function linear
+	animation-name compass_animation
+	animation-duration 2s
+	animation-iteration-count infinite
+	animation-timing-function linear
 
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 
