@@ -68,7 +68,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 				$timeout(function() {
 					$scope.showCompass = !$scope.showCompass
 					$scope.showText = true;
-				},20000)
+				}, 4000)
 				
 			} else {
 				console.log(err)
@@ -85,60 +85,57 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	}
 	findUserCoords();
 
-	//FARE random
-
 	
+//------------------------------------ANIMATIONS LOGIC-------------------------------
 
-	function moveDiv() {
+	function generateRandomSeagulls() {
 
 		var random1 = Math.floor((Math.random() * 6 + 1) * 1000);
 		var random2 = Math.floor((Math.random() * 6 + 1) * 1000);
 		var random3 = Math.floor((Math.random() * 6 + 1) * 1000);
-		//console.log(random)
 
-	    var $span = $(".seagull.seagull_1");
-	    var $span2 = $(".seagull.seagull_2");
-	    var $span3 = $(".seagull.seagull_3");
-
+	    var $seagull_1 = $(".seagull.seagull_1");
+	    var $seagull_2 = $(".seagull.seagull_2");
+	    var $seagull_3 = $(".seagull.seagull_3");
 	    var $highestWave = $('.wave.wave-1');
 
-	    $span.fadeOut(random1, function() {
-	        var maxLeft = $(window).width() - $span.width();
+	    $seagull_1.fadeOut(random1, function() {
+	        var maxLeft = $(window).width() - $seagull_1.width();
 	        var maxTop = $highestWave.offset().top
 	        var leftPos = Math.floor(Math.random() * (maxLeft + 1))
 	        var topPos = Math.floor(Math.random() * (maxTop + 1))
 	     
-	        $span.css({ left: leftPos, top: topPos }).fadeIn(random1);
+	        $seagull_1.css({ left: leftPos, top: topPos }).fadeIn(random1);
 	    });
 
-	    $span2.fadeOut(random2, function() {
-	        var maxLeft = $(window).width() - $span2.width();
+	    $seagull_2.fadeOut(random2, function() {
+	        var maxLeft = $(window).width() - $seagull_2.width();
 	        var maxTop = $highestWave.offset().top
 	        var leftPos = Math.floor(Math.random() * (maxLeft + 1))
 	        var topPos = Math.floor(Math.random() * (maxTop + 1))
 	     
-	        $span2.css({ left: leftPos, top: topPos }).fadeIn(random2);
+	        $seagull_2.css({ left: leftPos, top: topPos }).fadeIn(random2);
 	    });
 
-	    $span3.fadeOut(random3, function() {
-	        var maxLeft = $(window).width() - $span3.width();
+	    $seagull_3.fadeOut(random3, function() {
+	        var maxLeft = $(window).width() - $seagull_3.width();
 	        var maxTop = $highestWave.offset().top;
 	        var leftPos = Math.floor(Math.random() * (maxLeft + 1))
 	        var topPos = Math.floor(Math.random() * (maxTop + 1))
 	     
-	        $span3.css({ left: leftPos, top: topPos }).fadeIn(random3);
+	        $seagull_3.css({ left: leftPos, top: topPos }).fadeIn(random3);
 	    });
 	};
 
-	moveDiv();
-	setInterval(moveDiv, 5000);
+	generateRandomSeagulls();
+	setInterval(generateRandomSeagulls, 10000);
 
 
 	//Ship animation
-	/*windowWidth = $(window).width();
+	windowWidth = $(window).width();
 	$('.sailboat').animate({right: windowWidth}, 30000, function() {
 		$('.sailboat').addClass('.rotateY')
 		$('.sailboat').animate({right: 50}, 30000);
-	});*/
+	});
 
 });
