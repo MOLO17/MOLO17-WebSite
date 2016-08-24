@@ -10,11 +10,11 @@
 		bottom 170px
 		background url('images/day/wave_3.svg') 0 0 repeat-x
 		-webkit-animation-name wave
-		-webkit-animation-duration 5s
+		-webkit-animation-duration 8s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
 		animation-name wave
-		animation-duration 5s
+		animation-duration 8s
 		animation-iteration-count infinite
 		animation-timing-function linear
 
@@ -23,11 +23,11 @@
 		bottom 140px
 		background url('images/day/wave_2.svg') -42px 0 repeat-x
 		-webkit-animation-name waveMedium
-		-webkit-animation-duration 3.5s
+		-webkit-animation-duration 5s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
 		animation-name waveMedium
-		animation-duration 3.5s
+		animation-duration 5s
 		animation-iteration-count infinite
 		animation-timing-function linear
 
@@ -47,109 +47,116 @@
 			transform rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg)
 			
 
+	@-webkit-keyframes cloud_inverse
+		0%
+			-webkit-transform rotateZ(0deg) translate3d(0,60%,0) rotateZ(0deg)
+		100%
+			-webkit-transform rotateZ(360deg) translate3d(0,60%,0) rotateZ(-360deg)
+
+	@keyframes cloud_inverse
+		0%
+			transform rotateZ(0deg) translate3d(0, 60%, 0) rotateZ(0deg)
+		100%
+			transform rotateZ(-360deg) translate3d(0, 60%, 0) rotateZ(360deg)
+			
+
 	@-webkit-keyframes cloudSmall
 		0%
-			-webkit-transform rotateZ(0deg) translate3d(0,25%,0) rotateZ(0deg)
+			-webkit-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
 		100%
-			-webkit-transform rotateZ(360deg) translate3d(0,25%,0) rotateZ(-360deg)
+			-webkit-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
 
 	@keyframes cloudSmall
 		0%
-			transform rotateZ(0deg) translate3d(0, 25%, 0) rotateZ(0deg)
+			transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
 		100%
-			transform rotateZ(360deg) translate3d(0, 25%, 0) rotateZ(-360deg)
+			transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
 
 	.cloud_1
-		background url('images/day/cloud_1.svg') 0 0 no-repeat
+		background url('images/cloud.svg') 0 0 no-repeat
 		background-size 100% auto
 		position absolute
 		left 50%
 
 	.cloud_2
-		background url('images/day/cloud_2.svg') 0 0 no-repeat
-		background-size 100% auto
-		position absolute
-		
-	.cloud_3
-		background url('images/day/cloud_3.svg') 0 0 no-repeat
+		background url('images/cloud-2.svg') 0 0 no-repeat
 		background-size 100% auto
 		position absolute
 
 	.section-intro__cloud_1
-		width 8%
-		height 49px
-		bottom 380px
+		width 80px
+		height 50px
+		top 230px
 		margin-left -200px
 		margin-top 50px
 		opacity .6
-		-webkit-animation-name cloud
-		-webkit-animation-duration 20s
+		webkit-animation-name cloud
+		-webkit-animation-duration 30s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
 		animation-name cloud
-		animation-duration 20s
+		animation-duration 30s
 		animation-iteration-count infinite
 		animation-timing-function linear
 		
 	.section-intro__cloud_2
-		width 100px
-		height 200px
-		bottom 350px
+		width 60px
+		height 30px
+		top 310px
 		margin-left 450px
-		opacity .9
-		-webkit-animation-name cloudSmall
-		-webkit-animation-duration 20s
+		webkit-animation-name cloudSmall
+		-webkit-animation-duration 14s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
 		animation-name cloudSmall
-		animation-duration 20s
+		animation-duration 14s
 		animation-iteration-count infinite
 		animation-timing-function linear
 		
 	.section-intro__cloud_3
-		width 110px
-		height 60px
-		bottom 500px
+		width 90px
+		height 55px
+		top 200px
+		right 300px
+		opacity .7
 		margin-left 200px
-		opacity .6
-		-webkit-animation-name cloud
-		-webkit-animation-duration 20s
+		-webkit-animation-name cloud_inverse
+		-webkit-animation-duration 40s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
-		animation-name cloud
-		animation-duration 20s
+		animation-name cloud_inverse
+		animation-duration 40s
 		animation-iteration-count infinite
 		animation-timing-function linear
 		
 	.section-intro__cloud_4
-		width 80px
-		height 42px
-		bottom 530px
-		margin-left 830px
-		margin-top -40px
-		opacity .9
-		-webkit-animation-name cloudSmall
-		-webkit-animation-duration 20s
+		width 60px
+		height 32px
+		top 250px
+		left 950px
+		//margin-right 100px
+		//opacity .6
+		-webkit-animation-name cloud_inverse
+		-webkit-animation-duration 30s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
-		animation-name cloudSmall
-		animation-duration 20s
+		animation-name cloud_inverse
+		animation-duration 30s
 		animation-iteration-count infinite
 		animation-timing-function linear
 		
 	.section-intro__cloud_5
-		width 80px
-		height 42px
-		bottom 500px
-		margin-left 1000px
-		margin-top -40px
-		opacity .9
-		-webkit-animation-name cloudSmall
-		-webkit-animation-duration 20s
+		width 40px
+		height 21px
+		top 300px
+		right 350px
+		opacity .5
+		-webkit-animation-name cloud
+		-webkit-animation-duration 15s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
-		animation-name cloudSmall
-		animation-duration 20s
+		animation-name cloud
+		animation-duration 15s
 		animation-iteration-count infinite
 		animation-timing-function linear
 
