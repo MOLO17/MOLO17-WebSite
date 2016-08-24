@@ -527,6 +527,11 @@ input {
   display: block;
   position: absolute;
 }
+.day .seagull.animate-transition {
+  -webkit-transition: transform 12s linear;
+  -moz-transition: transform 12s linear;
+  transition: transform 12s linear;
+}
 .day .seagull_1 {
   background: url("images/day/seagull_1.svg") 0 0 no-repeat;
   width: 45px;

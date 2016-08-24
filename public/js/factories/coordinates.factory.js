@@ -8,8 +8,6 @@ molo.factory('coordinatesFactory', function($geolocation, $rootScope) {
 	coordinatesFactory.getCoords = function(completionHandler) {
 		$geolocation.getCurrentPosition().then(function(position) {
 	
-			$rootScope.$emit('geopositionConfirmed');
-
             coordinates = {
 				'latitude': position.coords.latitude,
 				'longitude': position.coords.longitude
