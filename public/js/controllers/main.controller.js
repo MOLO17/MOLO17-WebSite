@@ -1,12 +1,13 @@
 'use strict'
 	
-molo.controller('mainController', function($scope, $http, $timeout, $interval, $rootScope, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
+molo.controller('mainController', function($scope, $http, $timeout, $interval, $rootScope, $cookies, weatherFactory, weatherService, coordinatesFactory, coordinatesService, projectConsts) {
 
 	var vm;
 	vm = this;
 	vm.linearDistanceMiles;
 	vm.weather;
 	vm.errorMessage;
+	vm.requestMessage = 'Dacci la tua posizione';
 
 	var dayMilliseconds;
 	vm.landing = 10;
@@ -14,8 +15,9 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	var windowWidth;
 
 	$scope.showErrMessage = false;
-	$scope.showCompass = false;
+	$scope.showCompass = true;
 	$scope.showText = false;
+	$scope.showInfo = true;
 
 	var userPositionDecimal;
 	vm.userPositionDMS = {}
@@ -46,12 +48,15 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 			vm.weather = weatherService.getWeather();
 		})
 	}
+
+	
 	
 
 	function findUserCoords() {
 		coordinatesFactory.getCoords(function(err, result) {
 
-			$scope.showInfo = true;
+			
+			//$scope.showInfo = true;
 
 			if(result) {
 				findMoloWeather();
@@ -69,16 +74,27 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 				console.log(vm.userPositionDMS)
 
 				$scope.showCompass = true;
+				vm.requestMessage = 'Caricamento ..';
+				$('.company_logo').animate({left: 50}, 1500, "linear")
+
+				if($cookies.get('geoposition')) {
+					console.log($cookies.get('geoposition'))
+					console.log('posizione agganciata')
+				} else {
+					console.log('posizione NON agganciata')
+					$cookies.get('geoposition')
+				}
 
 				//Delay foo compass visualization
 				$timeout(function() {
 					$scope.showCompass = !$scope.showCompass
 					$scope.showText = true;
-				}, 40000)
+				}, 2500)
 				
 			} else {
 				console.log(err)
 				vm.errorMessage = err.message;
+				$scope.showCompass = true;
 				$scope.showErrMessage = true;
 			}
 		})
@@ -181,9 +197,9 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 		var windowWidth = $(window).width();
 
-		boat.animate({right: windowWidth + boat.width()}, 30000, function() {
+		boat.animate({right: windowWidth + boat.width()}, 30000, "linear", function() {
 			boat.toggleClass('backwards')
-			boat.animate({right: - boat.width()}, 30000, function() {
+			boat.animate({right: - boat.width()}, 30000, "linear", function() {
 				boat.toggleClass('backwards')
 				moveBoat(boat);
 			});
@@ -195,7 +211,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'morning';
+		var moment = 'evening';
 		var boat;
 
 		if(moment === 'morning')

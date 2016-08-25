@@ -1,5 +1,5 @@
 
-var molo = angular.module('MoloWebsite', ['ngGeolocation']);
+var molo = angular.module('MoloWebsite', ['ngGeolocation', 'ngCookies']);
 
 
 molo.run(function(coordinatesService) {

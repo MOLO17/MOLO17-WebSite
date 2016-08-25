@@ -24,9 +24,9 @@ div.row
 				div(ng-if='showCompass')
 					div.row
 						div.col-md-12
-							//-div.compass
 							div.compass_container
-								span.compassText Caricamento..
+								//-span.compassText Loading ..
+								span.compassText {{vm.requestMessage}}
 								ul
 									li
 										div.compass_pointer
@@ -80,11 +80,11 @@ div.row
 			div.footer
 				div.row
 					div.col-md-12.text.firstText
-						| Servizi di Hosting  
+						| Soluzioni web elastiche  
 						span.backslash //  
-						| Gestione infrastrutture Cloud  
+						| Applicativi mobile-oriented  
 						span.backslash //  
-						| Realizzazione applicativi
+						| Infrastrutture cloud
 
 				div.row
 					div.col-md-12.text.secondText
