@@ -191,11 +191,11 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	}
 
 
-	//Set the boat to animate depending on day moment
+	//Sets the boat to animate depending on day moment
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'day';
+		var moment = 'morning';
 		var boat;
 
 		if(moment === 'morning')

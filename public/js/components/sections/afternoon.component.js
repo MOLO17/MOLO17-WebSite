@@ -1,6 +1,6 @@
 
 molo.component('sectionAfternoon', {
-	templateUrl: "/sections/afternoon.html",
+	templateUrl: "/sections/morning.html",
     controller: "mainController",
     controllerAs: "vm",
     bindings: {} 
