@@ -25,7 +25,15 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	$interval(function() { 
 		vm.landing -= 1;
 	},dayMilliseconds);
-	
+
+/*
+	function countdown() {
+		//var landingDay = 
+		var now = new Date().toDateString();
+		console.log(now)
+	}
+	countdown()
+*/	
 
 	function findMoloWeather() {
 		weatherFactory.getWeather(function(err, response) {
@@ -80,8 +88,9 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	
 //------------------------------------ANIMATIONS LOGIC-------------------------------
 	
+	//Seagulls animation logic
 
-	function chageElementSize(element,timing) {
+	function chageElementSize(element, timing) {
 
 		if(!timing) timing = 900
 		else timing -= 100
@@ -118,7 +127,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	    	$seagull_1.addClass("animate-transition")
 
 	        var maxLeft = $(window).width() - $seagull_1.width();
-	        var maxTop = $highestWave.offset().top
+	        var maxTop = $highestWave.offset().top + 50;
 	        var leftPos = Math.floor((Math.random() * (maxLeft - minPosition)) + minPosition )
 	        var topPos = Math.floor((Math.random() * (maxTop - minPosition)) + minPosition )
 
@@ -134,7 +143,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
   			$seagull_2.addClass("animate-transition")
 
 	        var maxLeft = $(window).width() - $seagull_2.width();
-	        var maxTop = $highestWave.offset().top
+	        var maxTop = $highestWave.offset().top + 50;
 	       	var leftPos = Math.floor((Math.random() * (maxLeft - minPosition)) + minPosition )
 	        var topPos = Math.floor((Math.random() * (maxTop - minPosition)) + minPosition )
 	     	
@@ -150,7 +159,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
   			$seagull_3.addClass("animate-transition")
 
 	        var maxLeft = $(window).width() - $seagull_3.width();
-	        var maxTop = $highestWave.offset().top;
+	        var maxTop = $highestWave.offset().top + 50;
 	        var leftPos = Math.floor((Math.random() * (maxLeft - minPosition)) + minPosition )
 	        var topPos = Math.floor((Math.random() * (maxTop - minPosition)) + minPosition )
 	     	
@@ -163,13 +172,48 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	generateRandomSeagulls();
 	setInterval(generateRandomSeagulls, 13000);
 
+//-------------------------------------------------------------------------
+
+	//Ships animation logic
+
+	//Animate the boat with infinite movement
+	function moveBoat(boat) {
+
+		var windowWidth = $(window).width();
+
+		boat.animate({right: windowWidth + boat.width()}, 30000, function() {
+			boat.toggleClass('backwards')
+			boat.animate({right: - boat.width()}, 30000, function() {
+				boat.toggleClass('backwards')
+				moveBoat(boat);
+			});
+		});
+	}
 
 
-	//Ship animation
-	windowWidth = $(window).width();
-	$('.sailboat').animate({right: windowWidth}, 30000, function() {
-		$('.sailboat').addClass('.rotateY')
-		$('.sailboat').animate({right: 50}, 30000);
-	});
+	//Set the boat to animate depending on day moment
+	function whichBoat() {
+
+		//var moment = coordinatesService.getMoment();
+		var moment = 'day';
+		var boat;
+
+		if(moment === 'morning')
+			return moveBoat($('.merchant'));
+		
+		if(moment === 'day')
+			return moveBoat($('.sailboat'));
+
+		if(moment === 'afternoon')
+			return moveBoat($('.merchant'));
+
+		if(moment === 'evening')
+			return moveBoat($('.speed-boat'));
+
+		if(moment === 'night')
+			return moveBoat($('.cruise-ship'));
+	}
+
+	whichBoat();
 
 });

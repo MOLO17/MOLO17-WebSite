@@ -64,7 +64,8 @@ molo.service('coordinatesService', function(projectConsts) {
 
 
 //-----------------------------------------------------------------------
-
+	
+	//Set the moment of the day, for load different views
 	var moment = '';
 
 	self.setMoment = function(_moment) {

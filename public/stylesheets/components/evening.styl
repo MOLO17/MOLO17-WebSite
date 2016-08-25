@@ -30,3 +30,41 @@
 		animation-duration 2.5s
 		animation-iteration-count infinite
 		animation-timing-function linear
+		
+
+/*--------------------------SHIP---------------------------------------*/
+
+	@-webkit-keyframes ship-basculant
+		0%
+			-webkit-transform translate3d(8%,0,0) rotateZ(6deg)
+		100%
+			-webkit-transform translate3d(-8%,0,0) rotateZ(-6deg)
+
+	@keyframes ship-basculant
+		0%
+			transform translate3d(8%,0,0) rotateZ(6deg)
+		100%
+			transform translate3d(-8%,0,0) rotateZ(-6deg)
+			
+
+	.speed-boat_container
+		width 100%
+		height 100%
+			
+	.speed-boat
+		width 130px
+		padding-bottom 17%
+		position absolute
+		bottom 240px
+		right 20px
+		background url('images/evening/yacht.svg') bottom right no-repeat
+		background-size 260px
+		z-index 0
+		overflow hidden
+		
+		&.backwards
+			background-position bottom left
+		
+	.animate_speed-boat
+		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)

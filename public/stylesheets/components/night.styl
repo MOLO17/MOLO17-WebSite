@@ -32,29 +32,48 @@
 		animation-iteration-count infinite
 		animation-timing-function linearnight
 		
+//----------------------------------------BOAT----------------------------------------------
+	
+	@-webkit-keyframes ship-basculant
+		0%
+			-webkit-transform translate3d(5%,0,0) rotateZ(2deg)
+		100%
+			-webkit-transform translate3d(-5%,0,0) rotateZ(-2deg)
+
+	@keyframes ship-basculant
+		0%
+			transform translate3d(5%,0,0) rotateZ(2deg)
+		100%
+			transform translate3d(-5%,0,0) rotateZ(-2deg)
+			
+
 	.cruise-ship_container
-		
 		width 100%
 		height 100%
 			
 	.cruise-ship
-		background url('images/night/ship.svg') bottom left no-repeat
-		background-size contain
-		width 200px
+		width 250px
 		height 200px
+		background url('images/night/ship.svg') bottom right no-repeat
+		background-size 500px
 		padding-bottom 17%
 		position absolute
-		bottom 185px
+		bottom 180px
 		right 20px
-		
 		z-index 6
 		hoverflow hidden
-		//clip rect 0px 10px 10px 0px
+		
+		&.backwards
+			background-position bottom left
+
 		
 	.animate_cruise-ship
-		webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
-		animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 		
+
+
+//-----------------------------------STARS----------------------------------------------------		
 
 	.stars
 		display block
@@ -65,7 +84,7 @@
 		bottom 0
 		
 	.star_1
-		background url('images/evening/ship.svg') 0 0 no-repeat
+		//background url('images/evening/ship.svg') 0 0 no-repeat
 		background-size 100% auto
 		left 500px
 		bottom 400px
@@ -75,6 +94,6 @@
 
 		
 	.star_2
-		background url('images/evening/background_evening.png') 0 0 no-repeat
+		//background url('images/evening/background_evening.png') 0 0 no-repeat
 		background-size 100% auto
 		

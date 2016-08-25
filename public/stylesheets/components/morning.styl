@@ -32,24 +32,39 @@
 		animation-iteration-count infinite
 		animation-timing-function linear
 		
-		
+//------------------------------------BOAT----------------------------------------------------
+	
+	@-webkit-keyframes ship-basculant
+		0%
+			-webkit-transform translate3d(5%,0,0) rotateZ(4deg)
+		100%
+			-webkit-transform translate3d(-5%,0,0) rotateZ(-4deg)
+
+	@keyframes ship-basculant
+		0%
+			transform translate3d(5%,0,0) rotateZ(4deg)
+		100%
+			transform translate3d(-5%,0,0) rotateZ(-4deg)
+
+
 	.merchant_container
 		width 100%
 		height 100%
 			
 	.merchant
-		background url('images/night/merchant.svg') bottom left no-repeat
-		background-size contain
 		width 200px
-		height 200px
+		background url('images/morning_afternoon/merchant.svg') bottom right no-repeat
+		background-size 400px
 		padding-bottom 17%
 		position absolute
 		bottom 185px
 		right 20px
-		z-index 6
+		z-index 0
 		hoverflow hidden
-		//clip rect 0px 10px 10px 0px
+			
+		&.backwards
+			background-position bottom left
 		
 	.animate_merchant
-		webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
-		animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)

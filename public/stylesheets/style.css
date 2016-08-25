@@ -20,7 +20,7 @@ textarea {
   user-zoom: fixed !important;
 }
 html {
-  overflow: hidden;
+  overflow: hidden !important;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -28,7 +28,7 @@ html {
 }
 @media only screen and (max-width: 1024px), screen and (max-height: 768px) {
   html {
-    overflow: auto !important;
+    overflow: hidden !important;
   }
 }
 body {
@@ -128,7 +128,7 @@ input {
 }
 /*---------------------------------------------------------------------------------*/
 .company_logo {
-  background: url("images/common/logo.svg") no-repeat;
+  background: url("images/common/logo_2.svg") no-repeat;
   background-size: 100% auto;
   width: 200px;
   height: 200px;
@@ -211,58 +211,41 @@ input {
     -webkit-transform: rotateZ(0deg);
   }
   25% {
-    -webkit-transform: rotateZ(30deg);
+    -webkit-transform: rotateZ(40deg);
   }
   50% {
     -webkit-transform: rotateZ(0deg);
   }
   75% {
-    -webkit-transform: rotateZ(-30deg);
+    -webkit-transform: rotateZ(-40deg);
   }
   100% {
     -webkit-transform: rotateZ(0deg);
   }
 }
-@-webkit-keyframes compass_animation {
-  10% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  20% {
-    -webkit-transform: rotateZ(10deg);
-  }
-  30% {
-    -webkit-transform: rotateZ(15deg);
-  }
-  40% {
-    -webkit-transform: rotateZ(20deg);
-  }
-  50% {
-    -webkit-transform: rotateZ(25deg);
-  }
-  60% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  70% {
-    -webkit-transform: rotateZ(-20deg);
-  }
-  80% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  90% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-  }
-}
-.compass {
-  background: url("images/common/compass.svg") no-repeat;
-  background-size: 100% auto;
+.compass_container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   position: absolute;
-  width: 80%;
-  height: 80%;
+}
+.compass_pointer {
+  background: url("images/common/compass_2.svg") no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
   top: 40px;
   margin-left: 25px;
+  position: absolute;
+}
+.compass_dial {
+  background: url("images/common/compass_1.svg") no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  top: 40px;
+  margin-left: 25px;
+  position: absolute;
   -webkit-animation-name: compass_animation;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
@@ -305,25 +288,67 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.morning .merchant_container {
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+.merchant_container {
   width: 100%;
   height: 100%;
 }
-.morning .merchant {
-  background: url("images/night/merchant.svg") bottom left no-repeat;
-  background-size: contain;
+.merchant {
   width: 200px;
-  height: 200px;
+  background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
+  background-size: 400px;
   padding-bottom: 17%;
   position: absolute;
   bottom: 185px;
   right: 20px;
-  z-index: 6;
+  z-index: 0;
   hoverflow: hidden;
 }
-.morning .animate_merchant {
-  webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.merchant.backwards {
+  background-position: bottom left;
+}
+.animate_merchant {
+  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-moz-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@-o-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
 }
 .day {
   background: url("images/day/background_day.png") 0 0 repeat-x;
@@ -470,7 +495,7 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes ship-main {
+@-webkit-keyframes ship-basculant {
   0% {
     -webkit-transform: translate3d(5%, 0, 0) rotateZ(4deg);
   }
@@ -483,37 +508,22 @@ input {
   height: 100%;
 }
 .day .sailboat {
-  width: 150px;
+  width: 100px;
   padding-bottom: 17%;
   position: absolute;
   bottom: 185px;
   right: 20px;
-  background: url("images/boat.svg") bottom left no-repeat;
-  background-size: contain;
+  background: url("images/day/sailboat.svg") bottom right no-repeat;
+  background-size: 200px;
   z-index: 6;
-  hoverflow: hidden;
+  overflow: hidden;
 }
-.day .animate_sailboat_turn {
-  -webkit-animation-name: ship-turn;
-  -webkit-animation-duration: 60s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: ship-turn;
-  animation-duration: 60s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.day .sailboat.backwards {
+  background-position: bottom left;
 }
 .day .animate_sailboat {
-  webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-.day .rotateY {
-  webkit-transform: rotateY(150deg);
-  transform: rotateY(150deg);
-}
-.day .rotateY_back {
-  webkit-transform: rotateY(-150deg);
-  transform: rotateY(-150deg);
+  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .day .seagulls {
   width: 100%;
@@ -649,7 +659,7 @@ input {
     transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
   }
 }
-@-moz-keyframes ship-main {
+@-moz-keyframes ship-basculant {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(4deg);
   }
@@ -657,7 +667,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
   }
 }
-@-webkit-keyframes ship-main {
+@-webkit-keyframes ship-basculant {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(4deg);
   }
@@ -665,7 +675,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
   }
 }
-@-o-keyframes ship-main {
+@-o-keyframes ship-basculant {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(4deg);
   }
@@ -673,7 +683,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
   }
 }
-@keyframes ship-main {
+@keyframes ship-basculant {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(4deg);
   }
@@ -713,6 +723,68 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+.merchant_container {
+  width: 100%;
+  height: 100%;
+}
+.merchant {
+  width: 200px;
+  background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
+  background-size: 400px;
+  padding-bottom: 17%;
+  position: absolute;
+  bottom: 185px;
+  right: 20px;
+  z-index: 6;
+  hoverflow: hidden;
+}
+.merchant.backwards {
+  background-position: bottom left;
+}
+.animate_merchant {
+  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-moz-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@-o-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
 .evening {
   background: url("images/evening/background_evening.png") 0 0 repeat-x;
   width: 100%;
@@ -744,6 +816,68 @@ input {
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
+}
+.speed-boat_container {
+  width: 100%;
+  height: 100%;
+}
+.speed-boat {
+  width: 130px;
+  padding-bottom: 17%;
+  position: absolute;
+  bottom: 240px;
+  right: 20px;
+  background: url("images/evening/yacht.svg") bottom right no-repeat;
+  background-size: 260px;
+  z-index: 0;
+  overflow: hidden;
+}
+.speed-boat.backwards {
+  background-position: bottom left;
+}
+.animate_speed-boat {
+  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-moz-keyframes ship-basculant {
+  0% {
+    transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
+}
+@-o-keyframes ship-basculant {
+  0% {
+    transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
+}
+@keyframes ship-basculant {
+  0% {
+    transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
 }
 .night {
   background: url("images/night/background_night.png") 0 0 repeat-x;
@@ -777,34 +911,44 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linearnight;
 }
-.night .cruise-ship_container {
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
+}
+.cruise-ship_container {
   width: 100%;
   height: 100%;
 }
-.night .cruise-ship {
-  background: url("images/night/ship.svg") bottom left no-repeat;
-  background-size: contain;
-  width: 200px;
+.cruise-ship {
+  width: 250px;
   height: 200px;
+  background: url("images/night/ship.svg") bottom right no-repeat;
+  background-size: 500px;
   padding-bottom: 17%;
   position: absolute;
-  bottom: 185px;
+  bottom: 180px;
   right: 20px;
   z-index: 6;
   hoverflow: hidden;
 }
-.night .animate_cruise-ship {
-  webkit-animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-main 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.cruise-ship.backwards {
+  background-position: bottom left;
 }
-.night .stars {
+.animate_cruise-ship {
+  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.stars {
   display: block;
   position: absolute;
   overflow: hidden;
   bottom: 0;
 }
-.night .star_1 {
-  background: url("images/evening/ship.svg") 0 0 no-repeat;
+.star_1 {
   background-size: 100% auto;
   left: 500px;
   bottom: 400px;
@@ -812,9 +956,40 @@ input {
   height: 200px;
   z-index: 15;
 }
-.night .star_2 {
-  background: url("images/evening/background_evening.png") 0 0 no-repeat;
+.star_2 {
   background-size: 100% auto;
+}
+@-moz-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
+}
+@-o-keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
+}
+@keyframes ship-basculant {
+  0% {
+    transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
 }
 @-moz-keyframes wave {
   0% {
@@ -917,13 +1092,13 @@ input {
     transform: rotateZ(0deg);
   }
   25% {
-    transform: rotateZ(30deg);
+    transform: rotateZ(40deg);
   }
   50% {
     transform: rotateZ(0deg);
   }
   75% {
-    transform: rotateZ(-30deg);
+    transform: rotateZ(-40deg);
   }
   100% {
     transform: rotateZ(0deg);
@@ -934,13 +1109,13 @@ input {
     transform: rotateZ(0deg);
   }
   25% {
-    transform: rotateZ(30deg);
+    transform: rotateZ(40deg);
   }
   50% {
     transform: rotateZ(0deg);
   }
   75% {
-    transform: rotateZ(-30deg);
+    transform: rotateZ(-40deg);
   }
   100% {
     transform: rotateZ(0deg);
@@ -951,13 +1126,13 @@ input {
     transform: rotateZ(0deg);
   }
   25% {
-    transform: rotateZ(30deg);
+    transform: rotateZ(40deg);
   }
   50% {
     transform: rotateZ(0deg);
   }
   75% {
-    transform: rotateZ(-30deg);
+    transform: rotateZ(-40deg);
   }
   100% {
     transform: rotateZ(0deg);
@@ -968,13 +1143,13 @@ input {
     transform: rotateZ(0deg);
   }
   25% {
-    transform: rotateZ(30deg);
+    transform: rotateZ(40deg);
   }
   50% {
     transform: rotateZ(0deg);
   }
   75% {
-    transform: rotateZ(-30deg);
+    transform: rotateZ(-40deg);
   }
   100% {
     transform: rotateZ(0deg);
