@@ -17,7 +17,7 @@ molo.factory('coordinatesFactory', function($geolocation, $rootScope, $timeout, 
 					
 						$cookies.put('geoposition', 'position');
 
-			            coordinates = {
+						coordinates = {
 							'latitude': position.coords.latitude,
 							'longitude': position.coords.longitude
 						}
@@ -42,7 +42,7 @@ molo.factory('coordinatesFactory', function($geolocation, $rootScope, $timeout, 
 				
 					$cookies.put('geoposition', 'position');
 
-		            coordinates = {
+					coordinates = {
 						'latitude': position.coords.latitude,
 						'longitude': position.coords.longitude
 					}

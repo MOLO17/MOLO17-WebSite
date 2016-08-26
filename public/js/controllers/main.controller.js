@@ -52,30 +52,6 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	
 	function findUserCoords() {
 		coordinatesFactory.getCoords(function(err, result) {
-
-			if(result) {
-
-				$scope.showCompass = true;
-
-
-
-
-			} else {
-
-
-			}
-
-
-		})
-	}
-	//findUserCoords();
-
-
-
-
-
-	function findUserCoords() {
-		coordinatesFactory.getCoords(function(err, result) {
 			//$scope.showInfo = true;
 
 			if(result) {
@@ -252,5 +228,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	}
 
 	whichBoat();
+
+//-----------------
 
 });
