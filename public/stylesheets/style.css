@@ -231,7 +231,7 @@ input {
   position: absolute;
 }
 .compass_pointer {
-  background: url("images/common/compass_2.svg") no-repeat;
+  background: url("images/common/compass_2_better.svg") no-repeat;
   background-size: contain;
   width: 200px;
   height: 200px;
@@ -241,7 +241,7 @@ input {
   z-index: 0;
 }
 .compass_dial {
-  background: url("images/common/compass_1.svg") no-repeat;
+  background: url("images/common/compass_1_better.svg") no-repeat;
   background-size: contain;
   width: 200px;
   height: 200px;
