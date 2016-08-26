@@ -29,19 +29,15 @@ block headscript
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
-
-	//-script(type="text/ng-template",id="/sections/morning.html")
-		include components/sections/morning
+	
+	script(type="text/ng-template",id="/sections/morning-afternoon.html")
+		include components/sections/morning-afternoon
 	script(type="text/ng-template",id="/sections/day.html")
 		include components/sections/day
-	//-script(type="text/ng-template",id="/sections/afternoon.html")
-		include components/sections/afternoon
 	script(type="text/ng-template",id="/sections/evening.html")
 		include components/sections/evening
 	script(type="text/ng-template",id="/sections/night.html")
 		include components/sections/night
-	script(type="text/ng-template",id="/sections/morning-afternoon.html")
-		include components/sections/morning-afternoon
 
 
 block bodycontent
@@ -59,16 +55,3 @@ block bodycontent
 				section-evening()
 			div.night(ng-switch-when='night')
 				section-night()
-
-		//-backup
-		//- div(ng-switch on='moment')
-		//- 	div.morning(ng-switch-when='morning')
-		//- 		section-morning()
-		//- 	div.day(ng-switch-when='day')
-		//- 		section-day()
-		//- 	div.afternoon(ng-switch-when='afternoon')
-		//- 		section-afternoon()
-		//- 	div.evening(ng-switch-when='evening')
-		//- 		section-evening()
-		//- 	div.night(ng-switch-when='night')
-		//- 		section-night()
