@@ -11,7 +11,7 @@ molo.factory('coordinatesFactory', function($geolocation, $rootScope, $timeout, 
 
 			$geolocation.getCurrentPosition().then(function(position) {
 				
-				$cookies.put('geoposition', 'agganciata');
+				$cookies.put('geoposition', 'position');
 
 	            coordinates = {
 					'latitude': position.coords.latitude,
@@ -21,13 +21,11 @@ molo.factory('coordinatesFactory', function($geolocation, $rootScope, $timeout, 
 
 	         }).catch(function(err) {
 	         	completionHandler(err)
+	         	$cookies.put('geoposition', 'no_position');
+	         	console.log(err)
 	         })
 
 		}, 3000);
-
-
-
-		
 	}
 
 	return coordinatesFactory;

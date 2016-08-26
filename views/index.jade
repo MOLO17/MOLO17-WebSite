@@ -12,7 +12,7 @@ block headscript
 	!= CDN('/js/components/sections/afternoon.component.js')
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
-	!= CDN('/js/components/sections/morning_afternoon.component.js')
+	//-!= CDN('/js/components/sections/morning_afternoon.component.js')
 
 	//- Controllers
 	!= CDN('/js/controllers/main.controller.js')
@@ -40,7 +40,7 @@ block headscript
 		include components/sections/evening
 	script(type="text/ng-template",id="/sections/night.html")
 		include components/sections/night
-	script(type="text/ng-template",id="/sections/morning-afternoon.html")
+	//-script(type="text/ng-template",id="/sections/morning-afternoon.html")
 		include components/sections/morning-afternoon
 
 

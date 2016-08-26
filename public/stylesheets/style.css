@@ -133,7 +133,7 @@ input {
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 580px;
+  left: 45px;
   top: 45px;
   color: #f00;
 }
@@ -328,14 +328,15 @@ input {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-.sun {
+.sun_morning {
   display: block;
   position: absolute;
   width: 110px;
   height: 110px;
-  margin-top: 500px;
-  margin-left: 200px;
-  background-color: #f00;
+  margin-top: 400px;
+  margin-left: 280px;
+  transform-origin: 0 500px;
+  background-color: #ff0;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -343,13 +344,13 @@ input {
   border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-  -webkit-animation-name: sun-animation;
-  -webkit-animation-duration: 2.5s;
-  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: sun_morning-animation;
+  -webkit-animation-duration: 40s;
+  -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
-  animation-name: sun-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
+  animation-name: sun_morning-animation;
+  animation-duration: 40s;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
 }
 @-moz-keyframes ship-basculant {
@@ -382,6 +383,38 @@ input {
   }
   100% {
     transform: rotateZ(-4deg);
+  }
+}
+@-moz-keyframes sun-animation_color {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-webkit-keyframes sun-animation_color {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-o-keyframes sun-animation_color {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@keyframes sun-animation_color {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: #f00;
   }
 }
 .day {
@@ -787,14 +820,14 @@ input {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-.sun {
+.sun_afternoon {
   display: block;
   position: absolute;
   width: 110px;
   height: 110px;
   margin-top: 160px;
-  margin-left: -50px;
-  transform-origin: 0 350px;
+  margin-left: -110px;
+  transform-origin: 0 500px;
   background-color: #ff0;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -803,16 +836,16 @@ input {
   border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-}
-.sun_animation {
   -webkit-animation-name: sun-animation;
-  -webkit-animation-duration: 10s;
-  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 40s;
+  -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 5s;
   animation-name: sun-animation;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
+  animation-duration: 40s;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
+  animation-delay: 5s;
 }
 @-moz-keyframes ship-basculant {
   0% {
@@ -846,36 +879,36 @@ input {
     transform: rotateZ(-4deg);
   }
 }
-@-moz-keyframes sun-animation {
-  0% {
-    transform: rotateZ(0deg);
+@-moz-keyframes sun_afternoon-animation_color {
+  from {
+    background-color: #ff0;
   }
-  100% {
-    transform: rotateZ(80deg);
-  }
-}
-@-webkit-keyframes sun-animation {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(80deg);
+  to {
+    background-color: #f00;
   }
 }
-@-o-keyframes sun-animation {
-  0% {
-    transform: rotateZ(0deg);
+@-webkit-keyframes sun_afternoon-animation_color {
+  from {
+    background-color: #ff0;
   }
-  100% {
-    transform: rotateZ(80deg);
+  to {
+    background-color: #f00;
   }
 }
-@keyframes sun-animation {
-  0% {
-    transform: rotateZ(0deg);
+@-o-keyframes sun_afternoon-animation_color {
+  from {
+    background-color: #ff0;
   }
-  100% {
-    transform: rotateZ(80deg);
+  to {
+    background-color: #f00;
+  }
+}
+@keyframes sun_afternoon-animation_color {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: #f00;
   }
 }
 .evening {
@@ -950,8 +983,8 @@ input {
 .star_1 {
   background: url("images/evening/star_1.gif") 0 0 no-repeat;
   background-size: 100% auto;
-  left: 500px;
-  bottom: 400px;
+  margin-left: 200px;
+  margin-top: 60px;
   width: 100px;
   height: 200px;
 }

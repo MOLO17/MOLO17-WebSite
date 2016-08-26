@@ -50,12 +50,32 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	}
 
 	
-	
-
 	function findUserCoords() {
 		coordinatesFactory.getCoords(function(err, result) {
 
-			
+			if(result) {
+
+				$scope.showCompass = true;
+
+
+
+
+			} else {
+
+
+			}
+
+
+		})
+	}
+	//findUserCoords();
+
+
+
+
+
+	function findUserCoords() {
+		coordinatesFactory.getCoords(function(err, result) {
 			//$scope.showInfo = true;
 
 			if(result) {
@@ -75,7 +95,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 				$scope.showCompass = true;
 				vm.requestMessage = 'Caricamento ..';
-				$('.company_logo').animate({left: 50}, 1500, "linear")
+				//$('.company_logo').animate({left: 50}, 1500, "linear")
 
 				if($cookies.get('geoposition')) {
 					console.log($cookies.get('geoposition'))
@@ -94,13 +114,14 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 			} else {
 				console.log(err)
 				vm.errorMessage = err.message;
-				$scope.showCompass = true;
+				$scope.showCompass = false;
 				$scope.showErrMessage = true;
+				//$('.company_logo').animate({left: 50}, 1500, "linear")
 			}
 		})
 	}
 	findUserCoords();
-
+	
 	
 //------------------------------------ANIMATIONS LOGIC-------------------------------
 	
