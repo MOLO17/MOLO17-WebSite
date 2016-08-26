@@ -25,7 +25,6 @@ div.row
 					div.row
 						div.col-md-12
 							div.compass_container
-								//-span.compassText Loading ..
 								span.compassText {{vm.requestMessage}}
 								ul
 									li
@@ -66,9 +65,9 @@ div.row
 						div.coords.col-md-12
 							| {{vm.landing}} days
 
-				div(ng-if='showErrMessage')
-					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tristique elit, quis sagittis diam. Mauris ornare egestas congue. Aliquam aliquam ultrices accumsan. Praesent id rutrum turpis. Praesent ac placerat est. Nunc lacinia sem ut risus accumsan, quis semper diam scelerisque. Donec in lorem lacus. Cras egestas ornare sem vel volutpat. Vivamus laoreet turpis eu mi imperdiet consectetur. Nam accumsan orci at ex lacinia ullamcorper.
-
+				
+				div.adviceText(ng-if='showErrMessage') 
+					| Ehi amico, il mare oggi non promette nulla di buono. Se cerchi un attracco sicuro lo 	trovi qui
 			div.row
 				div.col-md-12
 					div.lighthouse
@@ -80,11 +79,11 @@ div.row
 			div.footer
 				div.row
 					div.col-md-12.text.firstText
-						| Soluzioni web elastiche  
+						| Soluzioni Web elastiche  
 						span.backslash //  
-						| Applicativi mobile-oriented  
+						| Applicativi Mobile-Oriented  
 						span.backslash //  
-						| Infrastrutture cloud
+						| Infrastrutture Cloud
 
 				div.row
 					div.col-md-12.text.secondText
