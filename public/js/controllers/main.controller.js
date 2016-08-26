@@ -44,7 +44,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 				return;
 			} 
 			weatherService.setWeather(response)
-			console.log(weatherService.getWeather());
+			//console.log(weatherService.getWeather());
 			vm.weather = weatherService.getWeather();
 		})
 	}
@@ -59,27 +59,19 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 				coordinatesService.setCoords(result.latitude, result.longitude);
 				
 				vm.userPositionDecimal = coordinatesService.getCoords();
-				console.log(vm.userPositionDecimal);
+				//console.log(vm.userPositionDecimal);
 
 				vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
 						vm.userPositionDecimal.longitude) * 0.54);
-				console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
+				//console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
 
 				vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
 				vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
-				console.log(vm.userPositionDMS)
+				//console.log(vm.userPositionDMS)
 
 				$scope.showCompass = true;
 				vm.requestMessage = 'Caricamento ..';
 				//$('.company_logo').animate({left: 50}, 1500, "linear")
-
-				if($cookies.get('geoposition')) {
-					console.log($cookies.get('geoposition'))
-					console.log('posizione agganciata')
-				} else {
-					console.log('posizione NON agganciata')
-					$cookies.get('geoposition')
-				}
 
 				//Delay foo compass visualization
 				$timeout(function() {
@@ -208,7 +200,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'day';
+		var moment = 'night';
 		var boat;
 
 		if(moment === 'morning')
