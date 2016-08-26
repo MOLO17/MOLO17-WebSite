@@ -267,19 +267,22 @@ input {
   text-align: center;
 }
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
-.morning {
+.morning,
+.afternoon {
   width: 100%;
   height: 100%;
   position: absolute;
 }
-.morning .sky {
+.morning .sky,
+.afternoon .sky {
   position: absolute;
   width: 100%;
   height: 80%;
   overflow: hidden;
   background: url("images/morning_afternoon/background_morning-afternoon.png") bottom repeat-x;
 }
-.morning .wave-1 {
+.morning .wave-1,
+.afternoon .wave-1 {
   z-index: 4;
   bottom: 170px;
   background: url("images/morning_afternoon/wave_3.svg") 0 0 repeat-x;
@@ -292,7 +295,8 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.morning .wave-2 {
+.morning .wave-2,
+.afternoon .wave-2 {
   z-index: 6;
   bottom: 135px;
   background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
@@ -325,7 +329,7 @@ input {
   position: absolute;
   bottom: 185px;
   right: 20px;
-  z-index: 0;
+  z-index: 6;
   hoverflow: hidden;
 }
 .merchant.backwards {
@@ -335,14 +339,13 @@ input {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-.sun_morning {
+.sun {
+  left: 0;
   display: block;
   position: absolute;
   width: 110px;
   height: 110px;
-  margin-top: 400px;
-  margin-left: 280px;
-  transform-origin: 0 500px;
+  transform-origin: 0 400px;
   background-color: #ff0;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -351,14 +354,22 @@ input {
   border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-  -webkit-animation-name: sun_morning-animation;
-  -webkit-animation-duration: 40s;
+  margin-left: -110px;
+  margin-top: 150px;
+  -webkit-animation-name: sun-animation;
+  -webkit-animation-duration: 35s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
-  animation-name: sun_morning-animation;
-  animation-duration: 40s;
+  -webkit-animation-delay: 3s;
+  animation-name: sun-animation;
+  animation-duration: 35s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
+  animation-delay: 3s;
+}
+.morning .sun {
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
 }
 @-moz-keyframes ship-basculant {
   0% {
@@ -421,6 +432,86 @@ input {
     background-color: #ff0;
   }
   to {
+    background-color: #f00;
+  }
+}
+@-moz-keyframes sun-animation {
+  0% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+  100% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+}
+@-webkit-keyframes sun-animation {
+  0% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+  100% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+}
+@-o-keyframes sun-animation {
+  0% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+  100% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+}
+@keyframes sun-animation {
+  0% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+  100% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+}
+@-moz-keyframes sun-animation {
+  0% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+}
+@-webkit-keyframes sun-animation {
+  0% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+}
+@-o-keyframes sun-animation {
+  0% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+}
+@keyframes sun-animation {
+  0% {
+    transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    transform: rotateZ(100deg);
     background-color: #f00;
   }
 }
@@ -769,165 +860,6 @@ input {
   }
   100% {
     transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
-  }
-}
-.afternoon {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-.afternoon .sky {
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  overflow: hidden;
-  background: url("images/morning_afternoon/background_morning-afternoon.png") bottom repeat-x;
-}
-.afternoon .wave-1 {
-  z-index: 4;
-  bottom: 170px;
-  background: url("images/morning_afternoon/wave_3.svg") 0 0 repeat-x;
-  -webkit-animation-name: wave;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: wave;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.afternoon .wave-2 {
-  z-index: 6;
-  bottom: 135px;
-  background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
-  -webkit-animation-name: waveMedium;
-  -webkit-animation-duration: 2.5s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: waveMedium;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@-webkit-keyframes ship-basculant {
-  0% {
-    -webkit-transform: rotateZ(4deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(-4deg);
-  }
-}
-.merchant_container {
-  width: 100%;
-  height: 100%;
-}
-.merchant {
-  width: 300px;
-  background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
-  background-size: 600px;
-  padding-bottom: 17%;
-  position: absolute;
-  bottom: 185px;
-  right: 20px;
-  z-index: 6;
-  hoverflow: hidden;
-}
-.merchant.backwards {
-  background-position: bottom left;
-}
-.animate_merchant {
-  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-.sun_afternoon {
-  display: block;
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  margin-top: 160px;
-  margin-left: -110px;
-  transform-origin: 0 500px;
-  background-color: #ff0;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -webkit-animation-name: sun-animation;
-  -webkit-animation-duration: 40s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-delay: 5s;
-  animation-name: sun-animation;
-  animation-duration: 40s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-delay: 5s;
-}
-@-moz-keyframes ship-basculant {
-  0% {
-    transform: rotateZ(4deg);
-  }
-  100% {
-    transform: rotateZ(-4deg);
-  }
-}
-@-webkit-keyframes ship-basculant {
-  0% {
-    transform: rotateZ(4deg);
-  }
-  100% {
-    transform: rotateZ(-4deg);
-  }
-}
-@-o-keyframes ship-basculant {
-  0% {
-    transform: rotateZ(4deg);
-  }
-  100% {
-    transform: rotateZ(-4deg);
-  }
-}
-@keyframes ship-basculant {
-  0% {
-    transform: rotateZ(4deg);
-  }
-  100% {
-    transform: rotateZ(-4deg);
-  }
-}
-@-moz-keyframes sun_afternoon-animation_color {
-  from {
-    background-color: #ff0;
-  }
-  to {
-    background-color: #f00;
-  }
-}
-@-webkit-keyframes sun_afternoon-animation_color {
-  from {
-    background-color: #ff0;
-  }
-  to {
-    background-color: #f00;
-  }
-}
-@-o-keyframes sun_afternoon-animation_color {
-  from {
-    background-color: #ff0;
-  }
-  to {
-    background-color: #f00;
-  }
-}
-@keyframes sun_afternoon-animation_color {
-  from {
-    background-color: #ff0;
-  }
-  to {
-    background-color: #f00;
   }
 }
 .evening {

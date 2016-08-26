@@ -1,5 +1,5 @@
 
-.morning
+.morning, .afternoon
 	width 100%
 	height 100%
 	position absolute
@@ -65,7 +65,7 @@
 		position absolute
 		bottom 185px
 		right 20px
-		z-index 0
+		z-index 6
 		hoverflow hidden
 			
 		&.backwards
@@ -85,44 +85,53 @@
 	
 		to {background-color: red}
 		
-	@keyframes sun_morning-animation
+	@keyframes sun-animation
 	
 		0%
-			transform rotateZ(0deg) {background-color: yellow}
+			transform rotateZ(100deg)
+			background-color red
 		100%
-			transform rotateZ(100deg) {background-color: red}
+			transform rotateZ(0deg)
+			background-color yellow
+			
+
+	@keyframes sun-animation
+	
+		0%
+			transform rotateZ(0deg)
+			background-color yellow
+		100%
+			transform rotateZ(100deg)
+			background-color red
 
 
-	.sun_morning
+	.sun
+		left 0
 		display block
 		position absolute
 		width 110px
 		height 110px
-		margin-top 400px
-		margin-left 280px
-		transform-origin 0 500px
+		transform-origin 0 400px
 		background-color yellow
 		-webkit-border-radius 50%
 		-moz-border-radius 50%
 		border-radius 50%
+		margin-left -110px
+		margin-top 150px
 		
-	
-		-webkit-animation-name sun_morning-animation
-		-webkit-animation-duration 40s
+		-webkit-animation-name sun-animation
+		-webkit-animation-duration 35s
 		-webkit-animation-iteration-count 1
 		-webkit-animation-timing-function linear
-		//-webkit-animation-delay 5s
-		animation-name sun_morning-animation
-		animation-duration 40s
+		-webkit-animation-delay 3s
+		animation-name sun-animation
+		animation-duration 35s
 		animation-iteration-count 1
 		animation-timing-function linear
-		//animation-delay 5s
-
-		// -webkit-animation-name sun-animation_color
-		// -webkit-animation-duration 5s
-		// -webkit-animation-iteration-count 1
-		// -webkit-animation-timing-function linear
-		// animation-name sun-animation_color
-		// animation-duration 5s
-		// animation-iteration-count 1
-		// animation-timing-function linear
+		animation-delay 3s
+			
+	&.morning
+		.sun
+			-webkit-animation-direction reverse
+			animation-direction reverse
+			

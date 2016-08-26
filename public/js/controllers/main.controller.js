@@ -196,7 +196,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 		boat.animate({right: windowWidth + boat.width()}, 30000, "linear", function() {
 			boat.toggleClass('backwards')
-			boat.animate({right: - boat.width()}, 30000, "linear", function() {
+			boat.animate({right: - boat.width() - 100}, 30000, "linear", function() {
 				boat.toggleClass('backwards')
 				moveBoat(boat);
 			});
@@ -208,7 +208,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'day';
+		var moment = 'morning';
 		var boat;
 
 		if(moment === 'morning')
