@@ -7,25 +7,55 @@ molo.factory('coordinatesFactory', function($geolocation, $rootScope, $timeout, 
 
 	coordinatesFactory.getCoords = function(completionHandler) {
 
-		$timeout(function() {
+		if(!$cookies.get('geoposition')) {
 
-			$geolocation.getCurrentPosition().then(function(position) {
+			$timeout(function() {
+
+				$geolocation.getCurrentPosition()
+
+					.then(function(position) {
+					
+						$cookies.put('geoposition', 'position');
+
+			            coordinates = {
+							'latitude': position.coords.latitude,
+							'longitude': position.coords.longitude
+						}
+
+						completionHandler(true, coordinates)
+					})
+
+					.catch(function(err) {
+						completionHandler(err)
+						$cookies.put('geoposition', 'no_position');
+						console.log(err)
+					})
+
+			}, 3000);
+
+
+		} else if($cookies.get('geoposition')) {
+
+			$geolocation.getCurrentPosition()
+
+				.then(function(position) {
 				
-				$cookies.put('geoposition', 'position');
+					$cookies.put('geoposition', 'position');
 
-	            coordinates = {
-					'latitude': position.coords.latitude,
-					'longitude': position.coords.longitude
-				}
-				completionHandler(true, coordinates)
+		            coordinates = {
+						'latitude': position.coords.latitude,
+						'longitude': position.coords.longitude
+					}
 
-	         }).catch(function(err) {
-	         	completionHandler(err)
-	         	$cookies.put('geoposition', 'no_position');
-	         	console.log(err)
-	         })
+					completionHandler(true, coordinates)
+				})
 
-		}, 3000);
+				.catch(function(err) {
+					completionHandler(err)
+					$cookies.put('geoposition', 'no_position');
+					console.log(err)
+				})
+		}
 	}
 
 	return coordinatesFactory;

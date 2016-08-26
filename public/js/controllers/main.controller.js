@@ -232,7 +232,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'evening';
+		var moment = 'day';
 		var boat;
 
 		if(moment === 'morning')
