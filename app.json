@@ -1,0 +1,16 @@
+{
+  "name": "MOLO17-WebSite",
+  "scripts": {
+  },
+  "env": {
+    "NODE_EVN": "staging"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
