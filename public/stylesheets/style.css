@@ -75,6 +75,57 @@ input {
     -webkit-transform: rotateZ(360deg) translate3d(0, 3%, 0) rotateZ(-360deg);
   }
 }
+@-webkit-keyframes waveMobile {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0);
+  }
+}
+@-webkit-keyframes waveMediumMobile {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0);
+  }
+}
+@-webkit-keyframes waveSlowMobile {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(15px, 15px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(30px, 30px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(15px, 15px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0);
+  }
+}
 .waves {
   display: block;
   width: 100%;
@@ -119,10 +170,25 @@ input {
   left: 50%;
   margin-left: -125px;
 }
-@media (max-width: 600px) {
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .lighthouse {
+    width: 80px;
+    margin-left: -40px;
+  }
+  .seagulls,
+  .cloud_1,
+  .cloud_2,
+  .wave.wave-1 {
+    display: none !important;
+  }
+  .company_logo {
+    top: 15px !important;
+  }
+}
+@media (max-width: 400px) {
   .lighthouse {
     width: 200px;
-    height: 225px;
+    height: 250px;
     margin-left: -100px;
   }
 }
@@ -186,13 +252,17 @@ input {
   bottom: 0;
   overflow: hidden;
   background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px;
 }
 /*---------------------------------------TEXT---------------------------------------------*/
 .text {
   color: #000;
   font-family: roboto;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .firstText {
   font-weight: bold;
@@ -271,6 +341,7 @@ input {
 .afternoon {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: absolute;
 }
 .morning .sky,
@@ -486,6 +557,7 @@ input {
 .day {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: absolute;
 /*----------------------------------CLOUDS-----------------------------------------*/
 /*--------------------------SHIP---------------------------------------*/
@@ -648,7 +720,7 @@ input {
 }
 .day .sailboat {
   width: 70px;
-  padding-bottom: 17%;
+  padding-bottom: 105px;
   position: absolute;
   bottom: 185px;
   right: 20px;
@@ -830,9 +902,30 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
   }
 }
+@media only screen and (max-width: 1024px) {
+  .wave-1 {
+    -webkit-animation-name: waveMobile !important;
+    animation-name: waveMobile !important;
+    -webkit-animation-duration: 4s !important;
+    animation-duration: 4s !important;
+  }
+  .wave-2 {
+    -webkit-animation-name: waveMediumMobile !important;
+    animation-name: waveMediumMobile !important;
+    -webkit-animation-duration: 6s !important;
+    animation-duration: 6s !important;
+  }
+  .wave-3 {
+    -webkit-animation-duration: 5s !important;
+    animation-duration: 5s !important;
+    -webkit-animation-name: waveSlowMobile !important;
+    animation-name: waveSlowMobile !important;
+  }
+}
 .evening {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: absolute;
 }
 .evening .sky {
@@ -956,6 +1049,7 @@ input {
 .night {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: absolute;
 }
 .night .sky {
@@ -1182,6 +1276,13 @@ input {
           transform: translateY(-2000px);
       }
   }
+@media only screen and (max-width: 1024px) {
+  .company_logo {
+    left: 0px !important;
+    right: 0px !important;
+    margin: auto !important;
+  }
+}
 @-moz-keyframes wave {
   0% {
     transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
@@ -1276,6 +1377,210 @@ input {
   }
   100% {
     transform: rotateZ(360deg) translate3d(0, 3%, 0) rotateZ(-360deg);
+  }
+}
+@-moz-keyframes waveMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-webkit-keyframes waveMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-o-keyframes waveMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@keyframes waveMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-moz-keyframes waveMediumMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-webkit-keyframes waveMediumMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-o-keyframes waveMediumMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@keyframes waveMediumMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-moz-keyframes waveSlowMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-webkit-keyframes waveSlowMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@-o-keyframes waveSlowMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+@keyframes waveSlowMobile {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
   }
 }
 @-moz-keyframes compass_animation {

@@ -148,16 +148,16 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 			var _conditionCheck = false
 
-			do {
+			// do {
 				_y = Math.floor((Math.random() * (_marginTop - (2*_minPosition))) + _minPosition )
 				_x = Math.floor((Math.random() * (_marginLeft - (2*_minPosition))) + _minPosition )
 
-				var fConditionCheck = (((_x+$_el.width()) >= _lightHouseLeft)&&(_x <= (_lightHouseLeft+_lightHouseWidth)))
-				var sConditionCheck = (((_y+$_el.height()) >= _lightHouseTop)&&(_y <= (_lightHouseTop+_lightHouseHeight)))
+				// var fConditionCheck = (((_x+$_el.width()) >= _lightHouseLeft)&&(_x <= (_lightHouseLeft+_lightHouseWidth)))
+				// var sConditionCheck = (((_y+$_el.height()) >= _lightHouseTop)&&(_y <= (_lightHouseTop+_lightHouseHeight)))
 
-				_conditionCheck = (((!fConditionCheck && !sConditionCheck)||(fConditionCheck^sConditionCheck))?true:false)
+				// _conditionCheck = (((!fConditionCheck && !sConditionCheck)||(fConditionCheck^sConditionCheck))?true:false)
 
-			} while(!_conditionCheck);
+			// } while(!_conditionCheck);
 
 			$_el.css({left:_x,top:_y,display:'block',opacity:0})
 			chageElementSize($_el,_timing);
