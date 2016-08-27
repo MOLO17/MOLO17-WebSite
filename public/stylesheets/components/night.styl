@@ -1,21 +1,24 @@
 
 .night
+	position absolute
 	width 100%
 	height 100%
-	position absolute
 	
+
 	.sky
 		position absolute
 		width 100%
 		height 95%
-		overflow hidden
 		background url('images/night/background_night.png') bottom repeat-x
+		overflow hidden
 	
+//--------------------------------------WAVES--------------------------------------------------
 
 	.wave-1
-		z-index 4
 		bottom 170px
 		background url('images/night/wave_3.svg') 0 0 repeat-x
+		z-index 4
+		
 		-webkit-animation-name wave
 		-webkit-animation-duration 3s
 		-webkit-animation-iteration-count infinite
@@ -26,9 +29,10 @@
 		animation-timing-function linear
 
 	.wave-2
-		z-index 6
 		bottom 135px
 		background url('images/night/wave_2.svg') -42px 0 repeat-x
+		z-index 6
+		
 		-webkit-animation-name waveMedium
 		-webkit-animation-duration 2.5s
 		-webkit-animation-iteration-count infinite
@@ -40,13 +44,13 @@
 		
 //----------------------------------------BOAT----------------------------------------------
 	
-	@-webkit-keyframes ship-basculant
+	@-webkit-keyframes ship_animation
 		0%
 			-webkit-transform translate3d(5%,0,0) rotateZ(2deg)
 		100%
 			-webkit-transform translate3d(-5%,0,0) rotateZ(-2deg)
 
-	@keyframes ship-basculant
+	@keyframes ship_animation
 		0%
 			transform translate3d(5%,0,0) rotateZ(2deg)
 		100%
@@ -58,32 +62,31 @@
 		height 100%
 			
 	.cruise-ship
+		position absolute
 		width 350px
 		height 200px
+		bottom 173px
+		right 20px
+		padding-bottom 17%
 		//background url('images/night/ship_random.gif') bottom right no-repeat
 		background url('images/night/ship.svg') bottom right no-repeat
 		background-size 700px
-		padding-bottom 17%
-		position absolute
-		bottom 173px
-		right 20px
-		z-index 6
 		hoverflow hidden
+		z-index 6
 		
 		&.backwards
 			background-position bottom left
 
 		
-	.animate_cruise-ship
-		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
-		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+	.animation_cruise-ship
+		webkit-animation: ship_animation 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+		animation: ship_animation 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 		
 
 
 //-----------------------------------STARS----------------------------------------------------		
 
-
-	@keyframes star-animation 
+	@keyframes shooting_star_animation 
 		0%
 			right 250px 
 			top -110px
@@ -92,23 +95,23 @@
 			top 400px
 			
 
-	.comet
+	.shooting_star
 		position absolute
 		width 100px
 		height 100px
-		overflow hidden
-		background url('images/night/comet.gif') no-repeat
-		background-size contain
 		top -110px
 		right 250px
+		background url('images/night/comet.gif') no-repeat
+		background-size contain
 		transform rotate(30deg)
+		overflow hidden
 		
-		-webkit-animation-name star-animation
+		-webkit-animation-name shooting_star_animation 
 		-webkit-animation-duration 6s
 		-webkit-animation-iteration-count 1
 		-webkit-animation-timing-function linear
 		-webkit-animation-delay 5s
-		animation-name star-animation
+		animation-name shooting_star_animation 
 		animation-duration 6s
 		animation-iteration-count 1
 		animation-timing-function linear

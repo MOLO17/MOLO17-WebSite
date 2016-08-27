@@ -133,6 +133,7 @@ input {
   width: 200px;
   height: 200px;
   position: absolute;
+  display: block;
   left: 45px;
   top: 45px;
   color: #f00;
@@ -269,16 +270,15 @@ input {
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 .morning,
 .afternoon {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 .morning .sky,
 .afternoon .sky {
   position: absolute;
   width: 100%;
   height: 80%;
-  overflow: hidden;
   background: url("images/morning_afternoon/background_morning-afternoon.png") bottom repeat-x;
 }
 .morning .wave-1,
@@ -297,9 +297,9 @@ input {
 }
 .morning .wave-2,
 .afternoon .wave-2 {
-  z-index: 6;
   bottom: 135px;
   background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -309,7 +309,29 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes ship-basculant {
+.merchant_container {
+  width: 100%;
+  height: 100%;
+}
+.merchant {
+  position: absolute;
+  width: 300px;
+  bottom: 185px;
+  right: 20px;
+  padding-bottom: 17%;
+  background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
+  background-size: 600px;
+  hoverflow: hidden;
+  z-index: 6;
+}
+.merchant.backwards {
+  background-position: bottom left;
+}
+.animate_merchant {
+  webkit-animation: ship_animation 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship_animation 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-webkit-keyframes ship_animation {
   0% {
     -webkit-transform: rotateZ(4deg);
   }
@@ -317,35 +339,14 @@ input {
     -webkit-transform: rotateZ(-4deg);
   }
 }
-.merchant_container {
-  width: 100%;
-  height: 100%;
-}
-.merchant {
-  width: 300px;
-  background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
-  background-size: 600px;
-  padding-bottom: 17%;
-  position: absolute;
-  bottom: 185px;
-  right: 20px;
-  z-index: 6;
-  hoverflow: hidden;
-}
-.merchant.backwards {
-  background-position: bottom left;
-}
-.animate_merchant {
-  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
 .sun {
-  left: 0;
-  display: block;
   position: absolute;
+  display: block;
   width: 110px;
   height: 110px;
-  transform-origin: 0 400px;
+  left: 0;
+  margin-left: -110px;
+  margin-top: 150px;
   background-color: #ff0;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -354,14 +355,13 @@ input {
   border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-  margin-left: -110px;
-  margin-top: 150px;
-  -webkit-animation-name: sun-animation;
+  transform-origin: 0 400px;
+  -webkit-animation-name: sun_animation;
   -webkit-animation-duration: 35s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 3s;
-  animation-name: sun-animation;
+  animation-name: sun_animation;
   animation-duration: 35s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
@@ -371,7 +371,7 @@ input {
   -webkit-animation-direction: reverse;
   animation-direction: reverse;
 }
-@-moz-keyframes ship-basculant {
+@-moz-keyframes ship_animation {
   0% {
     transform: rotateZ(4deg);
   }
@@ -379,7 +379,7 @@ input {
     transform: rotateZ(-4deg);
   }
 }
-@-webkit-keyframes ship-basculant {
+@-webkit-keyframes ship_animation {
   0% {
     transform: rotateZ(4deg);
   }
@@ -387,7 +387,7 @@ input {
     transform: rotateZ(-4deg);
   }
 }
-@-o-keyframes ship-basculant {
+@-o-keyframes ship_animation {
   0% {
     transform: rotateZ(4deg);
   }
@@ -395,7 +395,7 @@ input {
     transform: rotateZ(-4deg);
   }
 }
-@keyframes ship-basculant {
+@keyframes ship_animation {
   0% {
     transform: rotateZ(4deg);
   }
@@ -403,7 +403,7 @@ input {
     transform: rotateZ(-4deg);
   }
 }
-@-moz-keyframes sun-animation {
+@-moz-keyframes sun_animation {
   0% {
     transform: rotateZ(100deg);
     background-color: #f00;
@@ -413,7 +413,7 @@ input {
     background-color: #ff0;
   }
 }
-@-webkit-keyframes sun-animation {
+@-webkit-keyframes sun_animation {
   0% {
     transform: rotateZ(100deg);
     background-color: #f00;
@@ -423,7 +423,7 @@ input {
     background-color: #ff0;
   }
 }
-@-o-keyframes sun-animation {
+@-o-keyframes sun_animation {
   0% {
     transform: rotateZ(100deg);
     background-color: #f00;
@@ -433,7 +433,7 @@ input {
     background-color: #ff0;
   }
 }
-@keyframes sun-animation {
+@keyframes sun_animation {
   0% {
     transform: rotateZ(100deg);
     background-color: #f00;
@@ -443,7 +443,7 @@ input {
     background-color: #ff0;
   }
 }
-@-moz-keyframes sun-animation {
+@-moz-keyframes sun_animation {
   0% {
     transform: rotateZ(0deg);
     background-color: #ff0;
@@ -453,7 +453,7 @@ input {
     background-color: #f00;
   }
 }
-@-webkit-keyframes sun-animation {
+@-webkit-keyframes sun_animation {
   0% {
     transform: rotateZ(0deg);
     background-color: #ff0;
@@ -463,7 +463,7 @@ input {
     background-color: #f00;
   }
 }
-@-o-keyframes sun-animation {
+@-o-keyframes sun_animation {
   0% {
     transform: rotateZ(0deg);
     background-color: #ff0;
@@ -473,7 +473,7 @@ input {
     background-color: #f00;
   }
 }
-@keyframes sun-animation {
+@keyframes sun_animation {
   0% {
     transform: rotateZ(0deg);
     background-color: #ff0;
@@ -484,24 +484,24 @@ input {
   }
 }
 .day {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
 /*----------------------------------CLOUDS-----------------------------------------*/
-/*--------------------------SHIP---------------------------------------*/
+/*-------------------------------------SHIP---------------------------------------*/
 /*-----------------------------------------BIRDS---------------------------------------------------*/
 }
 .day .sky {
   position: absolute;
   width: 100%;
   height: 90%;
-  overflow: hidden;
   background: url("images/day/background_day.png") bottom repeat-x;
+  overflow: hidden;
 }
 .day .wave-1 {
-  z-index: 4;
   bottom: 160px;
   background: url("images/day/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
@@ -512,9 +512,9 @@ input {
   animation-timing-function: linear;
 }
 .day .wave-2 {
-  z-index: 6;
   bottom: 140px;
   background: url("images/day/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 3.5s;
   -webkit-animation-iteration-count: infinite;
@@ -524,40 +524,16 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes cloud {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes cloud_inverse {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes cloudSmall {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
-  }
-}
 .day .cloud_1 {
-  background: url("images/day/cloud_final.svg") 0 0 no-repeat;
-  background-size: 100% auto;
   position: absolute;
   left: 50%;
+  background: url("images/day/cloud_final.svg") 0 0 no-repeat;
+  background-size: 100% auto;
 }
 .day .cloud_2 {
+  position: absolute;
   background: url("images/day/cloud-2_final.svg") 0 0 no-repeat;
   background-size: 100% auto;
-  position: absolute;
 }
 .day .section-intro__cloud_1 {
   width: 80px;
@@ -634,6 +610,30 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+@-webkit-keyframes cloud {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes cloud_inverse {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes cloudSmall {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
+  }
+}
 @-webkit-keyframes ship-basculant {
   0% {
     -webkit-transform: translate3d(5%, 0, 0) rotateZ(4deg);
@@ -647,15 +647,15 @@ input {
   height: 100%;
 }
 .day .sailboat {
+  position: absolute;
   width: 70px;
   padding-bottom: 17%;
-  position: absolute;
   bottom: 185px;
   right: 20px;
   background: url("images/day/sailboat.svg") bottom right no-repeat;
   background-size: 140px;
-  z-index: 6;
   overflow: hidden;
+  z-index: 6;
 }
 .day .sailboat.backwards {
   background-position: bottom left;
@@ -665,10 +665,10 @@ input {
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .day .seagulls {
+  position: absolute;
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
-  position: absolute;
   bottom: 0;
   overflow: hidden;
 }
@@ -682,25 +682,25 @@ input {
   transition: transform 12s linear;
 }
 .day .seagull_1 {
-  background: url("images/day/seagull_1.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 120px;
   bottom: 310px;
+  background: url("images/day/seagull_1.svg") 0 0 no-repeat;
 }
 .day .seagull_2 {
-  background: url("images/day/seagull_2.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 180px;
   bottom: 290px;
+  background: url("images/day/seagull_2.svg") 0 0 no-repeat;
 }
 .day .seagull_3 {
-  background: url("images/day/seagull_3.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 190px;
   bottom: 340px;
+  background: url("images/day/seagull_3.svg") 0 0 no-repeat;
 }
 @-moz-keyframes cloud {
   0% {
@@ -831,21 +831,21 @@ input {
   }
 }
 .evening {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 .evening .sky {
   position: absolute;
   width: 100%;
-  height: 90%;
-  overflow: hidden;
+  height: 100%;
   background: url("images/evening/background_evening.png") bottom repeat-x;
+  overflow: hidden;
 }
-.evening .wave-1 {
-  z-index: 4;
+.wave-1 {
   bottom: 170px;
   background: url("images/evening/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
@@ -855,10 +855,10 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.evening .wave-2 {
-  z-index: 6;
+.wave-2 {
   bottom: 135px;
   background: url("images/evening/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -868,7 +868,25 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes ship-basculant {
+.speed-boat {
+  position: absolute;
+  width: 190px;
+  right: 20px;
+  padding-bottom: 17%;
+  bottom: 172px;
+  background: url("images/evening/yacht.svg") bottom right no-repeat;
+  background-size: 380px;
+  overflow: hidden;
+  z-index: 6;
+}
+.speed-boat.backwards {
+  background-position: bottom left;
+}
+.animation_speed-boat {
+  webkit-animation: ship-movement 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship-movement 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-webkit-keyframes ship-movement {
   0% {
     -webkit-transform: translate3d(8%, 0, 0) rotateZ(6deg);
   }
@@ -876,52 +894,32 @@ input {
     -webkit-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
   }
 }
-.speed-boat_container {
-  width: 100%;
-  height: 100%;
-}
-.speed-boat {
-  width: 190px;
-  padding-bottom: 17%;
+.evening_stars {
   position: absolute;
-  bottom: 172px;
-  right: 20px;
-  background: url("images/evening/yacht.svg") bottom right no-repeat;
-  background-size: 380px;
-  z-index: 6;
-  overflow: hidden;
-}
-.speed-boat.backwards {
-  background-position: bottom left;
-}
-.animate_speed-boat {
-  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-.stars {
   display: block;
-  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.star_1 {
-  background: url("images/evening/star_1.gif") 0 0 no-repeat;
-  background-size: 100% auto;
+.evening_star_1 {
+  width: 100px;
+  height: 200px;
   margin-left: 200px;
   margin-top: 60px;
-  width: 100px;
-  height: 200px;
-}
-.star_2 {
-  width: 100px;
-  height: 200px;
-  background: url("images/evening/star_2.gif") 0 0 no-repeat;
+  background: url("images/evening/star_1.gif") 0 0 no-repeat;
   background-size: 100% auto;
+  z-index: 8;
+}
+.evening_star_2 {
+  width: 100px;
+  height: 200px;
   margin-left: 990px;
   margin-top: -100px;
+  background: url("images/evening/star_2.gif") 0 0 no-repeat;
+  background-size: 100% auto;
+  z-index: 8;
 }
-@-moz-keyframes ship-basculant {
+@-moz-keyframes ship-movement {
   0% {
     transform: translate3d(8%, 0, 0) rotateZ(6deg);
   }
@@ -929,7 +927,7 @@ input {
     transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
   }
 }
-@-webkit-keyframes ship-basculant {
+@-webkit-keyframes ship-movement {
   0% {
     transform: translate3d(8%, 0, 0) rotateZ(6deg);
   }
@@ -937,7 +935,7 @@ input {
     transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
   }
 }
-@-o-keyframes ship-basculant {
+@-o-keyframes ship-movement {
   0% {
     transform: translate3d(8%, 0, 0) rotateZ(6deg);
   }
@@ -945,7 +943,7 @@ input {
     transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
   }
 }
-@keyframes ship-basculant {
+@keyframes ship-movement {
   0% {
     transform: translate3d(8%, 0, 0) rotateZ(6deg);
   }
@@ -954,21 +952,21 @@ input {
   }
 }
 .night {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 .night .sky {
   position: absolute;
   width: 100%;
   height: 95%;
-  overflow: hidden;
   background: url("images/night/background_night.png") bottom repeat-x;
+  overflow: hidden;
 }
-.night .wave-1 {
-  z-index: 4;
+.wave-1 {
   bottom: 170px;
   background: url("images/night/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
@@ -978,10 +976,10 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.night .wave-2 {
-  z-index: 6;
+.wave-2 {
   bottom: 135px;
   background: url("images/night/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -991,7 +989,7 @@ input {
   animation-iteration-count: infinite;
   animation-timing-function: linearnight;
 }
-@-webkit-keyframes ship-basculant {
+@-webkit-keyframes ship_animation {
   0% {
     -webkit-transform: translate3d(5%, 0, 0) rotateZ(2deg);
   }
@@ -1004,46 +1002,46 @@ input {
   height: 100%;
 }
 .cruise-ship {
+  position: absolute;
   width: 350px;
   height: 200px;
-  background: url("images/night/ship.svg") bottom right no-repeat;
-  background-size: 700px;
-  padding-bottom: 17%;
-  position: absolute;
   bottom: 173px;
   right: 20px;
-  z-index: 6;
+  padding-bottom: 17%;
+  background: url("images/night/ship.svg") bottom right no-repeat;
+  background-size: 700px;
   hoverflow: hidden;
+  z-index: 6;
 }
 .cruise-ship.backwards {
   background-position: bottom left;
 }
-.animate_cruise-ship {
-  webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.animation_cruise-ship {
+  webkit-animation: ship_animation 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: ship_animation 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-.comet {
+.shooting_star {
   position: absolute;
   width: 100px;
   height: 100px;
-  overflow: hidden;
-  background: url("images/night/comet.gif") no-repeat;
-  background-size: contain;
   top: -110px;
   right: 250px;
+  background: url("images/night/comet.gif") no-repeat;
+  background-size: contain;
   transform: rotate(30deg);
-  -webkit-animation-name: star-animation;
+  overflow: hidden;
+  -webkit-animation-name: shooting_star_animation;
   -webkit-animation-duration: 6s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 5s;
-  animation-name: star-animation;
+  animation-name: shooting_star_animation;
   animation-duration: 6s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-delay: 5s;
 }
-@-moz-keyframes ship-basculant {
+@-moz-keyframes ship_animation {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(2deg);
   }
@@ -1051,7 +1049,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
   }
 }
-@-webkit-keyframes ship-basculant {
+@-webkit-keyframes ship_animation {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(2deg);
   }
@@ -1059,7 +1057,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
   }
 }
-@-o-keyframes ship-basculant {
+@-o-keyframes ship_animation {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(2deg);
   }
@@ -1067,7 +1065,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
   }
 }
-@keyframes ship-basculant {
+@keyframes ship_animation {
   0% {
     transform: translate3d(5%, 0, 0) rotateZ(2deg);
   }
@@ -1075,7 +1073,7 @@ input {
     transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
   }
 }
-@-moz-keyframes star-animation {
+@-moz-keyframes shooting_star_animation {
   0% {
     right: 250px;
     top: -110px;
@@ -1085,7 +1083,7 @@ input {
     top: 400px;
   }
 }
-@-webkit-keyframes star-animation {
+@-webkit-keyframes shooting_star_animation {
   0% {
     right: 250px;
     top: -110px;
@@ -1095,7 +1093,7 @@ input {
     top: 400px;
   }
 }
-@-o-keyframes star-animation {
+@-o-keyframes shooting_star_animation {
   0% {
     right: 250px;
     top: -110px;
@@ -1105,7 +1103,7 @@ input {
     top: 400px;
   }
 }
-@keyframes star-animation {
+@keyframes shooting_star_animation {
   0% {
     right: 250px;
     top: -110px;
@@ -1118,7 +1116,6 @@ input {
 
   
   .stars {
-      border-radius: 50%;
       width: 1px;
       height: 1px;
       background: transparent;
@@ -1137,7 +1134,6 @@ input {
   }
 
   .stars2 {
-      border-radius: 50%;
       width: 2px;
       height: 2px;
       background: transparent;
@@ -1156,7 +1152,6 @@ input {
   }
 
   .stars3 {
-      border-radius: 50%;
       width: 3px;
       height: 3px;
       background: transparent;
