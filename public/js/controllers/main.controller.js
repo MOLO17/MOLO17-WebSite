@@ -23,10 +23,10 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	vm.userPositionDMS = {}
 
 	//Used for landing countdown visualization
-	dayMilliseconds = 1000 * 60 * 60 * 24;
-	$interval(function() { 
-		vm.landing -= 1;
-	},dayMilliseconds);
+	// dayMilliseconds = 1000 * 60 * 60 * 24;
+	// $interval(function() { 
+	// 	vm.landing -= 1;
+	// },dayMilliseconds);
 
 /*
 	function countdown() {
@@ -51,42 +51,42 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 	
 	function findUserCoords() {
-		coordinatesFactory.getCoords(function(err, result) {
-			//$scope.showInfo = true;
+		// coordinatesFactory.getCoords(function(err, result) {
+		// 	//$scope.showInfo = true;
 
-			if(result) {
-				findMoloWeather();
-				coordinatesService.setCoords(result.latitude, result.longitude);
+		// 	if(result) {
+		// 		findMoloWeather();
+		// 		coordinatesService.setCoords(result.latitude, result.longitude);
 				
-				vm.userPositionDecimal = coordinatesService.getCoords();
-				//console.log(vm.userPositionDecimal);
+		// 		vm.userPositionDecimal = coordinatesService.getCoords();
+		// 		//console.log(vm.userPositionDecimal);
 
-				vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
-						vm.userPositionDecimal.longitude) * 0.54);
-				//console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
+		// 		vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
+		// 				vm.userPositionDecimal.longitude) * 0.54);
+		// 		//console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
 
-				vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
-				vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
-				//console.log(vm.userPositionDMS)
+		// 		vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
+		// 		vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
+		// 		//console.log(vm.userPositionDMS)
 
-				$scope.showCompass = true;
-				vm.requestMessage = 'Caricamento ..';
-				//$('.company_logo').animate({left: 50}, 1500, "linear")
+		// 		$scope.showCompass = true;
+		// 		vm.requestMessage = 'Caricamento ..';
+		// 		//$('.company_logo').animate({left: 50}, 1500, "linear")
 
-				//Delay foo compass visualization
-				$timeout(function() {
-					$scope.showCompass = !$scope.showCompass
-					$scope.showText = true;
-				}, 2500)
+		// 		//Delay foo compass visualization
+		// 		$timeout(function() {
+		// 			$scope.showCompass = !$scope.showCompass
+		// 			$scope.showText = true;
+		// 		}, 2500)
 				
-			} else {
-				console.log(err)
-				vm.errorMessage = err.message;
-				$scope.showCompass = false;
-				$scope.showErrMessage = true;
-				//$('.company_logo').animate({left: 50}, 1500, "linear")
-			}
-		})
+		// 	} else {
+		// 		console.log(err)
+		// 		vm.errorMessage = err.message;
+		// 		$scope.showCompass = false;
+		// 		$scope.showErrMessage = true;
+		// 		//$('.company_logo').animate({left: 50}, 1500, "linear")
+		// 	}
+		// })
 	}
 	findUserCoords();
 	
@@ -109,73 +109,70 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 		var _height = element.height() * scaleFactor;
 		element.animate({opacity:1},timing);
 		element.css({"-webkit-transform":"scale("+scaleFactor+")","-moz-transform":"scale("+scaleFactor+")","transform":"scale("+scaleFactor+")"})
+		
+		var _timing = Math.floor(((Math.random() * 5) + 25) * 1000);
+		setTimeout(randomElementWithAnimation.bind(null,element),_timing)
+
 	}
 
+	function randomElementWithAnimation(element) {
+
+		if(!element || !element.length) return;
+		
+		var _timing = Math.floor((Math.random() * 3 + 1) * 1000);
+
+		var _minPosition = 100
+		_minPosition += element.height()
+
+		var $el = element
+
+		$el.animate({opacity:0},_timing,function() {
+
+			var $_el = $(this)
+
+			$_el.removeClass("animate-transition")
+			$_el.css({"-webkit-transform":"scale("+"1"+")","-moz-transform":"scale("+"1"+")","transform":"scale("+"1"+")"})
+			$_el.addClass("animate-transition")
+
+			var _marginLeft = $(window).width() - $_el.width()
+			var _marginTop = $('.wave.wave-1').offset().top
+
+			var _lightHouseTop = $(".lighthouse").offset().top
+			var _lightHouseHeight = $(".lighthouse").height()
+			
+			var _lightHouseLeft = $(".lighthouse").offset().left
+			var _lightHouseWidth = $(".lighthouse").width()
+
+			var _x = 0;
+			var _y = 0;
+
+			var _conditionCheck = false
+
+			do {
+				_y = Math.floor((Math.random() * (_marginTop - (2*_minPosition))) + _minPosition )
+				_x = Math.floor((Math.random() * (_marginLeft - (2*_minPosition))) + _minPosition )
+
+				var fConditionCheck = (((_x+$_el.width()) >= _lightHouseLeft)&&(_x <= (_lightHouseLeft+_lightHouseWidth)))
+				var sConditionCheck = (((_y+$_el.height()) >= _lightHouseTop)&&(_y <= (_lightHouseTop+_lightHouseHeight)))
+
+				_conditionCheck = (((!fConditionCheck && !sConditionCheck)||(fConditionCheck^sConditionCheck))?true:false)
+
+			} while(!_conditionCheck);
+
+			$_el.css({left:_x,top:_y,display:'block',opacity:0})
+			chageElementSize($_el,_timing);
+		})
+	}
 
 	function generateRandomSeagulls() {
 
-		var random1 = Math.floor((Math.random() * 6 + 1) * 1000);
-		var random2 = Math.floor((Math.random() * 6 + 1) * 1000);
-		var random3 = Math.floor((Math.random() * 6 + 1) * 1000);
+		var _seagulls = [".seagull.seagull_1",".seagull.seagull_2",".seagull.seagull_3",".cloud_1",".cloud_2"];
 
-	    var $seagull_1 = $(".seagull.seagull_1");
-	    var $seagull_2 = $(".seagull.seagull_2");
-	    var $seagull_3 = $(".seagull.seagull_3");
-	    var $highestWave = $('.wave.wave-1');
-
-	    var minPosition = 100
-
-	    $seagull_1.animate({opacity:0},random1, function() {
-
-	    	$seagull_1.removeClass("animate-transition")
-	    	$seagull_1.css({"-webkit-transform":"scale("+"1"+")","-moz-transform":"scale("+"1"+")","transform":"scale("+"1"+")"})
-	    	$seagull_1.addClass("animate-transition")
-
-	        var maxLeft = $(window).width() - $seagull_1.width();
-	        var maxTop = $highestWave.offset().top + 50;
-	        var leftPos = Math.floor((Math.random() * (maxLeft - minPosition)) + minPosition )
-	        var topPos = Math.floor((Math.random() * (maxTop - minPosition)) + minPosition )
-
-
-	  		$seagull_1.css({ left: leftPos, top: topPos, display:'inline-block', opacity:0 })
-	  		chageElementSize($seagull_1,random1);
-	    });
-
-	    $seagull_2.animate({opacity:0},random2, function() {
-
-			$seagull_2.removeClass("animate-transition")
-	    	$seagull_2.css({"-webkit-transform":"scale("+"1"+")","-moz-transform":"scale("+"1"+")","transform":"scale("+"1"+")"})
-  			$seagull_2.addClass("animate-transition")
-
-	        var maxLeft = $(window).width() - $seagull_2.width();
-	        var maxTop = $highestWave.offset().top + 50;
-	       	var leftPos = Math.floor((Math.random() * (maxLeft - minPosition)) + minPosition )
-	        var topPos = Math.floor((Math.random() * (maxTop - minPosition)) + minPosition )
-	     	
-	     	
-	        $seagull_2.css({ left: leftPos, top: topPos, display:'inline-block', opacity:0 })
-	        chageElementSize($seagull_2,random2);
-	    });
-
-	    $seagull_3.animate({opacity:0},random3, function() {
-			
-			$seagull_3.removeClass("animate-transition")
-	    	$seagull_3.css({"-webkit-transform":"scale("+"1"+")","-moz-transform":"scale("+"1"+")","transform":"scale("+"1"+")"})
-  			$seagull_3.addClass("animate-transition")
-
-	        var maxLeft = $(window).width() - $seagull_3.width();
-	        var maxTop = $highestWave.offset().top + 50;
-	        var leftPos = Math.floor((Math.random() * (maxLeft - minPosition)) + minPosition )
-	        var topPos = Math.floor((Math.random() * (maxTop - minPosition)) + minPosition )
-	     	
-	     	
-	        $seagull_3.css({ left: leftPos, top: topPos, display:'inline-block', opacity:0 })
-	        chageElementSize($seagull_3,random3);
-	    });
+		for(var i=0;i<_seagulls.length;i++)
+			setTimeout(randomElementWithAnimation.bind(null,$(""+_seagulls[i])),((Math.random()*(Math.random() * 3)+1)*1000))
 	};
 
 	generateRandomSeagulls();
-	setInterval(generateRandomSeagulls, 13000);
 
 //-------------------------------------------------------------------------
 
@@ -200,7 +197,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'night';
+		var moment = 'day';
 		var boat;
 
 		if(moment === 'morning')
