@@ -46,6 +46,12 @@
 			-webkit-transform rotateZ(4deg)
 		100%
 			-webkit-transform rotateZ(-4deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform rotateZ(4deg)
+		100%
+			-ms-transform rotateZ(-4deg)
 
 	@keyframes ship-basculant
 		0%
@@ -78,16 +84,24 @@
 		
 
 //----------------------------------SUN---------------------------------------------------
-	
-	@keyframes sun-animation
+			
+	@-webkit-keyframes sun-animation
 	
 		0%
-			transform rotateZ(100deg)
-			background-color red
-		100%
-			transform rotateZ(0deg)
+			-webkit-transform rotateZ(0deg)
 			background-color yellow
-			
+		100%
+			-webkit-transform rotateZ(100deg)
+			background-color red
+
+	@-ms-keyframes sun-animation
+	
+		0%
+			-ms-transform rotateZ(0deg)
+			background-color yellow
+		100%
+			-ms-transform rotateZ(100deg)
+			background-color red
 
 	@keyframes sun-animation
 	

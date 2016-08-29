@@ -45,6 +45,12 @@
 			-webkit-transform rotateZ(0deg) translate3d(0,40%,0) rotateZ(0deg)
 		100%
 			-webkit-transform rotateZ(360deg) translate3d(0,40%,0) rotateZ(-360deg)
+			
+	@-ms-keyframes cloud
+		0%
+			-ms-transform rotateZ(0deg) translate3d(0,40%,0) rotateZ(0deg)
+		100%
+			-ms-transform rotateZ(360deg) translate3d(0,40%,0) rotateZ(-360deg)
 
 	@keyframes cloud
 		0%
@@ -52,11 +58,18 @@
 		100%
 			transform rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg)
 
+
 	@-webkit-keyframes cloud_inverse
 		0%
 			-webkit-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
 		100%
 			-webkit-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
+			
+	@-ms-keyframes cloud_inverse
+		0%
+			-ms-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
+		100%
+			-ms-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
 
 	@keyframes cloud_inverse
 		0%
@@ -70,6 +83,12 @@
 			-webkit-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
 		100%
 			-webkit-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
+			
+	@-ms-keyframes cloudSmall
+		0%
+			-ms-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
+		100%
+			-ms-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
 
 	@keyframes cloudSmall
 		0%
@@ -170,6 +189,12 @@
 			-webkit-transform translate3d(5%,0,0) rotateZ(4deg)
 		100%
 			-webkit-transform translate3d(-5%,0,0) rotateZ(-4deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform translate3d(5%,0,0) rotateZ(4deg)
+		100%
+			-ms-transform translate3d(-5%,0,0) rotateZ(-4deg)
 
 	@keyframes ship-basculant
 		0%
@@ -247,18 +272,24 @@
 @media only screen and (max-width 1024px)
 	.wave-1
 		-webkit-animation-name waveMobile !important
+		-ms-animation-name waveMobile !important
 		animation-name waveMobile !important
 		-webkit-animation-duration 4s !important
+		-ms-animation-duration 4s !important
 		animation-duration 4s !important
 
 	.wave-2
 		-webkit-animation-name waveMediumMobile !important
+		-ms-animation-name waveMediumMobile !important
 		animation-name waveMediumMobile !important
 		-webkit-animation-duration 6s !important
+		-ms-animation-duration 6s !important
 		animation-duration 6s !important
 
 	.wave-3
 		-webkit-animation-duration 5s !important
+		-ms-animation-duration 5s !important
 		animation-duration 5s !important
 		-webkit-animation-name waveSlowMobile !important
+		-ms-animation-name waveSlowMobile !important
 		animation-name waveSlowMobile !important

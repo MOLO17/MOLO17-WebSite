@@ -81,6 +81,18 @@ input
 		transform rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg)
 	100%
 		transform rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg)
+		
+@-ms-keyframes wave
+	0%
+		-ms-transform rotateZ(0deg) translate3d(0,8%,0) rotateZ(0deg)
+	100%
+		-ms-transform rotateZ(360deg) translate3d(0,8%,0) rotateZ(-360deg)
+
+@keyframes wave
+	0%
+		transform rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg)
 	
 
 @-webkit-keyframes waveMedium
@@ -88,6 +100,12 @@ input
 		-webkit-transform rotateZ(0deg) translate3d(0,6%,0) rotateZ(0deg)
 	100%
 		-webkit-transform rotateZ(360deg) translate3d(0,6%,0) rotateZ(-360deg)
+		
+@-ms-keyframes waveMedium
+	0%
+		-ms-transform rotateZ(0deg) translate3d(0,6%,0) rotateZ(0deg)
+	100%
+		-ms-transform rotateZ(360deg) translate3d(0,6%,0) rotateZ(-360deg)
 
 @keyframes waveMedium
 	0%
@@ -101,6 +119,12 @@ input
 		-webkit-transform rotateZ(0deg) translate3d(0,3%,0) rotateZ(0deg)
 	100%
 		-webkit-transform rotateZ(360deg) translate3d(0,3%,0) rotateZ(-360deg)
+		
+@-ms-keyframes waveSlow
+	0%
+		-ms-transform rotateZ(0deg) translate3d(0,3%,0) rotateZ(0deg)
+	100%
+		-ms-transform rotateZ(360deg) translate3d(0,3%,0) rotateZ(-360deg)
 
 @keyframes waveSlow
 	0%
@@ -120,6 +144,18 @@ input
 		-webkit-transform translate3d(10px, 10px, 0)
 	100%
 		-webkit-transform translate3d(0px, 0px, 0)
+		
+@-ms-keyframes waveMobile
+	0%
+		-ms-transform translate3d(0px, 0px, 0)
+	25%
+		-ms-transform translate3d(10px, 10px, 0)
+	50%
+		-ms-transform translate3d(20px, 20px, 0)
+	75%
+		-ms-transform translate3d(10px, 10px, 0)
+	100%
+		-ms-transform translate3d(0px, 0px, 0)
 
 @keyframes waveMobile
 	0%
@@ -144,6 +180,18 @@ input
 		-webkit-transform translate3d(10px, 10px, 0)
 	100%
 		-webkit-transform translate3d(0px, 0px, 0)
+		
+@-ms-keyframes waveMediumMobile
+	0%
+		-ms-transform translate3d(0px, 0px, 0)
+	25%
+		-ms-transform translate3d(10px, 10px, 0)
+	50%
+		-ms-transform translate3d(20px, 20px, 0)
+	75%
+		-ms-transform translate3d(10px, 10px, 0)
+	100%
+		-ms-transform translate3d(0px, 0px, 0)
 
 @keyframes waveMediumMobile
 	0%
@@ -168,6 +216,18 @@ input
 		-webkit-transform translate3d(15px, 15px, 0)
 	100%
 		-webkit-transform translate3d(0px, 0px, 0)
+		
+@-ms-keyframes waveSlowMobile
+	0%
+		-ms-transform translate3d(0px, 0px, 0)
+	25%
+		-ms-transform translate3d(15px, 15px, 0)
+	50%
+		-ms-transform translate3d(30px, 30px, 0)
+	75%
+		-ms-transform translate3d(15px, 15px, 0)
+	100%
+		-ms-transform translate3d(0px, 0px, 0)
 
 @keyframes waveSlowMobile
 	0%
@@ -347,6 +407,18 @@ a
 		-webkit-transform rotateZ(-40deg)
 	100%
 		-webkit-transform rotateZ(0deg)
+		
+@-ms-keyframes compass_animation
+	0%
+		-ms-transform rotateZ(0deg)
+	25%
+		-ms-transform rotateZ(40deg)
+	50%
+		-ms-transform rotateZ(0deg)
+	75%
+		-ms-transform rotateZ(-40deg)
+	100%
+		-ms-transform rotateZ(0deg)
 
 @keyframes compass_animation
 	0%
@@ -413,5 +485,6 @@ a
 @import "components/night"
 @import "parallax_stars"
 @import "responsive"
+//@import "animations"
 
 	

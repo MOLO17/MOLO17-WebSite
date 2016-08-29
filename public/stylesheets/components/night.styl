@@ -46,6 +46,12 @@
 			-webkit-transform translate3d(5%,0,0) rotateZ(2deg)
 		100%
 			-webkit-transform translate3d(-5%,0,0) rotateZ(-2deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform translate3d(5%,0,0) rotateZ(2deg)
+		100%
+			-ms-transform translate3d(-5%,0,0) rotateZ(-2deg)
 
 	@keyframes ship-basculant
 		0%
@@ -82,7 +88,22 @@
 
 
 //-----------------------------------STARS----------------------------------------------------		
-
+	
+	@-webkit-keyframes star-animation 
+		0%
+			right 250px 
+			top -110px
+		100% 
+			right 2300px 
+			top 400px
+			
+	@-ms-keyframes star-animation 
+		0%
+			right 250px 
+			top -110px
+		100% 
+			right 2300px 
+			top 400px
 
 	@keyframes star-animation 
 		0%
