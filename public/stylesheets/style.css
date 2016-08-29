@@ -319,7 +319,7 @@ input {
   font-weight: bold;
   text-transform: uppercase;
 }
-/*---------------------------------------------------------------------------------------*/
+/*-------------------------------------------FOOTER--------------------------------------------*/
 .footer {
   position: absolute;
   display: block;
@@ -334,7 +334,6 @@ input {
   padding: 15px;
   z-index: 9;
 }
-/*---------------------------------------TEXT---------------------------------------------*/
 .text {
   color: #000;
   font-family: roboto;
@@ -355,15 +354,38 @@ input {
   font-weight: bold;
 }
 .github {
-  position: relative;
   width: 100%;
-  height: 10px;
-  left: 0;
-  bottom: 0;
-  color: #2c2c2b;
+  height: 40px;
+  position: absolute;
   text-align: center;
-  background-color: #a6a6a5;
-  z-index: 90;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+}
+.github > div {
+  display: inline-block;
+  line-height: 40px;
+  position: relative;
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  color: #808080;
+}
+.github > div img,
+.github > div svg {
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mooring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  right: 480px;
+  bottom: 152px;
+  background: url("images/common/mooring.svg") no-repeat;
+  background-size: contain;
+  z-index: 4;
 }
 @-webkit-keyframes compass_animation {
   0% {
