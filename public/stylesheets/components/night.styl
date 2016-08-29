@@ -1,9 +1,9 @@
 
 .night
+	position absolute
 	width 100%
 	height 100%
 	overflow hidden
-	position absolute
 	
 	.sky
 		position absolute
@@ -14,9 +14,10 @@
 	
 
 	.wave-1
-		z-index 4
 		bottom 170px
 		background url('images/night/wave_3.svg') 0 0 repeat-x
+		z-index 4
+		
 		-webkit-animation-name wave
 		-webkit-animation-duration 3s
 		-webkit-animation-iteration-count infinite
@@ -27,9 +28,10 @@
 		animation-timing-function linear
 
 	.wave-2
-		z-index 6
 		bottom 135px
 		background url('images/night/wave_2.svg') -42px 0 repeat-x
+		z-index 6
+		
 		-webkit-animation-name waveMedium
 		-webkit-animation-duration 2.5s
 		-webkit-animation-iteration-count infinite
@@ -65,15 +67,14 @@
 		height 100%
 			
 	.cruise-ship
+		position absolute
 		width 350px
 		height 200px
-		//background url('images/night/ship_random.gif') bottom right no-repeat
-		background url('images/night/ship.svg') bottom right no-repeat
-		background-size 700px
 		padding-bottom 17%
-		position absolute
 		bottom 173px
 		right 20px
+		background url('images/night/ship.svg') bottom right no-repeat
+		background-size 700px
 		z-index 6
 		hoverflow hidden
 		
@@ -118,11 +119,11 @@
 		position absolute
 		width 100px
 		height 100px
-		overflow hidden
-		background url('images/night/comet.gif') no-repeat
-		background-size contain
 		top -110px
 		right 250px
+		background url('images/night/comet.gif') no-repeat
+		background-size contain
+		overflow hidden
 		transform rotate(30deg)
 		
 		-webkit-animation-name star-animation

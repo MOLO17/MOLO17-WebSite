@@ -197,7 +197,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	function whichBoat() {
 
 		//var moment = coordinatesService.getMoment();
-		var moment = 'morning';
+		var moment = 'night';
 		var boat;
 
 		if(moment === 'morning')
