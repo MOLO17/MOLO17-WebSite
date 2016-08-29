@@ -12,8 +12,7 @@
 		background url('images/day/background_day.png') bottom repeat-x
 	
 	.wave-1
-		
-		bottom 160px
+		bottom 150px
 		background url('images/day/wave_3.svg') 0 0 repeat-x
 		z-index 4
 		
@@ -25,9 +24,10 @@
 		animation-duration 5s
 		animation-iteration-count infinite
 		animation-timing-function linear
+		
 
 	.wave-2
-		bottom 140px
+		bottom 115px
 		background url('images/day/wave_2.svg') -42px 0 repeat-x
 		z-index 6
 		
@@ -221,7 +221,7 @@
 		position absolute
 		width 100px
 		height 200px
-		bottom 185px
+		bottom 165px
 		right 20px
 		background url('images/day/sailboat.svg') bottom right no-repeat
 		background-size 200px
@@ -230,6 +230,13 @@
 		
 		&.backwards
 			background-position bottom left
+			
+	//@media only screen and (min-device-width 400px) and (max-device-width 1024px)
+	@media only screen and (min-width 400px) and (max-width 1024px)
+		.sailboat
+			background-size 80px
+			width 40px
+			height 60px
 		
 	.animate_sailboat
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)

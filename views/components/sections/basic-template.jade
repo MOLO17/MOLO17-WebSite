@@ -20,54 +20,54 @@ div
 							li
 								div.wave.wave-3
 
-			//- div.info(ng-if='showInfo')
-				//- div(ng-if='showCompass')
-				//- 	div.row
-				//- 		div.col-md-12
-				//- 			div.compass_container
-				//- 				span.compassText {{vm.requestMessage}}
-				//- 				ul
-				//- 					li
-				//- 						div.compass_pointer
-				//- 					li
-				//- 						div.compass_dial
+			//-div.info(ng-if='showInfo')
+				div(ng-if='showCompass')
+					div.row
+						div.col-md-12
+							div.compass_container
+								span.compassText {{vm.requestMessage}}
+								ul
+									li
+										div.compass_pointer
+									li
+										div.compass_dial
 
-				//- div(ng-if='showText')
-				//- 	div.row
-				//- 		div.title.col-md-12
-				//- 			| You Are Here
-				//- 	div.row
-				//- 		div.titles.col-md-12
-				//- 			| SCANNING...		
-				//- 	div.row
-				//- 		div.coords.col-md-12
-				//- 			| N {{vm.userPositionDMS.latitude}}
-				//- 			br
-				//- 			| E {{vm.userPositionDMS.longitude}}
-				//- 	div.row
-				//- 		div.titles.col-md-12
-				//- 			| DISTANCE
-				//- 	div.row
-				//- 		div.coords.col-md-12
-				//- 			| {{vm.linearDistanceMiles}} ML
-				//- 	div.row
-				//- 		div.titles.col-md-12
-				//- 			| CONDITIONS
-				//- 	div.row
-				//- 		div.coords.col-md-12
-				//- 			| {{vm.weather.description}}
-				//- 			br
-				//- 			| {{vm.weather.temperature}}° C
-				//- 	div.row
-				//- 		div.titles.col-md-12
-				//- 			| LANDING
-				//- 	div.row
-				//- 		div.coords.col-md-12
-				//- 			| {{vm.landing}} days
+				div(ng-if='showText')
+					div.row
+						div.title.col-md-12
+							| You Are Here
+					div.row
+						div.titles.col-md-12
+							| SCANNING...		
+					div.row
+						div.coords.col-md-12
+							| N {{vm.userPositionDMS.latitude}}
+							br
+							| E {{vm.userPositionDMS.longitude}}
+					div.row
+						div.titles.col-md-12
+							| DISTANCE
+					div.row
+						div.coords.col-md-12
+							| {{vm.linearDistanceMiles}} ML
+					div.row
+						div.titles.col-md-12
+							| CONDITIONS
+					div.row
+						div.coords.col-md-12
+							| {{vm.weather.description}}
+							br
+							| {{vm.weather.temperature}}° C
+					div.row
+						div.titles.col-md-12
+							| LANDING
+					div.row
+						div.coords.col-md-12
+							| {{vm.landing}} days
 
 				
-				//- div.adviceText(ng-if='showErrMessage') 
-				//- 	| Ehi amico, il mare oggi non promette nulla di buono. Se cerchi un attracco sicuro lo 	trovi qui
+				div.adviceText(ng-if='showErrMessage') 
+					| Ehi amico, il mare oggi non promette nulla di buono. Se cerchi un attracco sicuro lo 	trovi qui
 			div
 				div
 					div.lighthouse
@@ -95,3 +95,8 @@ div
 						a(href="tel:+39 0434 1573057") +39 0434 1573057
 						span.backslash  //  
 						a(href="mailto:hello@molo17.com") hello@molo17.com
+
+				//-div
+					div.col-md-12
+						div.github.text
+							|EEEEEEEEEEEEEEEEE

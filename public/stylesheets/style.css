@@ -224,7 +224,7 @@ input {
   bottom: 0;
 }
 .wave-3 {
-  bottom: 110px;
+  bottom: 90px;
   background: url("images/common/wave_common.svg") -74px 0 repeat-x;
   z-index: 7;
   -webkit-animation-name: waveSlow;
@@ -240,8 +240,8 @@ input {
 .lighthouse {
   position: absolute;
   width: 290px;
-  height: 100%;
-  bottom: 190px;
+  height: 75%;
+  bottom: 170px;
   left: 50%;
   margin-left: -125px;
   background: url("images/common/lighthouse.svg") left bottom no-repeat;
@@ -324,7 +324,7 @@ input {
   position: absolute;
   display: block;
   width: 100%;
-  height: 130px;
+  height: 110px;
   bottom: 0;
   overflow: hidden;
   background-color: #fff;
@@ -353,6 +353,11 @@ input {
 }
 .bold {
   font-weight: bold;
+}
+.github {
+  position: absolute;
+  width: 100%;
+  height: 300px;
 }
 @-webkit-keyframes compass_animation {
   0% {
@@ -448,7 +453,7 @@ input {
 }
 .morning .wave-1,
 .afternoon .wave-1 {
-  bottom: 170px;
+  bottom: 150px;
   background: url("images/morning_afternoon/wave_3.svg") 0 0 repeat-x;
   z-index: 4;
   -webkit-animation-name: wave;
@@ -462,7 +467,7 @@ input {
 }
 .morning .wave-2,
 .afternoon .wave-2 {
-  bottom: 135px;
+  bottom: 115px;
   background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
   z-index: 6;
   -webkit-animation-name: waveMedium;
@@ -497,7 +502,7 @@ input {
 .merchant {
   position: absolute;
   width: 300px;
-  bottom: 185px;
+  bottom: 165px;
   right: 20px;
   padding-bottom: 17%;
   background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
@@ -507,6 +512,14 @@ input {
 }
 .merchant.backwards {
   background-position: bottom left;
+}
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .merchant {
+    background-size: 280px;
+    width: 140px;
+    height: 60px;
+    bottom: 155px;
+  }
 }
 .animate_merchant {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -653,7 +666,7 @@ input {
   background: url("images/day/background_day.png") bottom repeat-x;
 }
 .day .wave-1 {
-  bottom: 160px;
+  bottom: 150px;
   background: url("images/day/wave_3.svg") 0 0 repeat-x;
   z-index: 4;
   -webkit-animation-name: wave;
@@ -666,7 +679,7 @@ input {
   animation-timing-function: linear;
 }
 .day .wave-2 {
-  bottom: 140px;
+  bottom: 115px;
   background: url("images/day/wave_2.svg") -42px 0 repeat-x;
   z-index: 6;
   -webkit-animation-name: waveMedium;
@@ -836,7 +849,7 @@ input {
   position: absolute;
   width: 100px;
   height: 200px;
-  bottom: 185px;
+  bottom: 165px;
   right: 20px;
   background: url("images/day/sailboat.svg") bottom right no-repeat;
   background-size: 200px;
@@ -845,6 +858,13 @@ input {
 }
 .day .sailboat.backwards {
   background-position: bottom left;
+}
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .day .sailboat {
+    background-size: 80px;
+    width: 40px;
+    height: 60px;
+  }
 }
 .day .animate_sailboat {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -1056,7 +1076,7 @@ input {
   background: url("images/evening/background_evening.png") bottom repeat-x;
 }
 .evening .wave-1 {
-  bottom: 170px;
+  bottom: 150px;
   background: url("images/evening/wave_3.svg") 0 0 repeat-x;
   z-index: 4;
   -webkit-animation-name: wave;
@@ -1069,7 +1089,7 @@ input {
   animation-timing-function: linear;
 }
 .evening .wave-2 {
-  bottom: 135px;
+  bottom: 115px;
   background: url("images/evening/wave_2.svg") -42px 0 repeat-x;
   z-index: 6;
   -webkit-animation-name: waveMedium;
@@ -1105,7 +1125,7 @@ input {
   position: absolute;
   width: 230px;
   height: 70px;
-  bottom: 172px;
+  bottom: 152px;
   right: 20px;
   background: url("images/evening/yacht.svg") bottom right no-repeat;
   background-size: 460px;
@@ -1114,6 +1134,14 @@ input {
 }
 .speed-boat.backwards {
   background-position: bottom left;
+}
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .speed-boat {
+    background-size: 230px;
+    width: 115px;
+    height: 55px;
+    bottom: 155px;
+  }
 }
 .animate_speed-boat {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -1188,7 +1216,7 @@ input {
   background: url("images/night/background_night.png") bottom repeat-x;
 }
 .night .wave-1 {
-  bottom: 170px;
+  bottom: 150px;
   background: url("images/night/wave_3.svg") 0 0 repeat-x;
   z-index: 4;
   -webkit-animation-name: wave;
@@ -1201,7 +1229,7 @@ input {
   animation-timing-function: linear;
 }
 .night .wave-2 {
-  bottom: 135px;
+  bottom: 115px;
   background: url("images/night/wave_2.svg") -42px 0 repeat-x;
   z-index: 6;
   -webkit-animation-name: waveMedium;
@@ -1238,9 +1266,9 @@ input {
   width: 350px;
   height: 200px;
   padding-bottom: 17%;
-  bottom: 173px;
+  bottom: 153px;
   right: 20px;
-  background: url("images/night/ship.svg") bottom right no-repeat;
+  background: url("images/night/cruise_ship.svg") bottom right no-repeat;
   background-size: 700px;
   z-index: 6;
   hoverflow: hidden;
@@ -1248,9 +1276,20 @@ input {
 .cruise-ship.backwards {
   background-position: bottom left;
 }
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .cruise-ship {
+    background-size: 350px;
+    width: 175px;
+    height: 55px;
+    bottom: 155px;
+  }
+}
 .animate_cruise-ship {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.cruise_ship_lights {
+  color: #000;
 }
 @-webkit-keyframes star-animation {
   0% {

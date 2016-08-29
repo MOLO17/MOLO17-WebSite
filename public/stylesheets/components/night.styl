@@ -14,7 +14,7 @@
 	
 
 	.wave-1
-		bottom 170px
+		bottom 150px
 		background url('images/night/wave_3.svg') 0 0 repeat-x
 		z-index 4
 		
@@ -28,7 +28,7 @@
 		animation-timing-function linear
 
 	.wave-2
-		bottom 135px
+		bottom 115px
 		background url('images/night/wave_2.svg') -42px 0 repeat-x
 		z-index 6
 		
@@ -71,23 +71,32 @@
 		width 350px
 		height 200px
 		padding-bottom 17%
-		bottom 173px
+		bottom 153px
 		right 20px
-		background url('images/night/ship.svg') bottom right no-repeat
+		background url('images/night/cruise_ship.svg') bottom right no-repeat
 		background-size 700px
 		z-index 6
 		hoverflow hidden
 		
 		&.backwards
 			background-position bottom left
+			
+	@media only screen and (min-width 400px) and (max-width 1024px)
+		.cruise-ship
+			background-size 350px
+			width 175px
+			height 55px
+			bottom 155px
 
 		
 	.animate_cruise-ship
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 		
-
-
+	.cruise_ship_lights
+		color black
+	
+	
 //-----------------------------------STARS----------------------------------------------------		
 	
 	@-webkit-keyframes star-animation 

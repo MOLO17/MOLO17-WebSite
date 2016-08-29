@@ -14,7 +14,7 @@
 		background url('images/evening/background_evening.png') bottom repeat-x
 	
 	.wave-1
-		bottom 170px
+		bottom 150px
 		background url('images/evening/wave_3.svg') 0 0 repeat-x
 		z-index 4
 		
@@ -28,7 +28,7 @@
 		animation-timing-function linear
 
 	.wave-2
-		bottom 135px
+		bottom 115px
 		background url('images/evening/wave_2.svg') -42px 0 repeat-x
 		z-index 6
 		
@@ -71,7 +71,7 @@
 		position absolute
 		width 230px
 		height 70px
-		bottom 172px
+		bottom 152px
 		right 20px
 		background url('images/evening/yacht.svg') bottom right no-repeat
 		background-size 460px
@@ -80,6 +80,13 @@
 		
 		&.backwards
 			background-position bottom left
+			
+	@media only screen and (min-width 400px) and (max-width 1024px)
+		.speed-boat
+			background-size 230px
+			width 115px
+			height 55px
+			bottom 155px
 		
 	.animate_speed-boat
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
