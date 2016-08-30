@@ -163,7 +163,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 	function generateRandomSeagulls() {
 
-		var _seagulls = [".seagull.seagull_1",".seagull.seagull_2",".seagull.seagull_3",".cloud_1",".cloud_2"];
+		var _seagulls = [".seagull.seagull_1",".seagull.seagull_2",".seagull.seagull_3",".cloud_1",".cloud_2" /*, ".alien"*/];
 
 		for(var i=0;i<_seagulls.length;i++)
 			setTimeout(randomElementWithAnimation.bind(null,$(""+_seagulls[i])),((Math.random()*(Math.random() * 3)+1)*1000))
@@ -193,8 +193,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	//Sets the boat to animate depending on day moment
 	function whichBoat() {
 
-		//var moment = coordinatesService.getMoment();
-		var moment = 'night';
+		var moment = $scope.$parent.moment
 		var boat;
 
 		if(moment === 'morning')

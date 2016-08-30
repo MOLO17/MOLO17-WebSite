@@ -1,5 +1,5 @@
 
-var molo = angular.module('MoloWebsite', ['ngGeolocation', 'ngCookies']);
+var molo = angular.module('MoloWebsite', ['ngGeolocation', 'ngCookies', 'pascalprecht.translate']);
 
 
 molo.run(function(coordinatesService) {
@@ -8,7 +8,6 @@ molo.run(function(coordinatesService) {
 	function loadView() {
 
 		var hour = new Date().getHours();
-
 
 		if(hour >= 6 && hour <= 8) {
 			coordinatesService.setMoment('morning')

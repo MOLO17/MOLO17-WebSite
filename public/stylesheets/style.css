@@ -478,6 +478,7 @@ input {
   height: 80%;
   overflow: hidden;
   background: url("images/morning_afternoon/background_morning-afternoon.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .morning .wave-1,
 .afternoon .wave-1 {
@@ -530,7 +531,7 @@ input {
 .merchant {
   position: absolute;
   width: 300px;
-  bottom: 165px;
+  bottom: 155px;
   right: 20px;
   padding-bottom: 17%;
   background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
@@ -591,12 +592,12 @@ input {
   margin-left: -110px;
   margin-top: 150px;
   -webkit-animation-name: sun-animation;
-  -webkit-animation-duration: 35s;
+  -webkit-animation-duration: 25s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 3s;
   animation-name: sun-animation;
-  animation-duration: 35s;
+  animation-duration: 25s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-delay: 3s;
@@ -692,6 +693,7 @@ input {
   height: 90%;
   overflow: hidden;
   background: url("images/day/background_day.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .day .wave-1 {
   bottom: 150px;
@@ -1102,6 +1104,7 @@ input {
   height: 90%;
   overflow: hidden;
   background: url("images/evening/background_evening.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .evening .wave-1 {
   bottom: 150px;
@@ -1175,29 +1178,6 @@ input {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-.evening_stars {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.star_1 {
-  width: 100px;
-  height: 200px;
-  margin-left: 200px;
-  margin-top: 60px;
-  background: url("images/evening/star_1.gif") 0 0 no-repeat;
-  background-size: 100% auto;
-}
-.star_2 {
-  width: 100px;
-  height: 200px;
-  margin-left: 990px;
-  margin-top: -100px;
-  background: url("images/evening/star_2.gif") 0 0 no-repeat;
-  background-size: 100% auto;
-}
 @-moz-keyframes ship-basculant {
   0% {
     transform: translate3d(8%, 0, 0) rotateZ(6deg);
@@ -1242,6 +1222,7 @@ input {
   height: 95%;
   overflow: hidden;
   background: url("images/night/background_night.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .night .wave-1 {
   bottom: 150px;
@@ -1319,26 +1300,6 @@ input {
 .cruise_ship_lights {
   color: #000;
 }
-@-webkit-keyframes star-animation {
-  0% {
-    right: 250px;
-    top: -110px;
-  }
-  100% {
-    right: 2300px;
-    top: 400px;
-  }
-}
-@-ms-keyframes star-animation {
-  0% {
-    right: 250px;
-    top: -110px;
-  }
-  100% {
-    right: 2300px;
-    top: 400px;
-  }
-}
 .comet {
   position: absolute;
   width: 100px;
@@ -1359,6 +1320,37 @@ input {
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-delay: 5s;
+}
+@-webkit-keyframes star-animation {
+  0% {
+    right: 250px;
+    top: -110px;
+  }
+  100% {
+    right: 2300px;
+    top: 400px;
+  }
+}
+@-ms-keyframes star-animation {
+  0% {
+    right: 250px;
+    top: -110px;
+  }
+  100% {
+    right: 2300px;
+    top: 400px;
+  }
+}
+.alien {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 300px;
+  left: 400px;
+  background: url("images/night/ufo.svg") no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+  z-index: 10;
 }
 @-moz-keyframes ship-basculant {
   0% {

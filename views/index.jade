@@ -2,6 +2,8 @@ extends layout
 
 block headscript
 
+	title welcome page	
+
 	meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
 
 	//- if (environment == 'development')
@@ -31,6 +33,12 @@ block headscript
 
 	//- aggiungere seo meta
 
+	script(type='text/javascript').
+		function changeMoment(_moment) {
+
+			document.getElementById('momentInput').value = _moment;
+		}
+
 	
 	script(type="text/ng-template",id="/sections/morning-afternoon.html")
 		include components/sections/morning-afternoon
@@ -45,6 +53,8 @@ block headscript
 block bodycontent
 
 	div(ng-controller='indexController')
+
+		input(id='momentInput', type='text', style='display: none', ng-model='moment')
 
 		div(ng-switch on='moment')
 			div.morning(ng-switch-when='morning')

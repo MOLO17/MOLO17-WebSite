@@ -11,6 +11,7 @@
 		height 95%
 		overflow hidden
 		background url('images/night/background_night.png') bottom repeat-x
+		background-size auto 100%
 	
 
 	.wave-1
@@ -98,7 +99,29 @@
 	
 	
 //-----------------------------------STARS----------------------------------------------------		
-	
+
+	.comet
+		position absolute
+		width 100px
+		height 100px
+		top -110px
+		right 250px
+		background url('images/night/comet.gif') no-repeat
+		background-size contain
+		overflow hidden
+		transform rotate(30deg)
+		
+		-webkit-animation-name star-animation
+		-webkit-animation-duration 6s
+		-webkit-animation-iteration-count 1
+		-webkit-animation-timing-function linear
+		-webkit-animation-delay 5s
+		animation-name star-animation
+		animation-duration 6s
+		animation-iteration-count 1
+		animation-timing-function linear
+		animation-delay 5s
+
 	@-webkit-keyframes star-animation 
 		0%
 			right 250px 
@@ -123,28 +146,17 @@
 			right 2300px 
 			top 400px
 			
+//---------------------------ALIEN---------------------------------------
 
-	.comet
+	.alien
 		position absolute
-		width 100px
-		height 100px
-		top -110px
-		right 250px
-		background url('images/night/comet.gif') no-repeat
+		width 70px
+		height 70px
+		top 300px
+		left 400px
+		background url('images/night/ufo.svg') no-repeat
 		background-size contain
-		overflow hidden
-		transform rotate(30deg)
-		
-		-webkit-animation-name star-animation
-		-webkit-animation-duration 6s
-		-webkit-animation-iteration-count 1
-		-webkit-animation-timing-function linear
-		-webkit-animation-delay 5s
-		animation-name star-animation
-		animation-duration 6s
-		animation-iteration-count 1
-		animation-timing-function linear
-		animation-delay 5s
-
+		opacity 0.8
+		z-index 10
 
 	
