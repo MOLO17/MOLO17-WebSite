@@ -24,6 +24,7 @@
     "express": "^4.13.4",
     "express-cdn": "^0.2.9",
     "express-device": "^0.4.2",
+    "express-sslify": "^1.1.0",
     "grunt": "^1.0.1",
     "grunt-ng-annotate": "^2.0.2",
     "grunt-usemin": "^3.1.1",
