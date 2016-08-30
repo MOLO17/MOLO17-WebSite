@@ -41,5 +41,5 @@ var port = ((process.env.NODE_ENV.toLowerCase() == "development") ? 40000 : proc
 
 app.set('port',port)
 var server = app.listen(app.get('port'), function () {
-	console.log('Molo17 Website server listening on port ' + app.get('port'));
+	console.log('MOLO17 Website server listening on port ' + app.get('port'));
 });
