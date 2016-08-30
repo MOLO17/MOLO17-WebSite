@@ -2,6 +2,8 @@ extends layout
 
 block headscript
 
+	title welcome page	
+
 	meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
 
 	//- if (environment == 'development')
@@ -9,9 +11,7 @@ block headscript
 	!= CDN('/js/constants.js')
 
 	//- Components
-	//-!= CDN('/js/components/sections/morning.component.js')
 	!= CDN('/js/components/sections/day.component.js')
-	//-!= CDN('/js/components/sections/afternoon.component.js')
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
 	!= CDN('/js/components/sections/morning_afternoon.component.js')
@@ -31,6 +31,14 @@ block headscript
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
+	//- aggiungere seo meta
+
+	script(type='text/javascript').
+		function changeMoment(_moment) {
+
+			document.getElementById('momentInput').value = _moment;
+		}
+
 	
 	script(type="text/ng-template",id="/sections/morning-afternoon.html")
 		include components/sections/morning-afternoon
@@ -44,8 +52,7 @@ block headscript
 
 block bodycontent
 
-	div(ng-controller='indexController')
-
+	div.fullheight-container(ng-controller='indexController')
 		div(ng-switch on='moment')
 			div.morning(ng-switch-when='morning')
 				section-morning-afternoon()
@@ -57,3 +64,5 @@ block bodycontent
 				section-evening()
 			div.night(ng-switch-when='night')
 				section-night()
+
+	include components/footer

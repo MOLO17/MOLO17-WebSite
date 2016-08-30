@@ -51,44 +51,41 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 	
 	function findUserCoords() {
-		// coordinatesFactory.getCoords(function(err, result) {
-		// 	//$scope.showInfo = true;
+		coordinatesFactory.getCoords(function(err, result) {
 
-		// 	if(result) {
-		// 		findMoloWeather();
-		// 		coordinatesService.setCoords(result.latitude, result.longitude);
+			if(result) {
+				findMoloWeather();
+				coordinatesService.setCoords(result.latitude, result.longitude);
 				
-		// 		vm.userPositionDecimal = coordinatesService.getCoords();
-		// 		//console.log(vm.userPositionDecimal);
+				vm.userPositionDecimal = coordinatesService.getCoords();
+				//console.log(vm.userPositionDecimal);
 
-		// 		vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
-		// 				vm.userPositionDecimal.longitude) * 0.54);
-		// 		//console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
+				vm.linearDistanceMiles = Math.ceil(coordinatesService.distance(vm.userPositionDecimal.latitude, 
+						vm.userPositionDecimal.longitude) * 0.54);
+				//console.log('Distance: ' + vm.linearDistanceMiles + ' nautic miles');
 
-		// 		vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
-		// 		vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
-		// 		//console.log(vm.userPositionDMS)
+				vm.userPositionDMS.latitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.latitude),
+				vm.userPositionDMS.longitude = coordinatesService.decimalToDMS(vm.userPositionDecimal.longitude)
+				//console.log(vm.userPositionDMS)
 
-		// 		$scope.showCompass = true;
-		// 		vm.requestMessage = 'Caricamento ..';
-		// 		//$('.company_logo').animate({left: 50}, 1500, "linear")
+				$scope.showCompass = true;
+				vm.requestMessage = 'Caricamento ..';
 
-		// 		//Delay foo compass visualization
-		// 		$timeout(function() {
-		// 			$scope.showCompass = !$scope.showCompass
-		// 			$scope.showText = true;
-		// 		}, 2500)
+				//Delay foo compass visualization
+				$timeout(function() {
+					$scope.showCompass = !$scope.showCompass
+					$scope.showText = true;
+				}, 2500)
 				
-		// 	} else {
-		// 		console.log(err)
-		// 		vm.errorMessage = err.message;
-		// 		$scope.showCompass = false;
-		// 		$scope.showErrMessage = true;
-		// 		//$('.company_logo').animate({left: 50}, 1500, "linear")
-		// 	}
-		// })
+			} else {
+				console.log(err)
+				vm.errorMessage = err.message;
+				$scope.showCompass = false;
+				$scope.showErrMessage = true;
+			}
+		})
 	}
-	findUserCoords();
+	//findUserCoords();
 	
 	
 //------------------------------------ANIMATIONS LOGIC-------------------------------
@@ -166,7 +163,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 	function generateRandomSeagulls() {
 
-		var _seagulls = [".seagull.seagull_1",".seagull.seagull_2",".seagull.seagull_3",".cloud_1",".cloud_2"];
+		var _seagulls = [".seagull.seagull_1",".seagull.seagull_2",".seagull.seagull_3",".cloud_1",".cloud_2" /*, ".alien"*/];
 
 		for(var i=0;i<_seagulls.length;i++)
 			setTimeout(randomElementWithAnimation.bind(null,$(""+_seagulls[i])),((Math.random()*(Math.random() * 3)+1)*1000))
@@ -196,8 +193,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	//Sets the boat to animate depending on day moment
 	function whichBoat() {
 
-		//var moment = coordinatesService.getMoment();
-		var moment = 'evening';
+		var moment = $scope.$parent.moment
 		var boat;
 
 		if(moment === 'morning')
@@ -218,9 +214,10 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 
 	whichBoat();
 
+
 //----------------------------------------------------------------------
 
-	// console.log("\n                                                                                    \n                                                                                    \n                                                                                    \n         +####          '###            ###    ###     # '##      ############:     \n       :#######+       ;####            ###   ###     ###'##      ############      \n      .#########+     :#####           :##:   ###     ###'##      ###########+      \n      ###:    ###    ,######           ###   ;##,      # '##              ###       \n     .##'     .##+  ,###,###          :##:   ###         '##              ###       \n     +##       ### .###: ###          ###   .##+         '##             ###.       \n     ###       ### ###;  ###          ###   ###          '##             ###        \n     ###       ######;   ###         :##:   ###          '##            ;##;        \n     ###       #####'    ###         ###   +##           '##            ###         \n     ###       ####+     ###        :##:   ###           '##           .###         \n     ###       ###+      ###        ###   :##;           '##           ###          \n     ###       ###       ###        ###   ###            '##           ###          \n     ###       ###       ###       ###    ###            '##          ###,          \n     ###       ###       ###       ###   ###             '##          ###           \n     ###       ###       ###      :##:   ###             '##         :##'           \n     ###       ###       ###      ###   '##.             '##         ###            \n     ###       ###       ###     :##:   ###              '##         ###            \n     ###       ###       ###     ###   ,##'              '##        ###             \n     ###       ###       ###     ###   ###               '##        ###             \n     ###       ###       ###    ###    ###               '##       '##:             \n     ###       ###       ###    ###   ###                '##       ###              \n     ###       ###       ###   :##:   ###                '##      ,##+              \n     ###       ###       ###   ###   ;##:                '##      ###               \n                                                                                    \n                                                                                    \n                                                                                    \n                                                                                    ")
+
 	window.console && console.log("%c\n   *******        *****            ***   ****    ******     ************* \n ***********     ******           ****  ****    *******     ************* \n*************  ********          ****  *****    *******     ************  \n****     **************         ****  *****        ****            ****   \n***      ********  ****        *****  ****         ****           *****   \n***      ******    ****       *****  ****          ****          *****    \n***      ****      ****       ****  ****           ****         *****     \n***      ****      ****      ****  ****            ****         ****      \n***      ****      ****     ****  *****            ****        ****       \n***      ****      ****    ****  *****             ****       ****        \n***      ****      ****   *****  ****              ****      *****        \n***      ****      ****  *****  ****               ****     *****         \n***       ***      ****  ****   ***                 ***     ****          \n                                                                          \n", "font-family: Menlo, monospace");
 	
 	console.log("We're hiring! If you reach this point send a cv to cv@molo17.com")

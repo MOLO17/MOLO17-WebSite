@@ -1,10 +1,10 @@
 
 .evening
-	//background url('images/evening/background_evening.png') 0 0 repeat-x
+	position absolute
 	width 100%
 	height 100%
 	overflow hidden
-	position absolute
+	
 	
 	.sky
 		position absolute
@@ -12,11 +12,14 @@
 		height 90%
 		overflow hidden
 		background url('images/evening/background_evening.png') bottom repeat-x
+		background-size auto 100%
 	
+
 	.wave-1
-		z-index 4
-		bottom 170px
+		bottom 138px
 		background url('images/evening/wave_3.svg') 0 0 repeat-x
+		z-index 4
+		
 		-webkit-animation-name wave
 		-webkit-animation-duration 3s
 		-webkit-animation-iteration-count infinite
@@ -27,9 +30,10 @@
 		animation-timing-function linear
 
 	.wave-2
-		z-index 6
-		bottom 135px
+		bottom 115px
 		background url('images/evening/wave_2.svg') -42px 0 repeat-x
+		z-index 6
+		
 		-webkit-animation-name waveMedium
 		-webkit-animation-duration 2.5s
 		-webkit-animation-iteration-count infinite
@@ -47,6 +51,12 @@
 			-webkit-transform translate3d(8%,0,0) rotateZ(6deg)
 		100%
 			-webkit-transform translate3d(-8%,0,0) rotateZ(-6deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform translate3d(8%,0,0) rotateZ(6deg)
+		100%
+			-ms-transform translate3d(-8%,0,0) rotateZ(-6deg)
 
 	@keyframes ship-basculant
 		0%
@@ -60,10 +70,10 @@
 		height 100%
 			
 	.speed-boat
+		position absolute
 		width 230px
 		height 70px
-		position absolute
-		bottom 172px
+		bottom 130px
 		right 20px
 		background url('images/evening/yacht.svg') bottom right no-repeat
 		background-size 460px
@@ -72,6 +82,13 @@
 		
 		&.backwards
 			background-position bottom left
+			
+	// @media only screen and (min-width 400px) and (max-width 1024px)
+	// 	.speed-boat
+	// 		background-size 230px
+	// 		width 115px
+	// 		height 55px
+	// 		bottom 155px
 		
 	.animate_speed-boat
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
@@ -80,7 +97,7 @@
 
 	//-----------------------------------STARS----------------------------------------------------		
 
-	.stars
+	/*.evening_stars
 		display block
 		position absolute
 		width 100%
@@ -88,18 +105,17 @@
 		overflow hidden
 		
 	.star_1
-		background url('images/evening/star_1.gif') 0 0 no-repeat
-		background-size 100% auto
-		margin-left 200px
-		margin-top 60px
 		width 100px
 		height 200px
+		margin-left 200px
+		margin-top 60px
+		background url('images/evening/star_1.gif') 0 0 no-repeat
+		background-size 100% auto
 
-		
 	.star_2
 		width 100px
 		height 200px
-		background url('images/evening/star_2.gif') 0 0 no-repeat
-		background-size 100% auto
 		margin-left 990px
 		margin-top -100px
+		background url('images/evening/star_2.gif') 0 0 no-repeat
+		background-size 100% auto*/

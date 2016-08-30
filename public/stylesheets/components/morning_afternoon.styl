@@ -1,22 +1,25 @@
 
 .morning, .afternoon
+	position absolute
+	overflow hidden
 	width 100%
 	height 100%
-	overflow hidden
-	position absolute
 	
+
 	.sky
 		position absolute
 		width 100%
 		height 80%
 		overflow hidden
 		background url('images/morning_afternoon/background_morning-afternoon.png') bottom repeat-x
+		background-size auto 100%
 	
 
 	.wave-1
-		z-index 4
-		bottom 170px
+		bottom 138px
 		background url('images/morning_afternoon/wave_3.svg') 0 0 repeat-x
+		z-index 4
+		
 		-webkit-animation-name wave
 		-webkit-animation-duration 3s
 		-webkit-animation-iteration-count infinite
@@ -27,9 +30,10 @@
 		animation-timing-function linear
 
 	.wave-2
-		z-index 6
-		bottom 135px
+		bottom 115px
 		background url('images/morning_afternoon/wave_2.svg') -42px 0 repeat-x
+		z-index 6
+		
 		-webkit-animation-name waveMedium
 		-webkit-animation-duration 2.5s
 		-webkit-animation-iteration-count infinite
@@ -46,6 +50,12 @@
 			-webkit-transform rotateZ(4deg)
 		100%
 			-webkit-transform rotateZ(-4deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform rotateZ(4deg)
+		100%
+			-ms-transform rotateZ(-4deg)
 
 	@keyframes ship-basculant
 		0%
@@ -59,18 +69,25 @@
 		height 100%
 			
 	.merchant
+		position absolute
 		width 300px
+		bottom 130px
+		right 20px
+		padding-bottom 17%
 		background url('images/morning_afternoon/merchant.svg') bottom right no-repeat
 		background-size 600px
-		padding-bottom 17%
-		position absolute
-		bottom 185px
-		right 20px
 		z-index 6
 		hoverflow hidden
 			
 		&.backwards
 			background-position bottom left
+			
+	// @media only screen and (min-width 400px) and (max-width 1024px)
+	// 	.merchant
+	// 		background-size 280px
+	// 		width 140px
+	// 		height 60px
+	// 		bottom 155px
 		
 	.animate_merchant
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
@@ -78,16 +95,24 @@
 		
 
 //----------------------------------SUN---------------------------------------------------
-	
-	@keyframes sun-animation
+			
+	@-webkit-keyframes sun-animation
 	
 		0%
-			transform rotateZ(100deg)
-			background-color red
-		100%
-			transform rotateZ(0deg)
+			-webkit-transform rotateZ(0deg)
 			background-color yellow
-			
+		100%
+			-webkit-transform rotateZ(100deg)
+			background-color red
+
+	@-ms-keyframes sun-animation
+	
+		0%
+			-ms-transform rotateZ(0deg)
+			background-color yellow
+		100%
+			-ms-transform rotateZ(100deg)
+			background-color red
 
 	@keyframes sun-animation
 	
@@ -100,11 +125,11 @@
 
 
 	.sun
-		left 0
-		display block
 		position absolute
+		display block
 		width 110px
 		height 110px
+		left 0
 		transform-origin 0 400px
 		background-color yellow
 		-webkit-border-radius 50%
@@ -114,12 +139,12 @@
 		margin-top 150px
 		
 		-webkit-animation-name sun-animation
-		-webkit-animation-duration 35s
+		-webkit-animation-duration 25s
 		-webkit-animation-iteration-count 1
 		-webkit-animation-timing-function linear
 		-webkit-animation-delay 3s
 		animation-name sun-animation
-		animation-duration 35s
+		animation-duration 25s
 		animation-iteration-count 1
 		animation-timing-function linear
 		animation-delay 3s

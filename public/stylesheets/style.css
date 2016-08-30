@@ -1,3 +1,6 @@
+* {
+  -webkit-font-smoothing: antialiased !important;
+}
 input,
 textarea {
   -webkit-touch-callout: default;
@@ -20,16 +23,11 @@ textarea {
   user-zoom: fixed !important;
 }
 html {
-  overflow: hidden !important;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-}
-@media only screen and (max-width: 1024px), screen and (max-height: 768px) {
-  html {
-    overflow: hidden !important;
-  }
 }
 body {
   background-color: #fff;
@@ -37,11 +35,11 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: roboto;
 }
 input {
   -webkit-border-radius: 0px;
@@ -59,6 +57,14 @@ input {
     -webkit-transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
   }
 }
+@-ms-keyframes wave {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
 @-webkit-keyframes waveMedium {
   0% {
     -webkit-transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
@@ -67,12 +73,28 @@ input {
     -webkit-transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
   }
 }
+@-ms-keyframes waveMedium {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg);
+  }
+}
 @-webkit-keyframes waveSlow {
   0% {
     -webkit-transform: rotateZ(0deg) translate3d(0, 3%, 0) rotateZ(0deg);
   }
   100% {
     -webkit-transform: rotateZ(360deg) translate3d(0, 3%, 0) rotateZ(-360deg);
+  }
+}
+@-ms-keyframes waveSlow {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 3%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 3%, 0) rotateZ(-360deg);
   }
 }
 @-webkit-keyframes waveMobile {
@@ -92,6 +114,23 @@ input {
     -webkit-transform: translate3d(0px, 0px, 0);
   }
 }
+@-ms-keyframes waveMobile {
+  0% {
+    -ms-transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    -ms-transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    -ms-transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    -ms-transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    -ms-transform: translate3d(0px, 0px, 0);
+  }
+}
 @-webkit-keyframes waveMediumMobile {
   0% {
     -webkit-transform: translate3d(0px, 0px, 0);
@@ -107,6 +146,23 @@ input {
   }
   100% {
     -webkit-transform: translate3d(0px, 0px, 0);
+  }
+}
+@-ms-keyframes waveMediumMobile {
+  0% {
+    -ms-transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    -ms-transform: translate3d(10px, 10px, 0);
+  }
+  50% {
+    -ms-transform: translate3d(20px, 20px, 0);
+  }
+  75% {
+    -ms-transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    -ms-transform: translate3d(0px, 0px, 0);
   }
 }
 @-webkit-keyframes waveSlowMobile {
@@ -126,29 +182,46 @@ input {
     -webkit-transform: translate3d(0px, 0px, 0);
   }
 }
+@-ms-keyframes waveSlowMobile {
+  0% {
+    -ms-transform: translate3d(0px, 0px, 0);
+  }
+  25% {
+    -ms-transform: translate3d(15px, 15px, 0);
+  }
+  50% {
+    -ms-transform: translate3d(30px, 30px, 0);
+  }
+  75% {
+    -ms-transform: translate3d(15px, 15px, 0);
+  }
+  100% {
+    -ms-transform: translate3d(0px, 0px, 0);
+  }
+}
 .waves {
+  position: absolute;
   display: block;
+  overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 250px;
   padding: 0;
   margin: 0;
-  position: absolute;
   left: 0;
-  overflow: hidden;
-  top: 0;
+  bottom: 0;
 }
 .wave {
+  position: absolute;
   display: block;
   width: 250%;
-  height: 83px;
-  position: absolute;
+  height: 60px;
   left: -100%;
   bottom: 0;
 }
 .wave-3 {
-  z-index: 7;
-  bottom: 110px;
+  bottom: 90px;
   background: url("images/common/wave_common.svg") -74px 0 repeat-x;
+  z-index: 7;
   -webkit-animation-name: waveSlow;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
@@ -160,20 +233,19 @@ input {
 }
 /*------------------------------------LIGHTHOUSE--------------------------------------------*/
 .lighthouse {
-  z-index: 5;
-  width: 290px;
-  height: 100%;
-  background: url("images/common/lighthouse.svg") left bottom no-repeat;
-  background-size: 100% auto;
   position: absolute;
-  bottom: 190px;
+  width: 290px;
+  height: 75%;
+  bottom: 140px;
   left: 50%;
   margin-left: -125px;
+  background: url("images/common/lighthouse.svg") left bottom no-repeat;
+  background-size: 100% auto;
+  z-index: 5;
 }
-@media only screen and (min-width: 400px) and (max-width: 1024px) {
-  .lighthouse {
-    width: 80px;
-    margin-left: -40px;
+@media only screen and (max-width: 1024px) {
+  html {
+    overflow-y: auto;
   }
   .seagulls,
   .cloud_1,
@@ -185,39 +257,28 @@ input {
     top: 15px !important;
   }
 }
-@media (max-width: 400px) {
-  .lighthouse {
-    width: 200px;
-    height: 250px;
-    margin-left: -100px;
-  }
-}
 /*---------------------------------------------------------------------------------*/
 .company_logo {
-  background: url("images/common/logo_2.svg") no-repeat;
-  background-size: 100% auto;
+  position: absolute;
   width: 200px;
   height: 200px;
-  position: absolute;
   left: 45px;
   top: 45px;
   color: #f00;
+  background: url("images/common/logo_2.svg") no-repeat;
+  background-size: 100% auto;
   z-index: 2;
 }
 /*---------------------------------------INFO------------------------------------------------*/
 .info {
-  z-index: 6;
-  opacity: 0.6;
   position: absolute;
   width: 250px;
   height: 280px;
-  background-color: #f00;
   top: 45px;
   right: 30px;
   margin-left: -175px;
   text-align: center;
   background-color: #fff;
-  font-family: roboto;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -225,6 +286,8 @@ input {
   border-radius: 30px;
   -o-border-radius: 30px;
   -ms-border-radius: 30px;
+  z-index: 6;
+  opacity: 0.6;
 }
 .title {
   margin-top: 15px;
@@ -242,25 +305,23 @@ input {
   font-weight: bold;
   text-transform: uppercase;
 }
-/*---------------------------------------------------------------------------------------*/
+/*-------------------------------------------FOOTER--------------------------------------------*/
 .footer {
-  z-index: 9;
   position: absolute;
   display: block;
   width: 100%;
-  height: 130px;
-  bottom: 0;
+  height: 100px;
+  bottom: 0px;
   overflow: hidden;
   background-color: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 15px;
+  z-index: 9;
 }
-/*---------------------------------------TEXT---------------------------------------------*/
 .text {
   color: #000;
-  font-family: roboto;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -271,14 +332,60 @@ input {
 .secondText {
   font-size: 11px;
 }
-.backslash {
+.slash {
   color: #f00;
 }
 .bold {
   font-weight: bold;
 }
 a {
-  color: #e30613 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+  -webkit-transition: border-color 0.2s linear;
+  -moz-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  border-bottom: 1px solid transparent;
+}
+a:hover {
+  border-bottom-color: #e30613;
+}
+.git {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  font-size: 11px;
+}
+.company-infos {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  font-size: 11px;
+  background-color: #e30613;
+  color: #fff;
+  line-height: 20px;
+  border-top: thin solid #000;
+}
+.company-infos .slash {
+  color: #000 !important;
+}
+.company-infos img,
+.company-infos svg {
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mooring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  right: 480px;
+  bottom: 152px;
+  background: url("images/common/mooring.svg") no-repeat;
+  background-size: contain;
+  z-index: 4;
 }
 @-webkit-keyframes compass_animation {
   0% {
@@ -297,30 +404,47 @@ a {
     -webkit-transform: rotateZ(0deg);
   }
 }
+@-ms-keyframes compass_animation {
+  0% {
+    -ms-transform: rotateZ(0deg);
+  }
+  25% {
+    -ms-transform: rotateZ(40deg);
+  }
+  50% {
+    -ms-transform: rotateZ(0deg);
+  }
+  75% {
+    -ms-transform: rotateZ(-40deg);
+  }
+  100% {
+    -ms-transform: rotateZ(0deg);
+  }
+}
 .compass_container {
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute;
 }
 .compass_pointer {
-  background: url("images/common/compass_2_better.svg") no-repeat;
-  background-size: contain;
+  position: absolute;
   width: 200px;
   height: 200px;
   top: 50px;
   margin-left: 25px;
-  position: absolute;
+  background: url("images/common/compass_2_better.svg") no-repeat;
+  background-size: contain;
   z-index: 0;
 }
 .compass_dial {
-  background: url("images/common/compass_1_better.svg") no-repeat;
-  background-size: contain;
+  position: absolute;
   width: 200px;
   height: 200px;
   top: 50px;
   margin-left: 25px;
-  position: absolute;
+  background: url("images/common/compass_1_better.svg") no-repeat;
+  background-size: contain;
   z-index: 5;
   -webkit-animation-name: compass_animation;
   -webkit-animation-duration: 2s;
@@ -339,13 +463,92 @@ a {
   margin-top: 20px;
   font-weight: bold;
 }
+/* As required, customize view to have footer on scroll in screen that are lower than 1024px */
+@media only screen and (min-width: 801px) {
+  body,
+  html {
+    overflow: hidden;
+  }
+  .company-infos a {
+    color: #fff !important;
+  }
+  .company-infos a:hover {
+    border-bottom-color: #fff;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .company-infos {
+    position: relative !important;
+    bottom: auto !important;
+    background-color: #fff !important;
+    height: auto !important;
+    line-height: normal !important;
+    border: 0px !important;
+    line-height: 16px !important;
+    color: #e30613;
+  }
+  .company-infos .slash {
+    color: #e30613 !important;
+  }
+  .mobile-centered {
+    text-align: center;
+  }
+  .footer {
+    height: auto !important;
+  }
+  .git {
+    position: relative;
+    bottom: auto !important;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px !important;
+  }
+  .day .sky,
+  .evening .sky,
+  .morning .sky,
+  .afternoon .sky,
+  .night .sky {
+    height: 100% !important;
+  }
+  .footer {
+    position: relative !important;
+    bottom: auto;
+  }
+  .fullheight-container {
+    height: 100%;
+    overflow: hidden !important;
+    display: block;
+  }
+  .lighthouse {
+    bottom: 50px !important;
+  }
+  .wave-1 {
+    bottom: 55px !important;
+  }
+  .wave-2 {
+    bottom: 25px !important;
+  }
+  .wave-3 {
+    bottom: 0px !important;
+  }
+  .sailboat {
+    bottom: 55px !important;
+  }
+  .speed-boat,
+  .merchant {
+    bottom: 40px !important;
+  }
+  .cruise-ship {
+    bottom: 42px !important;
+  }
+}
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 .morning,
 .afternoon {
+  position: absolute;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  position: absolute;
 }
 .morning .sky,
 .afternoon .sky {
@@ -354,12 +557,13 @@ a {
   height: 80%;
   overflow: hidden;
   background: url("images/morning_afternoon/background_morning-afternoon.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .morning .wave-1,
 .afternoon .wave-1 {
-  z-index: 4;
-  bottom: 170px;
+  bottom: 138px;
   background: url("images/morning_afternoon/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
@@ -371,9 +575,9 @@ a {
 }
 .morning .wave-2,
 .afternoon .wave-2 {
-  z-index: 6;
-  bottom: 135px;
+  bottom: 115px;
   background: url("images/morning_afternoon/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -391,18 +595,26 @@ a {
     -webkit-transform: rotateZ(-4deg);
   }
 }
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: rotateZ(4deg);
+  }
+  100% {
+    -ms-transform: rotateZ(-4deg);
+  }
+}
 .merchant_container {
   width: 100%;
   height: 100%;
 }
 .merchant {
+  position: absolute;
   width: 300px;
+  bottom: 130px;
+  right: 20px;
+  padding-bottom: 17%;
   background: url("images/morning_afternoon/merchant.svg") bottom right no-repeat;
   background-size: 600px;
-  padding-bottom: 17%;
-  position: absolute;
-  bottom: 185px;
-  right: 20px;
   z-index: 6;
   hoverflow: hidden;
 }
@@ -413,12 +625,32 @@ a {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
+@-webkit-keyframes sun-animation {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    -webkit-transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+}
+@-ms-keyframes sun-animation {
+  0% {
+    -ms-transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    -ms-transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+}
 .sun {
-  left: 0;
-  display: block;
   position: absolute;
+  display: block;
   width: 110px;
   height: 110px;
+  left: 0;
   transform-origin: 0 400px;
   background-color: #ff0;
   -webkit-border-radius: 50%;
@@ -431,12 +663,12 @@ a {
   margin-left: -110px;
   margin-top: 150px;
   -webkit-animation-name: sun-animation;
-  -webkit-animation-duration: 35s;
+  -webkit-animation-duration: 25s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 3s;
   animation-name: sun-animation;
-  animation-duration: 35s;
+  animation-duration: 25s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-delay: 3s;
@@ -475,46 +707,6 @@ a {
   }
   100% {
     transform: rotateZ(-4deg);
-  }
-}
-@-moz-keyframes sun-animation {
-  0% {
-    transform: rotateZ(100deg);
-    background-color: #f00;
-  }
-  100% {
-    transform: rotateZ(0deg);
-    background-color: #ff0;
-  }
-}
-@-webkit-keyframes sun-animation {
-  0% {
-    transform: rotateZ(100deg);
-    background-color: #f00;
-  }
-  100% {
-    transform: rotateZ(0deg);
-    background-color: #ff0;
-  }
-}
-@-o-keyframes sun-animation {
-  0% {
-    transform: rotateZ(100deg);
-    background-color: #f00;
-  }
-  100% {
-    transform: rotateZ(0deg);
-    background-color: #ff0;
-  }
-}
-@keyframes sun-animation {
-  0% {
-    transform: rotateZ(100deg);
-    background-color: #f00;
-  }
-  100% {
-    transform: rotateZ(0deg);
-    background-color: #ff0;
   }
 }
 @-moz-keyframes sun-animation {
@@ -558,10 +750,10 @@ a {
   }
 }
 .day {
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute;
 /*----------------------------------CLOUDS-----------------------------------------*/
 /*--------------------------SHIP---------------------------------------*/
 /*-----------------------------------------BIRDS---------------------------------------------------*/
@@ -572,24 +764,25 @@ a {
   height: 90%;
   overflow: hidden;
   background: url("images/day/background_day.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .day .wave-1 {
-  z-index: 4;
-  bottom: 160px;
+  bottom: 145px;
   background: url("images/day/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
-  -webkit-animation-duration: 5s;
+  -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   animation-name: wave;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 .day .wave-2 {
-  z-index: 6;
-  bottom: 140px;
+  bottom: 115px;
   background: url("images/day/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 3.5s;
   -webkit-animation-iteration-count: infinite;
@@ -607,12 +800,28 @@ a {
     -webkit-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
   }
 }
+@-ms-keyframes cloud {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
+  }
+}
 @-webkit-keyframes cloud_inverse {
   0% {
     -webkit-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
   }
   100% {
     -webkit-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
+  }
+}
+@-ms-keyframes cloud_inverse {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
   }
 }
 @-webkit-keyframes cloudSmall {
@@ -623,16 +832,24 @@ a {
     -webkit-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
   }
 }
+@-ms-keyframes cloudSmall {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
+  }
+}
 .day .cloud_1 {
-  background: url("images/day/cloud_final.svg") 0 0 no-repeat;
-  background-size: 100% auto;
   position: absolute;
   left: 50%;
+  background: url("images/day/cloud_final.svg") 0 0 no-repeat;
+  background-size: 100% auto;
 }
 .day .cloud_2 {
+  position: absolute;
   background: url("images/day/cloud-2_final.svg") 0 0 no-repeat;
   background-size: 100% auto;
-  position: absolute;
 }
 .day .section-intro__cloud_1 {
   width: 80px;
@@ -717,15 +934,23 @@ a {
     -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
   }
 }
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    -ms-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
 .day .ship_container {
   width: 100%;
   height: 100%;
 }
 .day .sailboat {
+  position: absolute;
   width: 100px;
   height: 200px;
-  position: absolute;
-  bottom: 185px;
+  bottom: 145px;
   right: 20px;
   background: url("images/day/sailboat.svg") bottom right no-repeat;
   background-size: 200px;
@@ -735,21 +960,29 @@ a {
 .day .sailboat.backwards {
   background-position: bottom left;
 }
+@media only screen and (max-width: 400px) {
+  .day .sailboat {
+    background-size: 140px;
+    width: 70px;
+    height: 100px;
+    bottom: 140px;
+  }
+}
 .day .animate_sailboat {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .day .seagulls {
+  position: absolute;
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
-  position: absolute;
   bottom: 0;
   overflow: hidden;
 }
 .day .seagull {
-  display: block;
   position: absolute;
+  display: block;
 }
 .day .seagull.animate-transition {
   -webkit-transition: transform 12s linear;
@@ -757,25 +990,25 @@ a {
   transition: transform 12s linear;
 }
 .day .seagull_1 {
-  background: url("images/day/seagull_1.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 120px;
   bottom: 310px;
+  background: url("images/day/seagull_1.svg") 0 0 no-repeat;
 }
 .day .seagull_2 {
-  background: url("images/day/seagull_2.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 180px;
   bottom: 290px;
+  background: url("images/day/seagull_2.svg") 0 0 no-repeat;
 }
 .day .seagull_3 {
-  background: url("images/day/seagull_3.svg") 0 0 no-repeat;
   width: 45px;
   height: 83px;
   left: 190px;
   bottom: 340px;
+  background: url("images/day/seagull_3.svg") 0 0 no-repeat;
 }
 @-moz-keyframes cloud {
   0% {
@@ -908,28 +1141,34 @@ a {
 @media only screen and (max-width: 1024px) {
   .wave-1 {
     -webkit-animation-name: waveMobile !important;
+    -ms-animation-name: waveMobile !important;
     animation-name: waveMobile !important;
     -webkit-animation-duration: 4s !important;
+    -ms-animation-duration: 4s !important;
     animation-duration: 4s !important;
   }
   .wave-2 {
     -webkit-animation-name: waveMediumMobile !important;
+    -ms-animation-name: waveMediumMobile !important;
     animation-name: waveMediumMobile !important;
     -webkit-animation-duration: 6s !important;
+    -ms-animation-duration: 6s !important;
     animation-duration: 6s !important;
   }
   .wave-3 {
     -webkit-animation-duration: 5s !important;
+    -ms-animation-duration: 5s !important;
     animation-duration: 5s !important;
     -webkit-animation-name: waveSlowMobile !important;
+    -ms-animation-name: waveSlowMobile !important;
     animation-name: waveSlowMobile !important;
   }
 }
 .evening {
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute;
 }
 .evening .sky {
   position: absolute;
@@ -937,11 +1176,12 @@ a {
   height: 90%;
   overflow: hidden;
   background: url("images/evening/background_evening.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .evening .wave-1 {
-  z-index: 4;
-  bottom: 170px;
+  bottom: 138px;
   background: url("images/evening/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
@@ -952,9 +1192,9 @@ a {
   animation-timing-function: linear;
 }
 .evening .wave-2 {
-  z-index: 6;
-  bottom: 135px;
+  bottom: 115px;
   background: url("images/evening/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -972,15 +1212,23 @@ a {
     -webkit-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
   }
 }
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    -ms-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
+}
 .speed-boat_container {
   width: 100%;
   height: 100%;
 }
 .speed-boat {
+  position: absolute;
   width: 230px;
   height: 70px;
-  position: absolute;
-  bottom: 172px;
+  bottom: 130px;
   right: 20px;
   background: url("images/evening/yacht.svg") bottom right no-repeat;
   background-size: 460px;
@@ -993,29 +1241,6 @@ a {
 .animate_speed-boat {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-.stars {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.star_1 {
-  background: url("images/evening/star_1.gif") 0 0 no-repeat;
-  background-size: 100% auto;
-  margin-left: 200px;
-  margin-top: 60px;
-  width: 100px;
-  height: 200px;
-}
-.star_2 {
-  width: 100px;
-  height: 200px;
-  background: url("images/evening/star_2.gif") 0 0 no-repeat;
-  background-size: 100% auto;
-  margin-left: 990px;
-  margin-top: -100px;
 }
 @-moz-keyframes ship-basculant {
   0% {
@@ -1050,10 +1275,10 @@ a {
   }
 }
 .night {
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute;
 }
 .night .sky {
   position: absolute;
@@ -1061,11 +1286,12 @@ a {
   height: 95%;
   overflow: hidden;
   background: url("images/night/background_night.png") bottom repeat-x;
+  background-size: auto 100%;
 }
 .night .wave-1 {
-  z-index: 4;
-  bottom: 170px;
+  bottom: 138px;
   background: url("images/night/wave_3.svg") 0 0 repeat-x;
+  z-index: 4;
   -webkit-animation-name: wave;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
@@ -1076,9 +1302,9 @@ a {
   animation-timing-function: linear;
 }
 .night .wave-2 {
-  z-index: 6;
-  bottom: 135px;
+  bottom: 115px;
   background: url("images/night/wave_2.svg") -42px 0 repeat-x;
+  z-index: 6;
   -webkit-animation-name: waveMedium;
   -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
@@ -1096,19 +1322,27 @@ a {
     -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
   }
 }
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    -ms-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
+}
 .cruise-ship_container {
   width: 100%;
   height: 100%;
 }
 .cruise-ship {
+  position: absolute;
   width: 350px;
   height: 200px;
-  background: url("images/night/ship.svg") bottom right no-repeat;
-  background-size: 700px;
   padding-bottom: 17%;
-  position: absolute;
-  bottom: 173px;
+  bottom: 132px;
   right: 20px;
+  background: url("images/night/cruise_ship.svg") bottom right no-repeat;
+  background-size: 700px;
   z-index: 6;
   hoverflow: hidden;
 }
@@ -1119,15 +1353,18 @@ a {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
+.cruise_ship_lights {
+  color: #000;
+}
 .comet {
   position: absolute;
   width: 100px;
   height: 100px;
-  overflow: hidden;
-  background: url("images/night/comet.gif") no-repeat;
-  background-size: contain;
   top: -110px;
   right: 250px;
+  background: url("images/night/comet.gif") no-repeat;
+  background-size: contain;
+  overflow: hidden;
   transform: rotate(30deg);
   -webkit-animation-name: star-animation;
   -webkit-animation-duration: 6s;
@@ -1139,6 +1376,37 @@ a {
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-delay: 5s;
+}
+@-webkit-keyframes star-animation {
+  0% {
+    right: 250px;
+    top: -110px;
+  }
+  100% {
+    right: 2300px;
+    top: 400px;
+  }
+}
+@-ms-keyframes star-animation {
+  0% {
+    right: 250px;
+    top: -110px;
+  }
+  100% {
+    right: 2300px;
+    top: 400px;
+  }
+}
+.alien {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 300px;
+  left: 400px;
+  background: url("images/night/ufo.svg") no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+  z-index: 10;
 }
 @-moz-keyframes ship-basculant {
   0% {
@@ -1281,6 +1549,38 @@ a {
     left: 0px !important;
     right: 0px !important;
     margin: auto !important;
+  }
+}
+@-moz-keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@-o-keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg);
   }
 }
 @-moz-keyframes wave {
