@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser')
 var path = require('path');
 var favicon = require('serve-favicon')
 var cors = require('cors')
+var enforce = require('express-sslify')
 
 var app = express()
 // app.use(favicon(__dirname + '/public/images/favicons/favicon-96x96.png'));
@@ -20,6 +21,9 @@ function compile(str, path) {
 /*****************************************************************************
 							CONTENT RESPONSE
 *****************************************************************************/
+
+if (process.env.NODE_ENV.toLowerCase() == "production")
+	app.use(enforce.HTTPS({ trustProtoHeader: true }))
 
 app.use(logger('tiny'))
 app.use(bodyParser.urlencoded({
