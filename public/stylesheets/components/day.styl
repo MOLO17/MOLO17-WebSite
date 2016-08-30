@@ -13,16 +13,16 @@
 		background-size auto 100%
 	
 	.wave-1
-		bottom 150px
+		bottom 145px
 		background url('images/day/wave_3.svg') 0 0 repeat-x
 		z-index 4
 		
 		-webkit-animation-name wave
-		-webkit-animation-duration 5s
+		-webkit-animation-duration 3s
 		-webkit-animation-iteration-count infinite
 		-webkit-animation-timing-function linear
 		animation-name wave
-		animation-duration 5s
+		animation-duration 3s
 		animation-iteration-count infinite
 		animation-timing-function linear
 		
@@ -233,11 +233,12 @@
 			background-position bottom left
 			
 	//@media only screen and (min-device-width 400px) and (max-device-width 1024px)
-	@media only screen and (min-width 400px) and (max-width 1024px)
+	@media only screen and (max-width 400px)
 		.sailboat
-			background-size 80px
-			width 40px
-			height 60px
+			background-size 140px
+			width 70px
+			height 100px
+			bottom 140px
 		
 	.animate_sailboat
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
