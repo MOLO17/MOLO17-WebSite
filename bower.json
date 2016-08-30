@@ -23,7 +23,8 @@
     "angular": "^1.5.7",
     "jquery": "^3.0.0",
     "flexboxgrid": "^6.3.0",
-    "ngGeolocation": "^0.0.8"
+    "ngGeolocation": "^0.0.8",
+    "angular-translate": "^2.11.1"
   },
   "resolutions": {
     "angular": "^1.5.7",

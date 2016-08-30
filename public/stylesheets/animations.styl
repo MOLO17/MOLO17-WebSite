@@ -1,71 +1,94 @@
-@-webkit-keyframes rotateOut
+
+/*-------------------------------WAVES (COMMON)--------------------------------------------------*/
+
+@-webkit-keyframes wave
 	0%
-		-webkit-transform-origin center
-		transform-origin center
-		opacity 1
-
-	20%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, 20deg)
-		transform rotate3d(0, 0, 1, 20deg)
-
-	40%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, -20deg)
-		transform rotate3d(0, 0, 1, -20deg)
-
+		-webkit-transform rotateZ(0deg) translate3d(0,8%,0) rotateZ(0deg)
 	100%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, 0deg)
-		transform rotate3d(0, 0, 1, 0deg)
+		-webkit-transform rotateZ(360deg) translate3d(0,8%,0) rotateZ(-360deg)
 
-@-moz-keyframes rotateOut
+@keyframes wave
 	0%
-		-webkit-transform-origin center
-		transform-origin center
-		opacity 1
-
-	20%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, 20deg)
-		transform rotate3d(0, 0, 1, 20deg)
-
-	40%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, -20deg)
-		transform rotate3d(0, 0, 1, -20deg)
-
+		transform rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg)
 	100%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, 0deg)
-		transform rotate3d(0, 0, 1, 0deg)
+		transform rotateZ(360deg) translate3d(0, 8%, 0) rotateZ(-360deg)
+	
 
-@keyframes rotateOut
+@-webkit-keyframes waveMedium
 	0%
-		-webkit-transform-origin center
-		transform-origin center
-		opacity 1
-
-	20%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, 20deg)
-		transform rotate3d(0, 0, 1, 20deg)
-
-	40%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, -20deg)
-		transform rotate3d(0, 0, 1, -20deg)
-
+		-webkit-transform rotateZ(0deg) translate3d(0,6%,0) rotateZ(0deg)
 	100%
-		-webkit-transform-origin center
-		transform-origin center
-		-webkit-transform rotate3d(0, 0, 1, 0deg)
-		transform rotate3d(0, 0, 1, 0deg)
+		-webkit-transform rotateZ(360deg) translate3d(0,6%,0) rotateZ(-360deg)
+
+@keyframes waveMedium
+	0%
+		transform rotateZ(0deg) translate3d(0, 6%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 6%, 0) rotateZ(-360deg)
+
+
+@-webkit-keyframes waveSlow
+	0%
+		-webkit-transform rotateZ(0deg) translate3d(0,2%,0) rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg) translate3d(0,2%,0) rotateZ(-360deg)
+
+@keyframes waveSlow
+	0%
+		transform rotateZ(0deg) translate3d(0, 2%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 2%, 0) rotateZ(-360deg)
+
+
+/*--------------------------------DAY VIEW----------------------------------------------*/
+
+@keyframes birdsAnimated
+	
+	0%
+		opacity: 1;
+	25%
+		opacity: 0.5;
+	50%
+		opacity: 0;
+	75%
+		opacity: 0.5;
+	100%
+		opacity: 1;
+
+
+@-webkit-keyframes ship-main
+	0%
+		-webkit-transform translate3d(5%,0,0) rotateZ(5deg)
+	100%
+		-webkit-transform translate3d(-5%,0,0) rotateZ(-5deg)
+
+@keyframes ship-main
+	0%
+		transform translate3d(5%,0,0) rotateZ(5deg)
+	100%
+		transform translate3d(-5%,0,0) rotateZ(-5deg)
+
+@-webkit-keyframes cloud
+	0%
+		-webkit-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
+
+@keyframes cloud
+	0%
+		transform rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg)
+		
+
+@-webkit-keyframes cloudSmall
+	0%
+		-webkit-transform rotateZ(0deg) translate3d(0,25%,0) rotateZ(0deg)
+	100%
+		-webkit-transform rotateZ(360deg) translate3d(0,25%,0) rotateZ(-360deg)
+
+@keyframes cloudSmall
+	0%
+		transform rotateZ(0deg) translate3d(0, 25%, 0) rotateZ(0deg)
+	100%
+		transform rotateZ(360deg) translate3d(0, 25%, 0) rotateZ(-360deg)
