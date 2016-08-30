@@ -1,3 +1,6 @@
+* {
+  -webkit-font-smoothing: antialiased !important;
+}
 input,
 textarea {
   -webkit-touch-callout: default;
@@ -20,16 +23,11 @@ textarea {
   user-zoom: fixed !important;
 }
 html {
-  overflow: hidden !important;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-}
-@media only screen and (max-width: 1024px), screen and (max-height: 768px) {
-  html {
-    overflow: hidden !important;
-  }
 }
 body {
   background-color: #fff;
@@ -37,19 +35,11 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: roboto;
-}
-a {
-  color: #000 !important;
-  text-decoration: none !important;
-}
-a:hover {
-  border-bottom: 1px solid #e30613;
 }
 input {
   -webkit-border-radius: 0px;
@@ -321,7 +311,7 @@ input {
   display: block;
   width: 100%;
   height: 100px;
-  bottom: 0;
+  bottom: 0px;
   overflow: hidden;
   background-color: #fff;
   -webkit-box-sizing: border-box;
@@ -348,32 +338,41 @@ input {
 .bold {
   font-weight: bold;
 }
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+  -webkit-transition: border-color 0.2s linear;
+  -moz-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  border-bottom: 1px solid transparent;
+}
+a:hover {
+  border-bottom-color: #e30613;
+}
 .git {
   position: absolute;
   right: 0;
-  bottom: 10px;
+  bottom: 30px;
   font-size: 11px;
 }
-.github {
+.company-infos {
   width: 100%;
-  height: 40px;
+  height: 20px;
   position: absolute;
   text-align: center;
   bottom: 0;
   left: 0;
   font-size: 11px;
-  background-color: #fff;
+  background-color: #e30613;
+  color: #fff;
+  line-height: 20px;
+  border-top: thin solid #000;
 }
-.github > div {
-  display: inline-block;
-  line-height: 40px;
-  position: relative;
-  height: 100%;
-  margin: 0 auto;
-  color: #808080;
+.company-infos .slash {
+  color: #000 !important;
 }
-.github > div img,
-.github > div svg {
+.company-infos img,
+.company-infos svg {
   height: 20px;
   display: inline-block;
   vertical-align: middle;
@@ -463,6 +462,85 @@ input {
 .adviceText {
   margin-top: 20px;
   font-weight: bold;
+}
+/* As required, customize view to have footer on scroll in screen that are lower than 1024px */
+@media only screen and (min-width: 801px) {
+  body,
+  html {
+    overflow: hidden;
+  }
+  .company-infos a {
+    color: #fff !important;
+  }
+  .company-infos a:hover {
+    border-bottom-color: #fff;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .company-infos {
+    position: relative !important;
+    bottom: auto !important;
+    background-color: #fff !important;
+    height: auto !important;
+    line-height: normal !important;
+    border: 0px !important;
+    line-height: 16px !important;
+    color: #e30613;
+  }
+  .company-infos .slash {
+    color: #e30613 !important;
+  }
+  .mobile-centered {
+    text-align: center;
+  }
+  .footer {
+    height: auto !important;
+  }
+  .git {
+    position: relative;
+    bottom: auto !important;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px !important;
+  }
+  .day .sky,
+  .evening .sky,
+  .morning .sky,
+  .afternoon .sky,
+  .night .sky {
+    height: 100% !important;
+  }
+  .footer {
+    position: relative !important;
+    bottom: auto;
+  }
+  .fullheight-container {
+    height: 100%;
+    overflow: hidden !important;
+    display: block;
+  }
+  .lighthouse {
+    bottom: 50px !important;
+  }
+  .wave-1 {
+    bottom: 55px !important;
+  }
+  .wave-2 {
+    bottom: 25px !important;
+  }
+  .wave-3 {
+    bottom: 0px !important;
+  }
+  .sailboat {
+    bottom: 55px !important;
+  }
+  .speed-boat,
+  .merchant {
+    bottom: 40px !important;
+  }
+  .cruise-ship {
+    bottom: 42px !important;
+  }
 }
 /*------------------------------------------COMPONENTS STYLE---------------------------------------*/
 .morning,

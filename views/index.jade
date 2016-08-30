@@ -52,10 +52,7 @@ block headscript
 
 block bodycontent
 
-	div(ng-controller='indexController')
-
-		input(id='momentInput', type='text', style='display: none', ng-model='moment')
-
+	div.fullheight-container(ng-controller='indexController')
 		div(ng-switch on='moment')
 			div.morning(ng-switch-when='morning')
 				section-morning-afternoon()
@@ -67,3 +64,5 @@ block bodycontent
 				section-evening()
 			div.night(ng-switch-when='night')
 				section-night()
+
+	include components/footer
