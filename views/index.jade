@@ -13,6 +13,7 @@ block headscript
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
 	!= CDN('/js/components/sections/morning_afternoon.component.js')
+	!= CDN('/js/components/footer.component.js')
 
 	//- Controllers
 	!= CDN('/js/controllers/main.controller.js')
@@ -29,9 +30,9 @@ block headscript
 	//- else
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
-	//- aggiungere seo meta
 
-	script(type='text/javascript').
+	
+	//-script(type='text/javascript').
 		function changeMoment(_moment) {
 			document.getElementById('momentInput').value = _moment;
 		}
@@ -45,6 +46,8 @@ block headscript
 		include components/sections/evening
 	script(type="text/ng-template",id="/sections/night.html")
 		include components/sections/night
+	script(type="text/ng-template",id="/footer.html")
+		include components/footer
 
 
 block bodycontent
@@ -62,4 +65,5 @@ block bodycontent
 			div.night(ng-switch-when='night')
 				section-night()
 
-	include components/footer
+	footer
+	//-include components/footer

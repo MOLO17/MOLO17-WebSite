@@ -9,6 +9,22 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	vm.errorMessage;
 	vm.requestMessage = 'Da dove arrivi, mariaio?';
 
+/*
+	vm.str1 = 'Soluzioni Web Elastiche';
+	vm.str2 = 'Applicativi Mobile-Oriented';
+	vm.str3 = 'Infrastrutture Cloud';
+*/
+	function translations() {
+
+		var language = navigator.language || navigator.userLanguage;
+		console.log(language);
+
+		if(language === "enUS") {
+
+		}
+	};
+	translations();
+
 	var dayMilliseconds;
 	vm.landing = 10;
 

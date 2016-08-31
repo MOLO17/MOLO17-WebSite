@@ -36,3 +36,14 @@ molo.run(function(coordinatesService) {
 	loadView();
 
 })
+
+
+molo.config(function($translateProvider) {
+    
+    $translateProvider.translations('en', {
+    	'str1': 'Elastic Web Solutions',
+    	'str2': 'Mobile-Oriented Apps',
+    	'str3': 'Cloud Infrastructures',
+    	'github': 'Fork this project on'
+  	})
+});
