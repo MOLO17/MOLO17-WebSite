@@ -1,7 +1,7 @@
 	
 molo.controller("indexController", function ($scope, $interval, coordinatesService) {
 	
-	//$scope.moment = coordinatesService.getMoment();
-    $scope.moment = "afternoon";
+	$scope.moment = coordinatesService.getMoment();
+    //$scope.moment = "afternoon";
 
 });	
