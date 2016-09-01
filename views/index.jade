@@ -14,7 +14,15 @@ block headscript
 	!= CDN('/js/components/sections/evening.component.js')
 	!= CDN('/js/components/sections/night.component.js')
 	!= CDN('/js/components/sections/morning_afternoon.component.js')
+
 	!= CDN('/js/components/footer.component.js')
+	!= CDN('/js/components/firstpage.component.js')
+	!= CDN('/js/components/secondpage.component.js')
+	!= CDN('/js/components/thirdpage.component.js')
+	!= CDN('/js/components/fourthpage.component.js')
+	!= CDN('/js/components/fifthpage.component.js')
+	!= CDN('/js/components/sixthpage.component.js')
+
 
 	//- Controllers
 	!= CDN('/js/controllers/main.controller.js')
@@ -33,7 +41,6 @@ block headscript
 	//- 	!= CDN('/dist/js/intermek.admin.min.js')
 
 
-	
 	//-script(type='text/javascript').
 		function changeMoment(_moment) {
 			document.getElementById('momentInput').value = _moment;
@@ -48,8 +55,23 @@ block headscript
 		include components/sections/evening
 	script(type="text/ng-template",id="/sections/night.html")
 		include components/sections/night
+
 	script(type="text/ng-template",id="/footer.html")
 		include components/footer
+
+	//-pages
+	script(type="text/ng-template",id="/firstpage.html")
+		include components/firstpage
+	script(type="text/ng-template",id="/secondpage.html")
+		include components/secondpage
+	script(type="text/ng-template",id="/thirdpage.html")
+		include components/thirdpage
+	script(type="text/ng-template",id="/fourthpage.html")
+		include components/fourthpage
+	script(type="text/ng-template",id="/fifthpage.html")
+		include components/fifthpage
+	script(type="text/ng-template",id="/sixthpage.html")
+		include components/sixthpage
 
 
 block bodycontent
@@ -68,7 +90,16 @@ block bodycontent
 				section-night()
 
 	footer
-
-
-
 	//-include components/footer
+
+	//------------------------TEST
+	//-firstpage
+	//-secondpage
+	//-thirdpage
+	//-fourthpage
+	//-fifthpage
+	//-sixthpage
+
+
+
+	

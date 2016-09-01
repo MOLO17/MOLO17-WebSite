@@ -195,6 +195,7 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	//Sets the boat to animate depending on day moment
 	function whichBoat() {
 
+		//moment is a string that rappresents the part of the day when the page is visited. This value can be retrived for the parent controller (indexController) instead of call another time the service
 		var moment = $scope.$parent.moment
 		var boat;
 

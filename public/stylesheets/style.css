@@ -1574,6 +1574,84 @@ a:hover {
     margin: auto !important;
   }
 }
+.firstpage_company_logo {
+  position: relative;
+  display: block;
+  width: 700px;
+  height: 200px;
+  margin: auto;
+  margin-top: 180px;
+  background: url("images/pages/logo_extended.svg") no-repeat;
+  background-size: contain;
+}
+.firstpage_text {
+  color: #000;
+  margin-left: 60px;
+  margin-top: 100px;
+  text-align: left;
+}
+.fourthpage_container {
+  background-color: #d3d3d3;
+}
+.thirdpage_header {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: #000;
+  font-weight: bold;
+}
+.thirdpage_section {
+  margin-top: 50px;
+}
+.thirdpage_title {
+  color: #f00;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+.thirdpage_col {
+  padding: 50px;
+}
+.thirdpage_p {
+  text-align: center;
+  color: #000;
+}
+.thirdpage_imges {
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  margin-top: 80px;
+}
+.img1 {
+  background-color: #f00;
+}
+.img2 {
+  background-color: #008000;
+}
+.img3 {
+  background-color: #00f;
+}
+.fourthpage_header {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: #000;
+  font-weight: bold;
+}
+.fourthpage_section {
+  margin-top: 50px;
+}
+.fifthpage_header {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: #000;
+  font-weight: bold;
+}
+.fifthpage_section {
+  margin-top: 50px;
+}
+.fifthpage_p {
+  margin-right: 150px;
+  margin-top: 150px;
+}
 @-moz-keyframes wave {
   0% {
     transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
