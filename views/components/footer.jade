@@ -1,19 +1,21 @@
 
-//-div.footer
-	div.col-md-12.text.firstText
-		div(translate='string1')  
-		span.slash //  
-		div(translate='string2')  
-		span.slash //  
-		div(translate='string3')
 
-div.footer
+
+//-div.footer
 	div.col-md-12.text.firstText
 		| {{vm.string1 | translate}}  
 		span.slash //  
 		| {{vm.string2 | translate}}  
 		span.slash //  
 		| {{vm.string3 | translate}}
+
+div.footer
+	div.col-md-12.text.firstText
+		div(translate='string1')  
+		span.slash //  
+		div(translate='string2')  
+		span.slash //  
+		div(translate='string3')
 
 	div.mobile-centered
 

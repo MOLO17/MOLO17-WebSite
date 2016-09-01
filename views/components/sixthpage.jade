@@ -3,4 +3,25 @@ header.pages_header.row
 	div.col-xs-12
 		p PARTNERS
 
-section.pages_section.row
+section.sixthpage_section.row.center-xs
+
+	div.col-xs-2(ng-mouseover='changeText("amazon")')
+		div.sixthpage_images.sixthpage_img1
+			
+	div.col-xs-2(ng-mouseover='changeText("heroku")')
+		div.sixthpage_images.sixthpage_img2
+
+	div.col-xs-2(ng-mouseover='changeText("zyxel")')
+		div.sixthpage_images.sixthpage_img3
+
+	div.col-xs-2(ng-mouseover='changeText("watchguard")')
+		div.sixthpage_images.sixthpage_img4
+
+
+
+div.col-xs-offset-1.col-xs-3
+	div.sixthpage_text
+		p {{vm.partnerText}}
+
+
+				

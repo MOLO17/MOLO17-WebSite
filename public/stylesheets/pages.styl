@@ -36,15 +36,6 @@
 
 //---------------------------------THIRD PAGE--------------------------------------------------------
 
-// .thirdpage_header
-// 	margin-top 30px
-// 	margin-left 30px
-// 	color black
-// 	font-weight bold
-
-// .thirdpage_section
-// 	margin-top 50px
-
 .thirdpage_title
 	color red
 	text-align center
@@ -64,38 +55,21 @@
 	margin auto
 	margin-top 80px
 	
-.img1
+.thirdpage_img1
 	background-color red
-.img2
-	background-color green
-.img3
-	background-color blue
 	
-
+.thirdpage_img2
+	background-color green
+	
+.thirdpage_img3
+	background-color blue
 	
 
 //---------------------------------FOURTH PAGE--------------------------------------------------------
 
-// .fourthpage_header
-// 	margin-top 30px
-// 	margin-left 30px
-// 	color black
-// 	font-weight bold
-	
-// .fourthpage_section
-// 	margin-top 50px
+
 
 //---------------------------------FIFTH PAGE--------------------------------------------------------
-
-
-// .fifthpage_header
-// 	margin-top 30px
-// 	margin-left 30px
-// 	color black
-// 	font-weight bold
-	
-// .fifthpage_section
-// 	margin-top 50px
 	
 .fifthpage_p
 	margin-right 150px
@@ -103,4 +77,55 @@
 
 //---------------------------------SIXTH PAGE--------------------------------------------------------
 
-//.sixthpage_
+.sixthpage_section
+	height 200px
+	margin-top 50px
+
+.sixthpage_text
+	color black
+	margin-left 60px
+	margin-top 100px
+	text-align left
+	
+	
+.sixthpage_images
+	position relative
+	width 200px
+	height 100px
+	text-align center
+	
+	&:hover
+		margin-top -15px
+		margin-left -15px
+		border 15px solid lightgrey
+		
+	&:before, &:after
+		content ''
+		height 15px
+		width 70%
+		display block
+		position absolute
+		background-color white
+		margin-left 15%
+		
+	&:before
+		top -15px
+	&:after
+		bottom -15px
+	
+	
+.sixthpage_img1
+	background url('images/pages/logo_extended.svg') no-repeat
+	background-size contain
+	
+.sixthpage_img2
+	background url('images/pages/logo_extended.svg') no-repeat
+	background-size contain
+	
+.sixthpage_img3
+	background url('images/pages/logo_extended.svg') no-repeat
+	background-size contain
+	
+.sixthpage_img4
+	background url('images/pages/logo_extended.svg') no-repeat
+	background-size contain

@@ -1618,18 +1618,71 @@ a:hover {
   margin: auto;
   margin-top: 80px;
 }
-.img1 {
+.thirdpage_img1 {
   background-color: #f00;
 }
-.img2 {
+.thirdpage_img2 {
   background-color: #008000;
 }
-.img3 {
+.thirdpage_img3 {
   background-color: #00f;
 }
 .fifthpage_p {
   margin-right: 150px;
   margin-top: 150px;
+}
+.sixthpage_section {
+  height: 200px;
+  margin-top: 50px;
+}
+.sixthpage_text {
+  color: #000;
+  margin-left: 60px;
+  margin-top: 100px;
+  text-align: left;
+}
+.sixthpage_images {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+}
+.sixthpage_images:hover {
+  margin-top: -15px;
+  margin-left: -15px;
+  border: 15px solid #d3d3d3;
+}
+.sixthpage_images:before,
+.sixthpage_images:after {
+  content: '';
+  height: 15px;
+  width: 70%;
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  margin-left: 15%;
+}
+.sixthpage_images:before {
+  top: -15px;
+}
+.sixthpage_images:after {
+  bottom: -15px;
+}
+.sixthpage_img1 {
+  background: url("images/pages/logo_extended.svg") no-repeat;
+  background-size: contain;
+}
+.sixthpage_img2 {
+  background: url("images/pages/logo_extended.svg") no-repeat;
+  background-size: contain;
+}
+.sixthpage_img3 {
+  background: url("images/pages/logo_extended.svg") no-repeat;
+  background-size: contain;
+}
+.sixthpage_img4 {
+  background: url("images/pages/logo_extended.svg") no-repeat;
+  background-size: contain;
 }
 @-moz-keyframes wave {
   0% {
