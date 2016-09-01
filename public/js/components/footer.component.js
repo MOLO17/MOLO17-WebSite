@@ -1,7 +1,7 @@
 
 molo.component('footer', {
 	templateUrl: "/footer.html",
-    controller: "mainController",
+    controller: "footerController",
     controllerAs: "vm",
     bindings: {} 
 })

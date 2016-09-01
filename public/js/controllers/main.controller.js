@@ -10,11 +10,6 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	vm.requestMessage = 'Da dove arrivi, mariaio?';
 
 
-	vm.str1 = 'Soluzioni Web Elastiche';
-	vm.str2 = 'Applicativi Mobile-Oriented';
-	vm.str3 = 'Infrastrutture Cloud';
-	vm.github = 'Contribuisci al progetto su';
-
 	var dayMilliseconds;
 	vm.landing = 10;
 
@@ -42,19 +37,6 @@ molo.controller('mainController', function($scope, $http, $timeout, $interval, $
 	}
 	countdown()
 */	
-
-	// function translations() {
-
-	// 	var language = navigator.language || navigator.userLanguage;
-		
-	// 	if(language === 'en-US') {
-	// 		$translate.use('en')
-	// 	} else {
-	// 		$translate.use('it')
-	// 	}
-
-	// };
-	// translations();
 
 
 	function findMoloWeather() {

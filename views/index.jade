@@ -7,6 +7,7 @@ block headscript
 	//- if (environment == 'development')
 	!= CDN('/js/app.js')
 	!= CDN('/js/constants.js')
+	!= CDN('/js/translations.js')
 
 	//- Components
 	!= CDN('/js/components/sections/day.component.js')
@@ -18,6 +19,7 @@ block headscript
 	//- Controllers
 	!= CDN('/js/controllers/main.controller.js')
 	!= CDN('/js/controllers/index.controller.js')
+	!= CDN('/js/controllers/footer.controller.js')
 
 	//- Factories
 	!= CDN('/js/factories/weather.factory.js')
