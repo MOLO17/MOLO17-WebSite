@@ -1574,6 +1574,15 @@ a:hover {
     margin: auto !important;
   }
 }
+.pages_header {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: #000;
+  font-weight: bold;
+}
+.pages_section {
+  margin-top: 50px;
+}
 .firstpage_company_logo {
   position: relative;
   display: block;
@@ -1589,18 +1598,6 @@ a:hover {
   margin-left: 60px;
   margin-top: 100px;
   text-align: left;
-}
-.fourthpage_container {
-  background-color: #d3d3d3;
-}
-.thirdpage_header {
-  margin-top: 30px;
-  margin-left: 30px;
-  color: #000;
-  font-weight: bold;
-}
-.thirdpage_section {
-  margin-top: 50px;
 }
 .thirdpage_title {
   color: #f00;
@@ -1629,24 +1626,6 @@ a:hover {
 }
 .img3 {
   background-color: #00f;
-}
-.fourthpage_header {
-  margin-top: 30px;
-  margin-left: 30px;
-  color: #000;
-  font-weight: bold;
-}
-.fourthpage_section {
-  margin-top: 50px;
-}
-.fifthpage_header {
-  margin-top: 30px;
-  margin-left: 30px;
-  color: #000;
-  font-weight: bold;
-}
-.fifthpage_section {
-  margin-top: 50px;
 }
 .fifthpage_p {
   margin-right: 150px;

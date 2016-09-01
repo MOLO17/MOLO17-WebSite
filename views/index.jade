@@ -79,15 +79,15 @@ block bodycontent
 	div.fullheight-container(ng-controller='indexController')
 		div(ng-switch on='moment')
 			div.morning(ng-switch-when='morning')
-				section-morning-afternoon()
+				section-morning-afternoon
 			div.day(ng-switch-when='day')
-				section-day()
+				section-day
 			div.afternoon(ng-switch-when='afternoon')
-				section-morning-afternoon()
+				section-morning-afternoon
 			div.evening(ng-switch-when='evening')
-				section-evening()
+				section-evening
 			div.night(ng-switch-when='night')
-				section-night()
+				section-night
 
 	footer
 	//-include components/footer
