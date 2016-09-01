@@ -69,6 +69,40 @@ input
 
 /*-----------------------------------------WAVES---------------------------------------------------*/
 
+.waves
+	position absolute
+	display block
+	overflow hidden
+	width 100%
+	height 250px
+	padding 0
+	margin 0
+	left 0
+	bottom 0
+
+.wave
+	position absolute
+	display block
+	width 250%
+	height 60px
+	left -100%
+	bottom 0
+
+.wave-3
+	bottom 90px
+	background url('images/common/wave_common.svg') -74px 0 repeat-x
+	z-index 7
+	
+	-webkit-animation-name waveSlow
+	-webkit-animation-duration 2s
+	-webkit-animation-iteration-count infinite
+	-webkit-animation-timing-function linear
+	animation-name waveSlow
+	animation-duration 2s
+	animation-iteration-count infinite
+	animation-timing-function linear
+	
+
 @-webkit-keyframes wave
 	0%
 		-webkit-transform rotateZ(0deg) translate3d(0,8%,0) rotateZ(0deg)
@@ -240,39 +274,6 @@ input
 	100%
 		transform translate3d(0px, 0px, 0)
 
-.waves
-	position absolute
-	display block
-	overflow hidden
-	width 100%
-	height 250px
-	padding 0
-	margin 0
-	left 0
-	bottom 0
-
-.wave
-	position absolute
-	display block
-	width 250%
-	height 60px
-	left -100%
-	bottom 0
-
-.wave-3
-	bottom 90px
-	background url('images/common/wave_common.svg') -74px 0 repeat-x
-	z-index 7
-	
-	-webkit-animation-name waveSlow
-	-webkit-animation-duration 2s
-	-webkit-animation-iteration-count infinite
-	-webkit-animation-timing-function linear
-	animation-name waveSlow
-	animation-duration 2s
-	animation-iteration-count infinite
-	animation-timing-function linear
-
 
 /*------------------------------------LIGHTHOUSE--------------------------------------------*/
 
@@ -442,42 +443,6 @@ a
 	
 //----------------------------------------COMPASS----------------------------------------------------
 
-@-webkit-keyframes compass_animation
-	0%
-		-webkit-transform rotateZ(0deg)
-	25%
-		-webkit-transform rotateZ(40deg)
-	50%
-		-webkit-transform rotateZ(0deg)
-	75%
-		-webkit-transform rotateZ(-40deg)
-	100%
-		-webkit-transform rotateZ(0deg)
-		
-@-ms-keyframes compass_animation
-	0%
-		-ms-transform rotateZ(0deg)
-	25%
-		-ms-transform rotateZ(40deg)
-	50%
-		-ms-transform rotateZ(0deg)
-	75%
-		-ms-transform rotateZ(-40deg)
-	100%
-		-ms-transform rotateZ(0deg)
-
-@keyframes compass_animation
-	0%
-		transform rotateZ(0deg)
-	25%
-		transform rotateZ(40deg)
-	50%
-		transform rotateZ(0deg)
-	75%
-		transform rotateZ(-40deg)
-	100%
-		transform rotateZ(0deg)
-
 .compass_container
 	position absolute
 	width 100%
@@ -521,6 +486,45 @@ a
 	margin-top 20px
 	font-weight bold
 	
+
+@-webkit-keyframes compass_animation
+	0%
+		-webkit-transform rotateZ(0deg)
+	25%
+		-webkit-transform rotateZ(40deg)
+	50%
+		-webkit-transform rotateZ(0deg)
+	75%
+		-webkit-transform rotateZ(-40deg)
+	100%
+		-webkit-transform rotateZ(0deg)
+		
+@-ms-keyframes compass_animation
+	0%
+		-ms-transform rotateZ(0deg)
+	25%
+		-ms-transform rotateZ(40deg)
+	50%
+		-ms-transform rotateZ(0deg)
+	75%
+		-ms-transform rotateZ(-40deg)
+	100%
+		-ms-transform rotateZ(0deg)
+
+@keyframes compass_animation
+	0%
+		transform rotateZ(0deg)
+	25%
+		transform rotateZ(40deg)
+	50%
+		transform rotateZ(0deg)
+	75%
+		transform rotateZ(-40deg)
+	100%
+		transform rotateZ(0deg)
+	
+
+//------------------------------------------------------------------------------------
 
 /* As required, customize view to have footer on scroll in screen that are lower than 1024px */
 @media only screen and (min-width: 769px)

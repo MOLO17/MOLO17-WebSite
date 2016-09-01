@@ -45,25 +45,6 @@
 		
 //------------------------------------BOAT----------------------------------------------------
 	
-	@-webkit-keyframes ship-basculant
-		0%
-			-webkit-transform rotateZ(4deg)
-		100%
-			-webkit-transform rotateZ(-4deg)
-			
-	@-ms-keyframes ship-basculant
-		0%
-			-ms-transform rotateZ(4deg)
-		100%
-			-ms-transform rotateZ(-4deg)
-
-	@keyframes ship-basculant
-		0%
-			transform rotateZ(4deg)
-		100%
-			transform rotateZ(-4deg)
-
-
 	.merchant_container
 		width 100%
 		height 100%
@@ -94,36 +75,27 @@
 		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 		
 
+	@-webkit-keyframes ship-basculant
+		0%
+			-webkit-transform rotateZ(4deg)
+		100%
+			-webkit-transform rotateZ(-4deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform rotateZ(4deg)
+		100%
+			-ms-transform rotateZ(-4deg)
+
+	@keyframes ship-basculant
+		0%
+			transform rotateZ(4deg)
+		100%
+			transform rotateZ(-4deg)
+		
+
 //----------------------------------SUN---------------------------------------------------
 			
-	@-webkit-keyframes sun-animation
-	
-		0%
-			-webkit-transform rotateZ(0deg)
-			background-color yellow
-		100%
-			-webkit-transform rotateZ(100deg)
-			background-color red
-
-	@-ms-keyframes sun-animation
-	
-		0%
-			-ms-transform rotateZ(0deg)
-			background-color yellow
-		100%
-			-ms-transform rotateZ(100deg)
-			background-color red
-
-	@keyframes sun-animation
-	
-		0%
-			transform rotateZ(0deg)
-			background-color yellow
-		100%
-			transform rotateZ(100deg)
-			background-color red
-
-
 	.sun
 		position absolute
 		display block
@@ -153,4 +125,31 @@
 		.sun
 			-webkit-animation-direction reverse
 			animation-direction reverse
+			
+	@-webkit-keyframes sun-animation
+	
+		0%
+			-webkit-transform rotateZ(0deg)
+			background-color yellow
+		100%
+			-webkit-transform rotateZ(100deg)
+			background-color red
+
+	@-ms-keyframes sun-animation
+	
+		0%
+			-ms-transform rotateZ(0deg)
+			background-color yellow
+		100%
+			-ms-transform rotateZ(100deg)
+			background-color red
+
+	@keyframes sun-animation
+	
+		0%
+			transform rotateZ(0deg)
+			background-color yellow
+		100%
+			transform rotateZ(100deg)
+			background-color red
 			

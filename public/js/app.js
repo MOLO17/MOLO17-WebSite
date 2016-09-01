@@ -19,6 +19,7 @@ molo.run(function(coordinatesService) {
 		//console.log(hour)
 		//console.log(minutes)
 		//console.log(time)
+		//time = 23
 
 		if(time > 6 && time <= 9) {
 			coordinatesService.setMoment('morning')

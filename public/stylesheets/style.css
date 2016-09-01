@@ -49,6 +49,38 @@ input {
   -ms-border-radius: 0px;
 }
 /*-----------------------------------------WAVES---------------------------------------------------*/
+.waves {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  bottom: 0;
+}
+.wave {
+  position: absolute;
+  display: block;
+  width: 250%;
+  height: 60px;
+  left: -100%;
+  bottom: 0;
+}
+.wave-3 {
+  bottom: 90px;
+  background: url("images/common/wave_common.svg") -74px 0 repeat-x;
+  z-index: 7;
+  -webkit-animation-name: waveSlow;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: waveSlow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 @-webkit-keyframes wave {
   0% {
     -webkit-transform: rotateZ(0deg) translate3d(0, 8%, 0) rotateZ(0deg);
@@ -198,38 +230,6 @@ input {
   100% {
     -ms-transform: translate3d(0px, 0px, 0);
   }
-}
-.waves {
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 250px;
-  padding: 0;
-  margin: 0;
-  left: 0;
-  bottom: 0;
-}
-.wave {
-  position: absolute;
-  display: block;
-  width: 250%;
-  height: 60px;
-  left: -100%;
-  bottom: 0;
-}
-.wave-3 {
-  bottom: 90px;
-  background: url("images/common/wave_common.svg") -74px 0 repeat-x;
-  z-index: 7;
-  -webkit-animation-name: waveSlow;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: waveSlow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 /*------------------------------------LIGHTHOUSE--------------------------------------------*/
 .lighthouse {
@@ -386,40 +386,6 @@ a:hover {
   background-size: contain;
   z-index: 4;
 }
-@-webkit-keyframes compass_animation {
-  0% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  25% {
-    -webkit-transform: rotateZ(40deg);
-  }
-  50% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  75% {
-    -webkit-transform: rotateZ(-40deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(0deg);
-  }
-}
-@-ms-keyframes compass_animation {
-  0% {
-    -ms-transform: rotateZ(0deg);
-  }
-  25% {
-    -ms-transform: rotateZ(40deg);
-  }
-  50% {
-    -ms-transform: rotateZ(0deg);
-  }
-  75% {
-    -ms-transform: rotateZ(-40deg);
-  }
-  100% {
-    -ms-transform: rotateZ(0deg);
-  }
-}
 .compass_container {
   position: absolute;
   width: 100%;
@@ -461,6 +427,40 @@ a:hover {
 .adviceText {
   margin-top: 20px;
   font-weight: bold;
+}
+@-webkit-keyframes compass_animation {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  25% {
+    -webkit-transform: rotateZ(40deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  75% {
+    -webkit-transform: rotateZ(-40deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+@-ms-keyframes compass_animation {
+  0% {
+    -ms-transform: rotateZ(0deg);
+  }
+  25% {
+    -ms-transform: rotateZ(40deg);
+  }
+  50% {
+    -ms-transform: rotateZ(0deg);
+  }
+  75% {
+    -ms-transform: rotateZ(-40deg);
+  }
+  100% {
+    -ms-transform: rotateZ(0deg);
+  }
 }
 /* As required, customize view to have footer on scroll in screen that are lower than 1024px */
 @media only screen and (min-width: 769px) {
@@ -586,22 +586,6 @@ a:hover {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes ship-basculant {
-  0% {
-    -webkit-transform: rotateZ(4deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(-4deg);
-  }
-}
-@-ms-keyframes ship-basculant {
-  0% {
-    -ms-transform: rotateZ(4deg);
-  }
-  100% {
-    -ms-transform: rotateZ(-4deg);
-  }
-}
 .merchant_container {
   width: 100%;
   height: 100%;
@@ -632,24 +616,20 @@ a:hover {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-@-webkit-keyframes sun-animation {
+@-webkit-keyframes ship-basculant {
   0% {
-    -webkit-transform: rotateZ(0deg);
-    background-color: #ff0;
+    -webkit-transform: rotateZ(4deg);
   }
   100% {
-    -webkit-transform: rotateZ(100deg);
-    background-color: #f00;
+    -webkit-transform: rotateZ(-4deg);
   }
 }
-@-ms-keyframes sun-animation {
+@-ms-keyframes ship-basculant {
   0% {
-    -ms-transform: rotateZ(0deg);
-    background-color: #ff0;
+    -ms-transform: rotateZ(4deg);
   }
   100% {
-    -ms-transform: rotateZ(100deg);
-    background-color: #f00;
+    -ms-transform: rotateZ(-4deg);
   }
 }
 .sun {
@@ -683,6 +663,26 @@ a:hover {
 .morning .sun {
   -webkit-animation-direction: reverse;
   animation-direction: reverse;
+}
+@-webkit-keyframes sun-animation {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    -webkit-transform: rotateZ(100deg);
+    background-color: #f00;
+  }
+}
+@-ms-keyframes sun-animation {
+  0% {
+    -ms-transform: rotateZ(0deg);
+    background-color: #ff0;
+  }
+  100% {
+    -ms-transform: rotateZ(100deg);
+    background-color: #f00;
+  }
 }
 @-moz-keyframes ship-basculant {
   0% {
@@ -799,54 +799,6 @@ a:hover {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes cloud {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
-  }
-}
-@-ms-keyframes cloud {
-  0% {
-    -ms-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
-  }
-  100% {
-    -ms-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes cloud_inverse {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
-  }
-}
-@-ms-keyframes cloud_inverse {
-  0% {
-    -ms-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
-  }
-  100% {
-    -ms-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
-  }
-}
-@-webkit-keyframes cloudSmall {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
-  }
-}
-@-ms-keyframes cloudSmall {
-  0% {
-    -ms-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
-  }
-  100% {
-    -ms-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
-  }
-}
 .day .cloud_1 {
   position: absolute;
   left: 50%;
@@ -933,20 +885,52 @@ a:hover {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes ship-basculant {
+@-webkit-keyframes cloud {
   0% {
-    -webkit-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+    -webkit-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
   }
   100% {
-    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+    -webkit-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
   }
 }
-@-ms-keyframes ship-basculant {
+@-ms-keyframes cloud {
   0% {
-    -ms-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+    -ms-transform: rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg);
   }
   100% {
-    -ms-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+    -ms-transform: rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes cloud_inverse {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
+  }
+}
+@-ms-keyframes cloud_inverse {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 50%, 0) rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes cloudSmall {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
+  }
+}
+@-ms-keyframes cloudSmall {
+  0% {
+    -ms-transform: rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg);
   }
 }
 .day .ship_container {
@@ -978,6 +962,22 @@ a:hover {
 .day .animate_sailboat {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
+}
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: translate3d(5%, 0, 0) rotateZ(4deg);
+  }
+  100% {
+    -ms-transform: translate3d(-5%, 0, 0) rotateZ(-4deg);
+  }
 }
 .day .seagulls {
   position: absolute;
@@ -1211,22 +1211,6 @@ a:hover {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes ship-basculant {
-  0% {
-    -webkit-transform: translate3d(8%, 0, 0) rotateZ(6deg);
-  }
-  100% {
-    -webkit-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
-  }
-}
-@-ms-keyframes ship-basculant {
-  0% {
-    -ms-transform: translate3d(8%, 0, 0) rotateZ(6deg);
-  }
-  100% {
-    -ms-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
-  }
-}
 .speed-boat_container {
   width: 100%;
   height: 100%;
@@ -1256,6 +1240,22 @@ a:hover {
 .animate_speed-boat {
   webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
+}
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: translate3d(8%, 0, 0) rotateZ(6deg);
+  }
+  100% {
+    -ms-transform: translate3d(-8%, 0, 0) rotateZ(-6deg);
+  }
 }
 @-moz-keyframes ship-basculant {
   0% {
@@ -1329,22 +1329,6 @@ a:hover {
   animation-iteration-count: infinite;
   animation-timing-function: linearnight;
 }
-@-webkit-keyframes ship-basculant {
-  0% {
-    -webkit-transform: translate3d(5%, 0, 0) rotateZ(2deg);
-  }
-  100% {
-    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
-  }
-}
-@-ms-keyframes ship-basculant {
-  0% {
-    -ms-transform: translate3d(5%, 0, 0) rotateZ(2deg);
-  }
-  100% {
-    -ms-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
-  }
-}
 .cruise-ship_container {
   width: 100%;
   height: 100%;
@@ -1378,6 +1362,22 @@ a:hover {
 }
 .cruise_ship_lights {
   color: #000;
+}
+@-webkit-keyframes ship-basculant {
+  0% {
+    -webkit-transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
+}
+@-ms-keyframes ship-basculant {
+  0% {
+    -ms-transform: translate3d(5%, 0, 0) rotateZ(2deg);
+  }
+  100% {
+    -ms-transform: translate3d(-5%, 0, 0) rotateZ(-2deg);
+  }
 }
 .comet {
   position: absolute;

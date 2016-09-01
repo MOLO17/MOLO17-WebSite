@@ -43,63 +43,6 @@
 
 	/*----------------------------------CLOUDS-----------------------------------------*/
 
-
-	@-webkit-keyframes cloud
-		0%
-			-webkit-transform rotateZ(0deg) translate3d(0,40%,0) rotateZ(0deg)
-		100%
-			-webkit-transform rotateZ(360deg) translate3d(0,40%,0) rotateZ(-360deg)
-			
-	@-ms-keyframes cloud
-		0%
-			-ms-transform rotateZ(0deg) translate3d(0,40%,0) rotateZ(0deg)
-		100%
-			-ms-transform rotateZ(360deg) translate3d(0,40%,0) rotateZ(-360deg)
-
-	@keyframes cloud
-		0%
-			transform rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg)
-		100%
-			transform rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg)
-
-
-	@-webkit-keyframes cloud_inverse
-		0%
-			-webkit-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
-		100%
-			-webkit-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
-			
-	@-ms-keyframes cloud_inverse
-		0%
-			-ms-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
-		100%
-			-ms-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
-
-	@keyframes cloud_inverse
-		0%
-			transform rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg)
-		100%
-			transform rotateZ(-360deg) translate3d(0, 50%, 0) rotateZ(360deg)
-			
-
-	@-webkit-keyframes cloudSmall
-		0%
-			-webkit-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
-		100%
-			-webkit-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
-			
-	@-ms-keyframes cloudSmall
-		0%
-			-ms-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
-		100%
-			-ms-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
-
-	@keyframes cloudSmall
-		0%
-			transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
-		100%
-			transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
-
 	.cloud_1
 		position absolute
 		left 50%
@@ -192,27 +135,65 @@
 		animation-duration 15s
 		animation-iteration-count infinite
 		animation-timing-function linear
+		
 
-	/*--------------------------SHIP---------------------------------------*/
-
-	@-webkit-keyframes ship-basculant
+	@-webkit-keyframes cloud
 		0%
-			-webkit-transform translate3d(5%,0,0) rotateZ(4deg)
+			-webkit-transform rotateZ(0deg) translate3d(0,40%,0) rotateZ(0deg)
 		100%
-			-webkit-transform translate3d(-5%,0,0) rotateZ(-4deg)
+			-webkit-transform rotateZ(360deg) translate3d(0,40%,0) rotateZ(-360deg)
 			
-	@-ms-keyframes ship-basculant
+	@-ms-keyframes cloud
 		0%
-			-ms-transform translate3d(5%,0,0) rotateZ(4deg)
+			-ms-transform rotateZ(0deg) translate3d(0,40%,0) rotateZ(0deg)
 		100%
-			-ms-transform translate3d(-5%,0,0) rotateZ(-4deg)
+			-ms-transform rotateZ(360deg) translate3d(0,40%,0) rotateZ(-360deg)
 
-	@keyframes ship-basculant
+	@keyframes cloud
 		0%
-			transform translate3d(5%,0,0) rotateZ(4deg)
+			transform rotateZ(0deg) translate3d(0, 40%, 0) rotateZ(0deg)
 		100%
-			transform translate3d(-5%,0,0) rotateZ(-4deg)
+			transform rotateZ(360deg) translate3d(0, 40%, 0) rotateZ(-360deg)
+
+
+	@-webkit-keyframes cloud_inverse
+		0%
+			-webkit-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
+		100%
+			-webkit-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
 			
+	@-ms-keyframes cloud_inverse
+		0%
+			-ms-transform rotateZ(0deg) translate3d(0,50%,0) rotateZ(0deg)
+		100%
+			-ms-transform rotateZ(360deg) translate3d(0,50%,0) rotateZ(-360deg)
+
+	@keyframes cloud_inverse
+		0%
+			transform rotateZ(0deg) translate3d(0, 50%, 0) rotateZ(0deg)
+		100%
+			transform rotateZ(-360deg) translate3d(0, 50%, 0) rotateZ(360deg)
+			
+
+	@-webkit-keyframes cloudSmall
+		0%
+			-webkit-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
+		100%
+			-webkit-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
+			
+	@-ms-keyframes cloudSmall
+		0%
+			-ms-transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
+		100%
+			-ms-transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
+
+	@keyframes cloudSmall
+		0%
+			transform rotateZ(0deg) translate3d(0, 30%, 0) rotateZ(0deg)
+		100%
+			transform rotateZ(360deg) translate3d(0, 30%, 0) rotateZ(-360deg)
+
+	/*--------------------------SHIP---------------------------------------*/		
 
 	.ship_container
 		width 100%
@@ -243,6 +224,25 @@
 	.animate_sailboat
 		webkit-animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
 		animation: ship-basculant 1.8s infinite alternate cubic-bezier(0.455, .03, .515, .955)
+	
+
+	@-webkit-keyframes ship-basculant
+		0%
+			-webkit-transform translate3d(5%,0,0) rotateZ(4deg)
+		100%
+			-webkit-transform translate3d(-5%,0,0) rotateZ(-4deg)
+			
+	@-ms-keyframes ship-basculant
+		0%
+			-ms-transform translate3d(5%,0,0) rotateZ(4deg)
+		100%
+			-ms-transform translate3d(-5%,0,0) rotateZ(-4deg)
+
+	@keyframes ship-basculant
+		0%
+			transform translate3d(5%,0,0) rotateZ(4deg)
+		100%
+			transform translate3d(-5%,0,0) rotateZ(-4deg)
 	
 
 	/*-----------------------------------------BIRDS---------------------------------------------------*/
