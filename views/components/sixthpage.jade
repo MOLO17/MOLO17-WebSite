@@ -1,27 +1,32 @@
 
 header.pages_header.row
 	div.col-xs-12
-		p PARTNERS
+		span.escape  &#62;
+		span.thirdpage_headerText PARTNERS
+		span.escape  // &#93;  &#125;  &#62; /
 
 section.sixthpage_section.row.center-xs
 
 	div.col-xs-2(ng-mouseover='changeText("amazon")')
-		div.sixthpage_images.sixthpage_img1
+		div.sixthpage_images.sixthpage_img1(ng-class='currentSponsorIndex == 0 ? "selected" : ""')
 			
 	div.col-xs-2(ng-mouseover='changeText("heroku")')
-		div.sixthpage_images.sixthpage_img2
+		div.sixthpage_images.sixthpage_img2(ng-class='currentSponsorIndex == 1 ? "selected" : ""')
 
 	div.col-xs-2(ng-mouseover='changeText("zyxel")')
-		div.sixthpage_images.sixthpage_img3
+		div.sixthpage_images.sixthpage_img3(ng-class='currentSponsorIndex == 2 ? "selected" : ""')
 
 	div.col-xs-2(ng-mouseover='changeText("watchguard")')
-		div.sixthpage_images.sixthpage_img4
+		div.sixthpage_images.sixthpage_img4(ng-class='currentSponsorIndex == 3 ? "selected" : ""')
 
 
 
 div.col-xs-offset-1.col-xs-3
 	div.sixthpage_text
-		p {{vm.partnerText}}
+		span.escape &#60;
+		div.secondpage_text
+			p {{vm.partnerText}}
+		span.escape /&#62;
 
 
 				
