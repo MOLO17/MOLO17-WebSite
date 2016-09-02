@@ -48,7 +48,8 @@ molo.service('coordinatesService', function(projectConsts) {
 	}
 
 
-	//Distance from 2 coordinates
+	//Distance from 2 coordinates. 
+	//TODO
 	self.distance = function(latitude2, longitude2) {
 
 		var latitude1 = moloPositionDecimal.lat;

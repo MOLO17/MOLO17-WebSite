@@ -11,10 +11,9 @@ molo.run(function(coordinatesService) {
 
 		var hour = new Date().getHours()
 		var minutes = new Date().getMinutes()
-		var time = [hour, '.', minutes];
+		var time = [hour, minutes];
 
-		time = time.join()
-		time = time.replace(/,/g, "");
+		time = time.join('.')
 		time = parseFloat(time);
 		//console.log(hour)
 		//console.log(minutes)
