@@ -2,10 +2,6 @@
 molo.controller('footerController', function($scope) {
 
 	var vm;
-	var amazonText;
-	var herokuText;
-	var zyxelText;
-	var watchguardText;
 	vm = this;
 	
 	vm.string1 = 'Soluzioni Web Elastiche';
@@ -13,14 +9,14 @@ molo.controller('footerController', function($scope) {
 	vm.string3 = 'Infrastrutture Cloud';
 	vm.github = 'Contribuisci al progetto su';
 
-	var sponsorList = [
-		'Piattaforma di servizi cloud in grado di offrire con sicurezza e scalabilità storage di database, distribuzione di contenuti e funzionalità.',
-		'Piattaforma di programmazione che permette alle aziende di creare, rilasciare, monitorare e scalare applicazioni, Heroku è il modo più veloce per passare dall’idea al progetto.',
-		'Produttore di apparati per il networking, il wireless, la security e i sistemi di accesso ad internet in grado di migliorare la connettività delle applicazioni multimediali.',
-		'Con sede a Seattle, WatchGuard ha implementato in tutto il mondo quasi un milione di appliance integrate e multifunzione per la gestione delle minacce, sia nelle piccole e medie imprese, sia nelle grandi aziende distribuite.'
-	]
 
-	vm.sponsorText = sponsorList[0]
+
+//-------------------------------------PAGES LOGIC----------------------------------------------------
+
+	$scope.amazon = true;
+	$scope.heroku = false;
+	$scope.zyxel = false;
+	$scope.watchguard = false;
 
 	$scope.currentSponsorIndex = 0;
 
@@ -29,26 +25,42 @@ molo.controller('footerController', function($scope) {
 	$scope.changeText = function(sponsor) {
 
 		if(sponsor === 'amazon') {
+			$scope.amazon = true;
+			$scope.heroku = false;
+			$scope.zyxel = false;
+			$scope.watchguard = false;
 			$scope.currentSponsorIndex = 0;
-			return vm.sponsorText = sponsorList[0];
+			return
 		}
 			
 
 		if(sponsor === 'heroku') {
+			$scope.amazon = false;
+			$scope.heroku = true;
+			$scope.zyxel = false;
+			$scope.watchguard = false;
 			$scope.currentSponsorIndex = 1;
-			return vm.sponsorText = sponsorList[1];
+			return
 		}
 			
 
 		if(sponsor === 'zyxel') {
+			$scope.amazon = false;
+			$scope.heroku = false;
+			$scope.zyxel = true;
+			$scope.watchguard = false;
 			$scope.currentSponsorIndex = 2;
-			return vm.sponsorText = sponsorList[2];
+			return
 		}
 			
 
 		if(sponsor === 'watchguard') {
+			$scope.amazon = false;
+			$scope.heroku = false;
+			$scope.zyxel = false;
+			$scope.watchguard = true;
 			$scope.currentSponsorIndex = 3;
-			return vm.sponsorText = sponsorList[3];
+			return
 		}
 					
 	}

@@ -9,15 +9,23 @@ section.sixthpage_section.row.center-xs
 
 	div.col-xs-2(ng-mouseover='changeText("amazon")')
 		div.sixthpage_images.sixthpage_img1(ng-class='currentSponsorIndex == 0 ? "selected" : ""')
+		div.sixthpage_images_texts(ng-if='amazon')
+			| Piattaforma di servizi cloud in grado di offrire con sicurezza e scalabilità storage di database, distribuzione di contenuti e funzionalità.
 			
 	div.col-xs-2(ng-mouseover='changeText("heroku")')
 		div.sixthpage_images.sixthpage_img2(ng-class='currentSponsorIndex == 1 ? "selected" : ""')
+		div.sixthpage_images_texts(ng-if='heroku')
+			| Piattaforma di programmazione che permette alle aziende di creare, rilasciare, monitorare e scalare applicazioni, Heroku è il modo più veloce per passare dall’idea al progetto.
 
 	div.col-xs-2(ng-mouseover='changeText("zyxel")')
 		div.sixthpage_images.sixthpage_img3(ng-class='currentSponsorIndex == 2 ? "selected" : ""')
+		div.sixthpage_images_texts(ng-if='zyxel')
+			| Produttore di apparati per il networking, il wireless, la security e i sistemi di accesso ad internet in grado di migliorare la connettività delle applicazioni multimediali.
 
 	div.col-xs-2(ng-mouseover='changeText("watchguard")')
 		div.sixthpage_images.sixthpage_img4(ng-class='currentSponsorIndex == 3 ? "selected" : ""')
+		div.sixthpage_images_texts(ng-if='watchguard')
+			| Con sede a Seattle, WatchGuard ha implementato in tutto il mondo quasi un milione di appliance integrate e multifunzione per la gestione delle minacce, sia nelle piccole e medie imprese, sia nelle grandi aziende distribuite.
 
 
 
@@ -25,7 +33,7 @@ div.col-xs-offset-1.col-xs-3
 	div.sixthpage_text
 		span.escape &#60;
 		div.secondpage_text
-			p {{vm.sponsorText}}
+			p Donec porta a ligula in accumsan. Cras pharetra dui et accumsan vulputate. Cras tristique, eros et semper suscipit, neque nisi vehicula nibh, sed sollicitudin diam sem sit amet lacus. Mauris hendrerit tincidunt scelerisque. Duis ac porttitor augue, quis euismod nisi.
 		span.escape /&#62;
 
 

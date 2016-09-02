@@ -1583,6 +1583,11 @@ a:hover {
 .pages_section {
   margin-top: 50px;
 }
+.escape {
+  color: #f00;
+  top: 900px;
+  font-size: 18px;
+}
 .firstpage_company_logo {
   position: relative;
   display: block;
@@ -1603,11 +1608,6 @@ a:hover {
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: left;
-  font-size: 18px;
-}
-.escape {
-  color: #f00;
-  top: 900px;
   font-size: 18px;
 }
 .secondpage_textcontainer {
@@ -1647,6 +1647,10 @@ a:hover {
   text-align: center;
   color: #000;
 }
+.thirdpage_headerText {
+  color: #000;
+  font-weight: normal;
+}
 .thirdpage_imges {
   width: 80%;
   height: 100px;
@@ -1662,6 +1666,13 @@ a:hover {
 .thirdpage_img3 {
   background-color: #00f;
 }
+.thirdpage_escape_1,
+.thirdpage_escape_2 {
+  margin-right: -30px;
+}
+.thirdpage_escape_3,
+.thirdpage_escape_4,
+.thirdpage_escape_5,
 .fourthpage_text {
   margin-left: 44px;
   margin-top: 10px;
@@ -1714,12 +1725,15 @@ a:hover {
 .sixthpage_images:after {
   bottom: -15px;
 }
+.sixthpage_images_texts {
+  margin-top: 20px;
+}
 .sixthpage_img1 {
   background: url("images/pages/logo_extended.svg") no-repeat;
   background-size: contain;
 }
 .sixthpage_img2 {
-  background: url("images/pages/amazon_logo.ai") no-repeat;
+  background: url("images/pages/logo_extended.svg") no-repeat;
   background-size: contain;
 }
 .sixthpage_img3 {
